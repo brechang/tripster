@@ -148,9 +148,6 @@ as element()*
 
     {local:getUserTripRating(1)}
 
-    <rateContent>
-    </rateContent>
-
     <request>
         <tripid> 3 </tripid>
         <status> pending </status>
