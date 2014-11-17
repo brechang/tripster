@@ -122,7 +122,7 @@ as element()*
     return
         <rateTrip>
             <id> {data($x/TRIP_ID)} </id>
-            <score> foo name </score>
+            {local:getTripScore($x/TRIP_ID)}
             {local:getTripComments($x/TRIP_ID)}
         </rateTrip>
 };
@@ -134,6 +134,15 @@ as element()*
     where data($x/TRIP_ID) = $id
     return
         <comments>{data($x/COMMENT_STR)}</comments>
+};
+
+declare function local:getTripScore($id as xs:integer)
+as element()*
+{
+    for $x in doc("export.xml")/database/TRIP/tuple
+    where data($x/ID) = $id
+    return
+        <score>{data($x/RATING)}</score>
 };
 
 <tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
