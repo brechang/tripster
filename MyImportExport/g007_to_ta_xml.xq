@@ -124,8 +124,7 @@ as element()*
 {
     for $x in doc("export.xml")/database/TRIP_COMMENTS/tuple
     where data($x/TRIP_ID) = $id
-    return
-        <comments>{data($x/COMMENT_STR)}</comments>
+    return <comments>{data($x/COMMENT_STR)}</comments>
 };
 
 declare function local:getTripScore($id as xs:integer)
@@ -135,6 +134,55 @@ as element()*
     where data($x/ID) = $id
     return
         <score>{data($x/RATING)}</score>
+};
+
+declare function local:getUserTripID($id as xs:integer)
+as xs:integer
+{
+    for $x in doc("export.xml")/database/PARTICIPANTS_OF/tuple
+    where data($x/USER_ID) = $id
+    return data($x/TRIP_ID)
+};
+
+declare function local:getUserTripAlbum($id as xs:integer)
+as xs:integer
+{
+  for $x in doc("export.xml")/database/ALBUM_OF/tuple
+  where data($x/TRIP_ID) = $id
+  return data($x/ALBUM_ID)
+};
+
+declare function local:getUserAlbumContent($id as xs:integer)
+as element()*
+{
+    for $x in doc("export.xml")/database/CONTENT_OF/tuple
+    where data($x/ALBUM_ID) = $id
+    return data($x/CONTENT_ID)
+};
+
+declare function local:getUserContentRating($id as xs:integer)
+as element()*
+{
+    for $x in doc("export.xml")/database/CONTENT/tuple
+    where data($x/ID) = local:getUserAlbumContent(local:getUserTripAlbum($id))
+    return
+        <rateContent>
+            <contentid>{data($x/ID)}</contentid>
+            <contentSource>group1</contentSource>
+            <score>{data($x/RATING)}</score>
+            {local:getContentComment(data($x/ID))}
+        </rateContent>
+
+};
+
+declare function local:getContentComment($id as xs:integer)
+as element()*
+{
+    for $x in doc("export.xml")/database/CONTENT_COMMENTS/tuple
+    where data($x/CONTENT_ID) = $id
+    return
+        <comment>{data($x/COMMENT_STR)}</comment>
+
 };
 
 <tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
@@ -149,8 +197,7 @@ as element()*
 
     {local:getUserTripRating(1)}
 
-    <rateContent>
-    </rateContent>
+    {local:getUserContentRating(1)}
 
     <request>
     </request>
