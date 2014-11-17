@@ -31,6 +31,27 @@ as element()*
     return <friend> {local:getUsername(data($x/FRIEND_ID))} </friend>
 };
 
+declare function local:getContentURL($id as xs:integer)
+{
+    for $x in doc("export.xml")/database/CONTENT/tuple
+    where data($x/ID) = $id
+    return data($x/URL)
+};
+
+declare function local:getContent($id as xs:integer)
+as element()*
+{
+   for $x in doc("export.xml")/database/CONTENT_OF/tuple
+   where data($x/ALBUM_ID) = $id
+   return
+   <content>
+        <id> {data($x/CONTENT_ID)} </id>
+        <group> group1 </group>
+        <type> photo </type>
+        <url> {local:getContentURL($x/CONTENT_ID)}</url>
+   </content>
+};
+
 declare function local:getAlbumName($id as xs:integer)
 as xs:string
 {
@@ -47,10 +68,26 @@ as element()*
     return
         <album>
             <id> {data($x/ALBUM_ID)} </id>
-            <name> {local:getAlbumname(data($x/ALBUM_ID))} </name>
+            <name> {local:getAlbumName(data($x/ALBUM_ID))} </name>
             <privacyFlag> private </privacyFlag>
             {local:getContent(data($x/ALBUM_ID))}
         </album>
+};
+
+declare function local:getLocationName($id)
+as xs:string
+{
+    for $x in doc("export.xml")/database/LOCATION/tuple
+    where data($x/ID) = $id
+    return data($x/NAME)
+};
+
+declare function local:getLocation($id)
+as element()*
+{
+    for $x in doc("export.xml")/database/TRIP/tuple
+    where data($x/USER_ID) = $id
+    return <location> {local:getLocationName(data($x/LOCATION_ID))} </location>
 };
 
 declare function local:getTrip($id as xs:integer)
@@ -65,7 +102,7 @@ as element()*
             <feature> foo feature </feature>
             <privacyFlag> private </privacyFlag>
             {local:getAlbum($x/TRIP_ID)}
-            <location> {local:getLocation($x/TRIP_ID)} </location>
+            {local:getLocation($x/TRIP_ID)}
         </trip>
 };
 
@@ -78,10 +115,6 @@ as element()*
     <interests> Surfing </interests>
     {local:getFriends(1)}
     {local:getTrip(1)}
-    <trip>
-        <album> </album>
-        <location> </location>
-    </trip>
 
     <rateTrip>
     </rateTrip>
