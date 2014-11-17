@@ -6,6 +6,7 @@ xquery version "3.0";
 : Time: 7:14 PM
 : To change this template use File | Settings | File Templates.
 :)
+
 declare variable $docname := "export.xml";
 
 declare function local:getUsername($id as xs:integer)

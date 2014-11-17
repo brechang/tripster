@@ -1,0 +1,1 @@
+sed -n 2p log.xml | xmllint --format - | tee xmlpretty.xml
