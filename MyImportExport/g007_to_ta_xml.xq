@@ -6,11 +6,12 @@ xquery version "3.0";
 : Time: 7:14 PM
 : To change this template use File | Settings | File Templates.
 :)
+declare variable $docname := "export.xml";
 
 declare function local:getUsername($id as xs:integer)
 as xs:string?
 {
-    for $x in doc("export.xml")/database/USERS/tuple
+    for $x in doc($docname)/database/USERS/tuple
     where data($x/ID) = $id
     return data($x/USERNAME)
 };
@@ -18,7 +19,7 @@ as xs:string?
 declare function local:getAffiliation($id as xs:integer)
 as xs:string?
 {
-    for $x in doc("export.xml")/database/USERS/tuple
+    for $x in doc($docname)/database/USERS/tuple
     where data($x/ID) = $id
     return data($x/AFFILIATION)
 };
@@ -26,7 +27,7 @@ as xs:string?
 declare function local:getFriends($id as xs:integer)
 as element()*
 {
-    for $x in doc("export.xml")/database/FRIENDS_WITH/tuple
+    for $x in doc($docname)/database/FRIENDS_WITH/tuple
     where data($x/USER_ID) = $id
     return <friend> {local:getUsername(data($x/FRIEND_ID))} </friend>
 };
@@ -34,14 +35,14 @@ as element()*
 declare function local:getFriendsId($id as xs:integer)
 as element()*
 {
-    for $x in doc("export.xml")/database/FRIENDS_WITH/tuple
+    for $x in doc($docname)/database/FRIENDS_WITH/tuple
     where data($x/USER_ID) = $id
     return <friendid> {local:getUsername(data($x/FRIEND_ID))} </friendid>
 };
 
 declare function local:getContentURL($id as xs:integer)
 {
-    for $x in doc("export.xml")/database/CONTENT/tuple
+    for $x in doc($docname)/database/CONTENT/tuple
     where data($x/ID) = $id
     return data($x/URL)
 };
@@ -49,7 +50,7 @@ declare function local:getContentURL($id as xs:integer)
 declare function local:getContent($id as xs:integer)
 as element()*
 {
-   for $x in doc("export.xml")/database/CONTENT_OF/tuple
+   for $x in doc($docname)/database/CONTENT_OF/tuple
    where data($x/ALBUM_ID) = $id
    return
    <content>
@@ -63,7 +64,7 @@ as element()*
 declare function local:getAlbumName($id as xs:integer)
 as xs:string
 {
-    for $x in doc("export.xml")/database/ALBUM/tuple
+    for $x in doc($docname)/database/ALBUM/tuple
     where data($x/ID) = $id
     return data($x/NAME)
 };
@@ -71,7 +72,7 @@ as xs:string
 declare function local:getAlbum($id as xs:integer)
 as element()*
 {
-    for $x in doc("export.xml")/database/ALBUM_OF/tuple
+    for $x in doc($docname)/database/ALBUM_OF/tuple
     where data($x/TRIP_ID) = $id
     return
         <album>
@@ -85,7 +86,7 @@ as element()*
 declare function local:getLocationName($id)
 as xs:string
 {
-    for $x in doc("export.xml")/database/LOCATION/tuple
+    for $x in doc($docname)/database/LOCATION/tuple
     where data($x/ID) = $id
     return data($x/NAME)
 };
@@ -93,7 +94,7 @@ as xs:string
 declare function local:getLocation($id)
 as element()*
 {
-    for $x in doc("export.xml")/database/TRIP/tuple
+    for $x in doc($docname)/database/TRIP/tuple
     where data($x/USER_ID) = $id
     return <location> {local:getLocationName(data($x/LOCATION_ID))} </location>
 };
@@ -101,7 +102,7 @@ as element()*
 declare function local:getTrip($id as xs:integer)
 as element()*
 {
-    for $x in doc("export.xml")/database/PARTICIPANTS_OF/tuple
+    for $x in doc($docname)/database/PARTICIPANTS_OF/tuple
     where data($x/USER_ID) = $id
     return
         <trip>
@@ -117,7 +118,7 @@ as element()*
 declare function local:getUserTripRating($id as xs:integer)
 as element()*
 {
-    for $x in doc("export.xml")/database/PARTICIPANTS_OF/tuple
+    for $x in doc($docname)/database/PARTICIPANTS_OF/tuple
     where data($x/USER_ID) = $id
     return
         <rateTrip>
@@ -130,7 +131,7 @@ as element()*
 declare function local:getTripComments($id as xs:integer)
 as element()*
 {
-    for $x in doc("export.xml")/database/TRIP_COMMENTS/tuple
+    for $x in doc($docname)/database/TRIP_COMMENTS/tuple
     where data($x/TRIP_ID) = $id
     return
         <comments>{data($x/COMMENT_STR)}</comments>
@@ -139,23 +140,26 @@ as element()*
 declare function local:getTripScore($id as xs:integer)
 as element()*
 {
-    for $x in doc("export.xml")/database/TRIP/tuple
+    for $x in doc($docname)/database/TRIP/tuple
     where data($x/ID) = $id
     return
         <score>{data($x/RATING)}</score>
 };
 
-<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
-<User>
-    <login> {local:getUsername(1)} </login>
-    <email> {local:getUsername(1)}@example.com </email>
-    <name> {local:getUsername(1)} </name>
-    <affiliation> {local:getAffiliation(1)} </affiliation>
-    <interests> Surfing </interests>
-    {local:getFriends(1)}
-    {local:getTrip(1)}
-
-    {local:getUserTripRating(1)}
+declare function local:getTripsterData() as
+element()*
+{
+for $x in doc($docname)/database/USERS/tuple/ID
+return
+    <User>
+        <login> {local:getUsername($x)} </login>
+        <email> {local:getUsername($x)}@example.com </email>
+        <name> {local:getUsername($x)} </name>
+        <affiliation> {local:getAffiliation($x)} </affiliation>
+        <interests> Surfing </interests>
+        {local:getFriends($x)}
+        {local:getTrip($x)}
+            {local:getUserTripRating($x)}
 
     <request>
         <tripid> 3 </tripid>
@@ -164,12 +168,12 @@ as element()*
 
     <invite>
         <tripid> 1 </tripid>
-        {local:getFriendsId(1)}
+        {local:getFriendsId($x)}
         <status> pending </status>
     </invite>
-</User>
+    </User>
+};
 
-<User>
-    {local:getUsername(2)}
-</User>
+<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
+    {local:getTripsterData()}
 </tripster>
