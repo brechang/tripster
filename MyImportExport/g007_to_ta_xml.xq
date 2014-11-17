@@ -31,6 +31,14 @@ as element()*
     return <friend> {local:getUsername(data($x/FRIEND_ID))} </friend>
 };
 
+declare function local:getFriendsId($id as xs:integer)
+as element()*
+{
+    for $x in doc("export.xml")/database/FRIENDS_WITH/tuple
+    where data($x/USER_ID) = $id
+    return <friendid> {local:getUsername(data($x/FRIEND_ID))} </friendid>
+};
+
 declare function local:getContentURL($id as xs:integer)
 {
     for $x in doc("export.xml")/database/CONTENT/tuple
@@ -123,9 +131,14 @@ as element()*
     </rateContent>
 
     <request>
+        <tripid> 3 </tripid>
+        <status> pending </status>
     </request>
 
     <invite>
+        <tripid> 1 </tripid>
+        {local:getFriendsId(1)}
+        <status> pending </status>
     </invite>
 </User>
 
