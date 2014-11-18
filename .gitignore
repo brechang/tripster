@@ -54,7 +54,9 @@ docs/_build/
 target/
 
 # Java stuff
-*.project
-*.settings
-*.idea
+.project
+.settings
+.idea
+.classpath
+*.class
 workspace.xml

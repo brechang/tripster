@@ -56,8 +56,8 @@ as element()*
    return
    <content>
         <id> {data($x/CONTENT_ID)} </id>
-        <group> group1 </group>
-        <type> photo </type>
+        <group>group1</group>
+        <type>photo</type>
         <url> {local:getContentURL($x/CONTENT_ID)}</url>
    </content>
 };
@@ -79,12 +79,12 @@ as element()*
         <album>
             <id> {data($x/ALBUM_ID)} </id>
             <name> {local:getAlbumName(data($x/ALBUM_ID))} </name>
-            <privacyFlag> private </privacyFlag>
+            <privacyFlag>private</privacyFlag>
             {local:getContent(data($x/ALBUM_ID))}
         </album>
 };
 
-declare function local:getLocationName($id)
+declare function local:getLocationName($id as xs:integer)
 as xs:string
 {
     for $x in doc($docname)/database/LOCATION/tuple
@@ -92,12 +92,12 @@ as xs:string
     return data($x/NAME)
 };
 
-declare function local:getLocation($id)
-as element()*
+declare function local:getLocation($id as xs:integer)
+as xs:string
 {
     for $x in doc($docname)/database/TRIP/tuple
-    where data($x/USER_ID) = $id
-    return <location> {local:getLocationName(data($x/LOCATION_ID))} </location>
+    where data($x/ID) = $id
+    return {local:getLocationName($x/LOCATION_ID)}
 };
 
 declare function local:getTrip($id as xs:integer)
@@ -108,11 +108,14 @@ as element()*
     return
         <trip>
             <id> {data($x/TRIP_ID)} </id>
-            <name> foo name </name>
-            <feature> foo feature </feature>
-            <privacyFlag> private </privacyFlag>
+            <name>foo name</name>
+            <feature>foo feature</feature>
+            <privacyFlag>private</privacyFlag>
             {local:getAlbum($x/TRIP_ID)}
-            {local:getLocation($x/TRIP_ID)}
+            <location>
+                <name>{local:getLocation($x/TRIP_ID)}</name>
+                <type>city</type>
+            </location>
         </trip>
 };
 
@@ -134,7 +137,7 @@ as element()*
 {
     for $x in doc($docname)/database/TRIP_COMMENTS/tuple
     where data($x/TRIP_ID) = $id
-    return <comments>{data($x/COMMENT_STR)}</comments>
+    return <comment>{data($x/COMMENT_STR)}</comment>
 };
 
 declare function local:getTripScore($id as xs:integer)
@@ -147,19 +150,19 @@ as element()*
 };
 
 declare function local:getUserTripID($id as xs:integer)
-as xs:integer
+as element()*
 {
     for $x in doc($docname)/database/PARTICIPANTS_OF/tuple
     where data($x/USER_ID) = $id
-    return data($x/TRIP_ID)
+    return $x/TRIP_ID
 };
 
 declare function local:getUserTripAlbum($id as xs:integer)
-as xs:integer
+as element()*
 {
-  for $x in doc($docname)/database/ALBUM_OF/tuple
-  where data($x/TRIP_ID) = $id
-  return data($x/ALBUM_ID)
+    for $x in doc($docname)/database/ALBUM_OF/tuple
+    where data($x/TRIP_ID) = $id
+    return $x/ALBUM_ID
 };
 
 declare function local:getUserAlbumContent($id as xs:integer)
@@ -170,19 +173,26 @@ as element()*
     return $x
 };
 
+declare function local:getContentRating($id as xs:integer)
+as xs:string
+{
+    for $x in doc($docname)/database/CONTENT/tuple
+    where data($x/ID) = $id
+    return $x/RATING
+};
+
 declare function local:getUserContentRating($id as xs:integer)
 as element()*
 {
-    for $x in local:getUserAlbumContent(local:getUserTripAlbum(local:getUserTripID($id)))
-        (: doc($docname)/database/CONTENT/tuple :)
-    (: where data($x/ID) = local:getUserAlbumContent(local:getUserTripAlbum(local:getUserTripID($id))) :)
-
+    for $x in local:getUserTripID($id)
+    for $y in local:getUserTripAlbum($x)
+    for $z in local:getUserAlbumContent($y)
     return
         <rateContent>
-            <contentid>{data($x/CONTENT_ID)}</contentid>
+            <contentid>{data($z/CONTENT_ID)}</contentid>
             <contentSource>group1</contentSource>
-            <score>{data($x/RATING)}</score>
-            {local:getContentComment(data($x/CONTENT_ID))}
+            <score>{local:getContentRating($z/CONTENT_ID)}</score>
+            {local:getContentComment(data($z/CONTENT_ID))}
         </rateContent>
 };
 
@@ -203,25 +213,26 @@ for $x in doc($docname)/database/USERS/tuple/ID
 return
 <User>
     <login> {local:getUsername($x)} </login>
-    <email> {local:getUsername($x)}@example.com </email>
+    <email> {local:getUsername($x)}@example.com</email>
     <name> {local:getUsername($x)} </name>
     <affiliation> {local:getAffiliation($x)} </affiliation>
-    <interests> Surfing </interests>
+    <interests>Surfing</interests>
     {local:getFriends($x)}
     {local:getTrip($x)}
     {local:getUserTripRating($x)}
     {local:getUserContentRating($x)}
 
     <request>
-        <tripid> 3 </tripid>
-        <status> pending </status>
+        <tripid>3</tripid>
+        <status>pending</status>
     </request>
 
     <invite>
-        <tripid> 1 </tripid>
+        <tripid>1</tripid>
         {local:getFriendsId($x)}
-        <status> pending </status>
+        <status>pending</status>
     </invite>
+    <dream>Moon</dream>
 </User>
 };
 
