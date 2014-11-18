@@ -206,6 +206,14 @@ as element()*
 
 };
 
+declare function local:getUserDreamLocation($id as xs:integer)
+as element()*
+{
+    for $x in doc($docname)/database/DREAM_LOCATION_OF/tuple
+    where data($x/USER_ID) = $id
+    return <dream>{local:getLocation($x/LOCATION_ID)}</dream>
+};
+
 declare function local:getTripsterData() as
 element()*
 {
@@ -232,7 +240,7 @@ return
         {local:getFriendsId($x)}
         <status>pending</status>
     </invite>
-    <dream>Moon</dream>
+    {local:getUserDreamLocation($x)}
 </User>
 };
 
