@@ -14,38 +14,53 @@ as xs:string?
 {
     for $x in doc($docname)/database/USERS/tuple
     where data($x/ID) = $id
-    return data($x/USERNAME)
+    return
+        <USERS>
+            <tuple><ID>1</ID><USERNAME>richardo</USERNAME><ENC_PWORD>w1ej31ree</ENC_PWORD><AFFILIATION>Penn</AFFILIATION></tuple>
+        </USERS>
 };
 
-declare function local:getAffiliation($id as xs:integer)
+declare function local:getTrip($id as xs:integer)
 as xs:string?
 {
     for $x in doc($docname)/database/USERS/tuple
     where data($x/ID) = $id
-    return data($x/AFFILIATION)
+    return
+        <TRIP>
+            data($x/AFFILIATION)
+        </TRIP>
 };
 
-declare function local:getFriends($id as xs:integer)
+declare function local:getLocation($id as xs:integer)
 as element()*
 {
     for $x in doc($docname)/database/FRIENDS_WITH/tuple
     where data($x/USER_ID) = $id
-    return <friend> {local:getUsername(data($x/FRIEND_ID))} </friend>
+    return
+        <LOCATION>
+            {local:getUsername(data($x/FRIEND_ID))}
+        </LOCATION>
 };
 
-declare function local:getFriendsId($id as xs:integer)
+declare function local:getAlbum($id as xs:integer)
 as element()*
 {
     for $x in doc($docname)/database/FRIENDS_WITH/tuple
     where data($x/USER_ID) = $id
-    return <friendid> {local:getUsername(data($x/FRIEND_ID))} </friendid>
+    return
+        <ALBUM>
+            {local:getUsername(data($x/FRIEND_ID))}
+        </ALBUM>
 };
 
-declare function local:getContentURL($id as xs:integer)
+declare function local:getAlbumOf($id as xs:integer)
 {
     for $x in doc($docname)/database/CONTENT/tuple
     where data($x/ID) = $id
-    return data($x/URL)
+    return
+        <ALBUM_OF>
+            data($x/URL)
+        </ALBUM_OF>
 };
 
 
@@ -237,20 +252,22 @@ return
 
 <database>
     {local:getUsers()}
-    {local:getTrip()}
+    {local:getFriendsWith()}
     {local:getLocation()}
     {local:getAlbum()}
     {local:getAlbumOf()}
 
+
     {local:getContent()}
     {local:getContentOf()}
+    {local:getContentComments()}
+    {local:getContentCommentsOf()}
+
+
     {local:getDreamLocationOf()}
     {local:getVisited()}
     {local:getParticipantsOf()}
-
     {local:getTripComments()}
     {local:getTripCommentsOf()}
-    {local:getFriendsWith()}
-    {local:getContentComments()}
-    {local:getContentCommentsOf()}
+    {local:getTrip()}
 </database>
