@@ -8,19 +8,38 @@ xquery version "3.0";
 
 declare variable $docname := "ta_tripster.xml";
 
-(: KEVIN-SPACE :)
-declare function local:getUser($id as xs:integer)
-as xs:string?
+declare function local:genUserInfo()
+as element()*
 {
-    for $x in doc($docname)/database/USERS/tuple
-    where data($x/ID) = $id
-    return
-        <USERS>
-            <tuple><ID>1</ID><USERNAME>richardo</USERNAME><ENC_PWORD>w1ej31ree</ENC_PWORD><AFFILIATION>Penn</AFFILIATION></tuple>
-        </USERS>
+    let $count := 0
+    for $x in doc($docname)/tripster/user
+        let $count := $count + 1
+        return
+        <tuple>
+            <ID>
+                {$count}
+            </ID>
+            <USERNAME>data($x/login)</USERNAME>
+            <ENC_PWORD>password</ENC_PWORD>
+            <AFFILIATION>data($x/affiliation)</AFFILIATION>
+        </tuple>
 };
 
-declare function local:getTrip($id as xs:integer)
+(: KEVIN-SPACE :)
+declare function local:getUser($id as xs:integer)
+as element()*
+{
+    for $x in doc($docname)/user
+    where data($x/ID) = $id
+    return
+            <tuple>
+                <USERNAME>data($x/login)</USERNAME>
+                <ENC_PWORD>password</ENC_PWORD>
+                <AFFILIATION>data($x/affiliation)</AFFILIATION>
+            </tuple>
+};
+
+declare function local:getFriendsWith($id as xs:integer)
 as xs:string?
 {
     for $x in doc($docname)/database/USERS/tuple
@@ -88,7 +107,7 @@ as xs:string
     return data($x/NAME)
 };
 
-declare function local:getAlbum($id as xs:integer)
+declare function local:getAlbumfoo($id as xs:integer)
 as element()*
 {
     for $x in doc($docname)/database/ALBUM_OF/tuple
@@ -110,7 +129,7 @@ as xs:string
     return data($x/NAME)
 };
 
-declare function local:getLocation($id)
+declare function local:getLocationfoo($id)
 as element()*
 {
     for $x in doc($docname)/database/TRIP/tuple
@@ -251,14 +270,14 @@ return
 
 
 <database>
-    {local:getUsers()}
+    <USER> {local:getUsers()} </USER>
     {local:getFriendsWith()}
     {local:getLocation()}
     {local:getAlbum()}
     {local:getAlbumOf()}
 
 
-    {local:getContent()}
+(:    {local:getContent()}
     {local:getContentOf()}
     {local:getContentComments()}
     {local:getContentCommentsOf()}
@@ -269,5 +288,5 @@ return
     {local:getParticipantsOf()}
     {local:getTripComments()}
     {local:getTripCommentsOf()}
-    {local:getTrip()}
+    {local:getTrip()}:)
 </database>
