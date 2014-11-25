@@ -1,11 +1,13 @@
 xquery version "3.0";
 
 (:~
-: User: luhkevin
+: User: haolinlu, brechang, fanyin
 : Date: 11/16/14
 : Time: 7:14 PM
 : To change this template use File | Settings | File Templates.
 :)
+
+
 
 declare variable $docname := "ta_tripster.xml";
 
@@ -24,6 +26,9 @@ declare updating function local:replaceIds($el)
         replace node $x/id with <id>{$pos}</id>
     )
 };
+
+(: KEVIN SPACE :)
+(: KEVIN: getUsers, getAlbum, getAlbumOf, getFriendsWith, getParticipantsOf :)
 
 declare function local:getUsername($id as xs:integer)
 as xs:string?
@@ -63,6 +68,10 @@ declare function local:getContentURL($id as xs:integer)
     where data($x/ID) = $id
     return data($x/URL)
 };
+
+
+(: BRENDA SPACE :)
+(: BRENDA: getContent, getContentOf, getContentComments, getContentCommentsOf :)
 
 declare function local:getContent($id as xs:integer)
 as element()*
@@ -115,6 +124,9 @@ as element()*
     where data($x/USER_ID) = $id
     return <location> {local:getLocationName(data($x/LOCATION_ID))} </location>
 };
+
+(: FAN SPACE :)
+(: FAN: getTrip, getTripComments, getTripCommentsOf, getLocation, getDreamLocation, getVisited :)
 
 declare function local:getTrip($id as xs:integer)
 as element()*
@@ -241,15 +253,15 @@ return
 </User>
 };
 
+(: LP SPACE :)
+
 declare variable $base := doc($docname)/tripster/user;
 
-(: insert :)
 local:insertIds($base);
 local:insertIds($base/trip/location);
 local:insertIds($base/rateTrip);
 local:insertIds($base/rateContent);
 
-(: replace :)
 local:replaceIds($base/trip);
 local:replaceIds($base/trip/album);
 local:replaceIds($base/trip/album/content);
