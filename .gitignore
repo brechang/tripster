@@ -54,7 +54,11 @@ docs/_build/
 target/
 
 # Java stuff
-*.project
-*.settings
-*.idea
-MyImportExport/.idea/workspace.xml
+.project
+.settings
+.idea
+.classpath
+*.class
+./MyImportExport/bin/*
+./MyImportExport/out/*
+./MyImportExport/.idea/workspace.xml
