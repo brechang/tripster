@@ -30,45 +30,78 @@ declare updating function local:replaceIds($el)
 (: KEVIN SPACE :)
 (: KEVIN: getUsers, getAlbum, getAlbumOf, getFriendsWith, getParticipantsOf :)
 
-declare function local:getUsername($id as xs:integer)
-as xs:string?
-{
-    for $x in doc($docname)/database/USERS/tuple
-    where data($x/ID) = $id
-    return data($x/USERNAME)
-};
-
-declare function local:getAffiliation($id as xs:integer)
-as xs:string?
-{
-    for $x in doc($docname)/database/USERS/tuple
-    where data($x/ID) = $id
-    return data($x/AFFILIATION)
-};
-
-declare function local:getFriends($id as xs:integer)
+declare function local:getUsers()
 as element()*
 {
-    for $x in doc($docname)/database/FRIENDS_WITH/tuple
-    where data($x/USER_ID) = $id
-    return <friend> {local:getUsername(data($x/FRIEND_ID))} </friend>
+    for $x in doc($docname)/tripster
+    for $y in $x/user
+
+    return
+        <tuple>
+            <ID>data($y/id)</ID>
+            <USERNAME>data($y/login)</USERNAME>
+            <ENC_PWORD>data($y/password)</ENC_PWORD>
+            <AFFILIATION>data($y/affiliation)</AFFILIATION>
+        </tuple>
 };
 
-declare function local:getFriendsId($id as xs:integer)
+declare function local:getAlbum()
 as element()*
 {
-    for $x in doc($docname)/database/FRIENDS_WITH/tuple
-    where data($x/USER_ID) = $id
-    return <friendid> {local:getUsername(data($x/FRIEND_ID))} </friendid>
+    for $x in doc($docname)/tripster/user/trip
+    for $y in $x/album
+    return 
+        <tuple>
+            <ID>data($y/id)</ID>
+            <NAME>data($y/name)</NAME>
+        </tuple>
 };
 
-declare function local:getContentURL($id as xs:integer)
+
+declare function local:getAlbumOf()
+as element()*
 {
-    for $x in doc($docname)/database/CONTENT/tuple
-    where data($x/ID) = $id
-    return data($x/URL)
+    for $x in doc($docname)/tripster/user/trip
+    for $y in $x/album
+    return 
+        <tuple>
+            <ALBUM_ID>data($y/id)</ALBUM_ID>
+            <TRIP_ID>data($x/id)</TRIP_ID>
+        </tuple>
 };
 
+declare function local:getFriendID($name as xs:string)
+as xs:integer
+{
+    for $x in doc($docname)/tripster
+        for $y in $x/user
+           where ($x/name) = $name  
+        return data($y/id)
+}
+
+declare function local:getFriendsWith()
+as element()*
+{
+    for $x in doc($docname)/tripster
+        for $y in $x/user
+    return 
+        <tuple> 
+            <USER_ID>data($y/id)</USER_ID>
+            <FRIEND_ID>{local:getFriendID(data($y/name))}</FRIEND_ID>
+        </tuple>
+};
+
+declare function local:getParticipantsOf()
+as element()*
+{
+    for $x in doc($docname)/tripster
+        for $y in $x/trip
+    return 
+        <tuple>
+            <TRIP_ID>data($y/id)</TRIP_ID>            
+            <USER_ID>data($x/user/id)</USER_ID>            
+        </tuple>
+};
 
 (: BRENDA SPACE :)
 (: BRENDA: getContent, getContentOf, getContentComments, getContentCommentsOf :)
