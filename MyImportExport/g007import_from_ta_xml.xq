@@ -7,7 +7,23 @@ xquery version "3.0";
 : To change this template use File | Settings | File Templates.
 :)
 
-declare variable $docname := "export.xml";
+declare variable $docname := "ta_tripster.xml";
+
+declare updating function local:insertIds($el)
+{
+    for $x at $pos in $el
+    return (
+        insert node <id>{$pos}</id> as first into $x
+    )
+};
+
+declare updating function local:replaceIds($el)
+{
+    for $x at $pos in $el
+    return (
+        replace node $x/id with <id>{$pos}</id>
+    )
+};
 
 declare function local:getUsername($id as xs:integer)
 as xs:string?
@@ -225,6 +241,24 @@ return
 </User>
 };
 
-<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
-    {local:getTripsterData()}
+declare variable $base := doc($docname)/tripster/user;
+
+(: insert :)
+local:insertIds($base);
+local:insertIds($base/trip/location);
+local:insertIds($base/rateTrip);
+local:insertIds($base/rateContent);
+
+(: replace :)
+local:replaceIds($base/trip);
+local:replaceIds($base/trip/album);
+local:replaceIds($base/trip/album/content);
+
+<tripster>
+{for $x in doc($docname)/tripster/user
+    return 
+        <user>
+        <id>{data($x/id)}</id>
+        <trip><id>{data($x/trip/id)}</id></trip>
+        </user>}
 </tripster>
