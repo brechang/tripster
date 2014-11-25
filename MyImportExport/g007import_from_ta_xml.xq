@@ -1,15 +1,15 @@
 xquery version "3.0";
 
 (:~
-: User: luhkevin
-: Date: 11/16/14
-: Time: 7:14 PM
+: User: haolinlu, brechang,fanyin
+: Date: 11/24/14
 : To change this template use File | Settings | File Templates.
 :)
 
-declare variable $docname := "export.xml";
+declare variable $docname := "ta_tripster.xml";
 
-declare function local:getUsername($id as xs:integer)
+(: KEVIN-SPACE :)
+declare function local:getUser($id as xs:integer)
 as xs:string?
 {
     for $x in doc($docname)/database/USERS/tuple
@@ -48,6 +48,9 @@ declare function local:getContentURL($id as xs:integer)
     return data($x/URL)
 };
 
+
+
+(: BRENDA SPACE:)
 declare function local:getContent($id as xs:integer)
 as element()*
 {
@@ -99,6 +102,10 @@ as element()*
     where data($x/USER_ID) = $id
     return <location> {local:getLocationName(data($x/LOCATION_ID))} </location>
 };
+
+
+(: FAN SPACE:)
+
 
 declare function local:getTrip($id as xs:integer)
 as element()*
@@ -225,6 +232,25 @@ return
 </User>
 };
 
-<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
-    {local:getTripsterData()}
-</tripster>
+(: LP-SPACE :)
+
+
+<database>
+    {local:getUsers()}
+    {local:getTrip()}
+    {local:getLocation()}
+    {local:getAlbum()}
+    {local:getAlbumOf()}
+
+    {local:getContent()}
+    {local:getContentOf()}
+    {local:getDreamLocationOf()}
+    {local:getVisited()}
+    {local:getParticipantsOf()}
+
+    {local:getTripComments()}
+    {local:getTripCommentsOf()}
+    {local:getFriendsWith()}
+    {local:getContentComments()}
+    {local:getContentCommentsOf()}
+</database>

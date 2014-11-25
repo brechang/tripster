@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
+	<operator>Val Tannen</operator>
+	<web_url>www.valtannen.com</web_url>
+	<user>
+		<login>Bob123</login>
+		<email>bob@bob.com</email>
+		<name>Bob</name>
+		<affiliation>Penn</affiliation>
+		<interests>Hiking, Reading, Swimming</interests>
+		<friend>Cat456</friend>
+		<trip>
+			<id>1</id>
+			<name>A Visit To Himalayas</name>
+			<feature>Mountains</feature>
+			<privacyFlag>private</privacyFlag>
+			<album>
+				<id>1</id>
+				<name>First Week</name>
+				<privacyFlag>private</privacyFlag>
+				<content>
+					<id>1</id>
+					<source>group1</source>
+					<type>photo</type>
+					<url>www.somethingawesome.com</url>
+				</content>
+				<content>
+					<id>2</id>
+					<source>group1</source>
+					<type>video</type>
+					<url>www.somethingmoreawesome.com</url>
+				</content>
+			</album>
+			<location>
+				<name>Himalayas</name>
+				<type>Mountains</type>
+			</location>
+		</trip>
+		<rateTrip>
+			<tripid>1</tripid>
+			<score>5</score>
+			<comment>Awesome!</comment>
+		</rateTrip>
+		<rateContent>
+			<contentid>1</contentid>
+			<contentSource>group1</contentSource>
+			<score>5</score>
+			<comment>So cool</comment>
+		</rateContent>
+		<request>
+			<tripid>2</tripid>
+			<status>pending</status>
+		</request>
+		<invite>
+			<tripid>1</tripid>
+			<friendid>Cat456</friendid>
+			<status>pending</status>
+		</invite>
+		<dream>Sun</dream>	
+	</user>
+
+	<user>
+		<login>Cat456</login>
+		<email>cat@cat.com</email>
+		<name>Cat</name>
+		<affiliation>Penn</affiliation>
+		<interests>Hiking, Reading, Swimming</interests>
+		<friend>Bob123</friend>
+		<trip>
+			<id>2</id>
+			<name>A Visit To Space</name>
+			<feature>Stars</feature>
+			<privacyFlag>public</privacyFlag>
+			<album>
+				<id>2</id>
+				<name>First Week</name>
+				<privacyFlag>private</privacyFlag>
+				<content>
+					<id>1</id>
+					<source>group2</source>
+					<type>photo</type>
+					<url>www.somethingcool.com</url>
+				</content>
+				<content>
+					<id>2</id>
+					<source>group2</source>
+					<type>video</type>
+					<url>www.somethingmorecool.com</url>
+				</content>
+			</album>
+			<location>
+				<name>Sun</name>
+				<type>Star</type>
+			</location>
+		</trip>
+		<dream>Himalayas</dream>	
+	</user>
+	
+</tripster>
