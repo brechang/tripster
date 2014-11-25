@@ -1,90 +1,53 @@
 xquery version "3.0";
 
 (:~
-: User: haolinlu, brechang,fanyin
-: Date: 11/24/14
+: User: luhkevin
+: Date: 11/16/14
+: Time: 7:14 PM
 : To change this template use File | Settings | File Templates.
 :)
 
-declare variable $docname := "ta_tripster.xml";
+declare variable $docname := "export.xml";
 
-declare function local:genUserInfo()
-as element()*
-{
-    let $count := 0
-    for $x in doc($docname)/tripster/user
-        let $count := $count + 1
-        return
-        <tuple>
-            <ID>
-                {$count}
-            </ID>
-            <USERNAME>data($x/login)</USERNAME>
-            <ENC_PWORD>password</ENC_PWORD>
-            <AFFILIATION>data($x/affiliation)</AFFILIATION>
-        </tuple>
-};
-
-(: KEVIN-SPACE :)
-declare function local:getUser($id as xs:integer)
-as element()*
-{
-    for $x in doc($docname)/user
-    where data($x/ID) = $id
-    return
-            <tuple>
-                <USERNAME>data($x/login)</USERNAME>
-                <ENC_PWORD>password</ENC_PWORD>
-                <AFFILIATION>data($x/affiliation)</AFFILIATION>
-            </tuple>
-};
-
-declare function local:getFriendsWith($id as xs:integer)
+declare function local:getUsername($id as xs:integer)
 as xs:string?
 {
     for $x in doc($docname)/database/USERS/tuple
     where data($x/ID) = $id
-    return
-        <TRIP>
-            data($x/AFFILIATION)
-        </TRIP>
+    return data($x/USERNAME)
 };
 
-declare function local:getLocation($id as xs:integer)
+declare function local:getAffiliation($id as xs:integer)
+as xs:string?
+{
+    for $x in doc($docname)/database/USERS/tuple
+    where data($x/ID) = $id
+    return data($x/AFFILIATION)
+};
+
+declare function local:getFriends($id as xs:integer)
 as element()*
 {
     for $x in doc($docname)/database/FRIENDS_WITH/tuple
     where data($x/USER_ID) = $id
-    return
-        <LOCATION>
-            {local:getUsername(data($x/FRIEND_ID))}
-        </LOCATION>
+    return <friend> {local:getUsername(data($x/FRIEND_ID))} </friend>
 };
 
-declare function local:getAlbum($id as xs:integer)
+declare function local:getFriendsId($id as xs:integer)
 as element()*
 {
     for $x in doc($docname)/database/FRIENDS_WITH/tuple
     where data($x/USER_ID) = $id
-    return
-        <ALBUM>
-            {local:getUsername(data($x/FRIEND_ID))}
-        </ALBUM>
+    return <friendid> {local:getUsername(data($x/FRIEND_ID))} </friendid>
 };
 
-declare function local:getAlbumOf($id as xs:integer)
+declare function local:getContentURL($id as xs:integer)
 {
     for $x in doc($docname)/database/CONTENT/tuple
     where data($x/ID) = $id
-    return
-        <ALBUM_OF>
-            data($x/URL)
-        </ALBUM_OF>
+    return data($x/URL)
 };
 
-
-
-(: BRENDA SPACE:)
 declare function local:getContent($id as xs:integer)
 as element()*
 {
@@ -107,7 +70,7 @@ as xs:string
     return data($x/NAME)
 };
 
-declare function local:getAlbumfoo($id as xs:integer)
+declare function local:getAlbum($id as xs:integer)
 as element()*
 {
     for $x in doc($docname)/database/ALBUM_OF/tuple
@@ -129,17 +92,13 @@ as xs:string
     return data($x/NAME)
 };
 
-declare function local:getLocationfoo($id)
+declare function local:getLocation($id)
 as element()*
 {
     for $x in doc($docname)/database/TRIP/tuple
     where data($x/USER_ID) = $id
     return <location> {local:getLocationName(data($x/LOCATION_ID))} </location>
 };
-
-
-(: FAN SPACE:)
-
 
 declare function local:getTrip($id as xs:integer)
 as element()*
@@ -266,27 +225,6 @@ return
 </User>
 };
 
-(: LP-SPACE :)
-
-
-<database>
-    <USER> {local:getUsers()} </USER>
-    {local:getFriendsWith()}
-    {local:getLocation()}
-    {local:getAlbum()}
-    {local:getAlbumOf()}
-
-
-(:    {local:getContent()}
-    {local:getContentOf()}
-    {local:getContentComments()}
-    {local:getContentCommentsOf()}
-
-
-    {local:getDreamLocationOf()}
-    {local:getVisited()}
-    {local:getParticipantsOf()}
-    {local:getTripComments()}
-    {local:getTripCommentsOf()}
-    {local:getTrip()}:)
-</database>
+<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
+    {local:getTripsterData()}
+</tripster>
