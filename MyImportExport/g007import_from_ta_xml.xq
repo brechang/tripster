@@ -33,27 +33,24 @@ declare updating function local:replaceIds($el)
 declare function local:getUsers()
 as element()*
 {
-    for $x in doc($docname)/tripster
-    for $y in $x/user
-
+    for $x in doc($docname)/tripster/user
     return
         <tuple>
-            <ID>data($y/id)</ID>
-            <USERNAME>data($y/login)</USERNAME>
-            <ENC_PWORD>data($y/password)</ENC_PWORD>
-            <AFFILIATION>data($y/affiliation)</AFFILIATION>
+            <ID>{data($x/id)}</ID>
+            <USERNAME>{data($x/login)}</USERNAME>
+            <ENC_PWORD>{data($x/password)}</ENC_PWORD>
+            <AFFILIATION>{data($x/affiliation)}</AFFILIATION>
         </tuple>
 };
 
 declare function local:getAlbum()
 as element()*
 {
-    for $x in doc($docname)/tripster/user/trip
-    for $y in $x/album
+    for $x in doc($docname)/tripster/user/trip/album
     return 
         <tuple>
-            <ID>data($y/id)</ID>
-            <NAME>data($y/name)</NAME>
+            <ID>{data($x/id)}</ID>
+            <NAME>{data($x/name)}</NAME>
         </tuple>
 };
 
@@ -65,41 +62,39 @@ as element()*
     for $y in $x/album
     return 
         <tuple>
-            <ALBUM_ID>data($y/id)</ALBUM_ID>
-            <TRIP_ID>data($x/id)</TRIP_ID>
+            <ALBUM_ID>{data($y/id)}</ALBUM_ID>
+            <TRIP_ID>{data($x/id)}</TRIP_ID>
         </tuple>
 };
 
 declare function local:getFriendID($name as xs:string)
 as xs:integer
 {
-    for $x in doc($docname)/tripster
-        for $y in $x/user
-           where data($x/name) = $name  
-        return data($y/id)
+    for $x in doc($docname)/tripster/user
+    where data($x/login) = $name  
+    return data($x/id)
 };
 
 declare function local:getFriendsWith()
 as element()*
 {
-    for $x in doc($docname)/tripster
-        for $y in $x/user
+    for $x in doc($docname)/tripster/user
     return 
         <tuple> 
-            <USER_ID>data($y/id)</USER_ID>
-            <FRIEND_ID>{local:getFriendID(data($y/name))}</FRIEND_ID>
+            <USER_ID>{data($x/id)}</USER_ID>
+            <FRIEND_ID>{local:getFriendID(data($x/friend))}</FRIEND_ID>
         </tuple>
 };
 
 declare function local:getParticipantsOf()
 as element()*
 {
-    for $x in doc($docname)/tripster
+    for $x in doc($docname)/tripster/user
         for $y in $x/trip
     return 
         <tuple>
-            <TRIP_ID>data($y/id)</TRIP_ID>            
-            <USER_ID>data($x/user/id)</USER_ID>            
+            <TRIP_ID>{data($y/id)}</TRIP_ID>            
+            <USER_ID>{data($x/id)}</USER_ID>            
         </tuple>
 };
 
@@ -208,7 +203,7 @@ as element()*
 declare function local:getDreamLocation()
 as element()*
 {
-    for $x in doc($docname)/tripster/user/dream
+    for $x in doc($docname)/tripster/user
     return
         <tuple>
         <USER_ID>{data($x/id)}</USER_ID>
@@ -244,5 +239,5 @@ local:replaceIds($base/trip/album/content);
     <TRIP_COMMENTS_OF>{local:getTripCommentsOf()}</TRIP_COMMENTS_OF>
     <FRIENDS_WITH>{local:getFriendsWith()}</FRIENDS_WITH>
     <CONTENT_COMMENTS>{local:getContentComments()}</CONTENT_COMMENTS>
-    <CONTENT_COMMENTS_OF>{local:getContentCommentsOf()}</CONTENTS_COMMENTS_OF>
+    <CONTENT_COMMENTS_OF>{local:getContentCommentsOf()}</CONTENT_COMMENTS_OF>
 </database>
