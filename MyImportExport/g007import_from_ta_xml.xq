@@ -75,9 +75,9 @@ as xs:integer
 {
     for $x in doc($docname)/tripster
         for $y in $x/user
-           where ($x/name) = $name  
+           where data($x/name) = $name  
         return data($y/id)
-}
+};
 
 declare function local:getFriendsWith()
 as element()*
@@ -166,7 +166,7 @@ as element()*
         <tuple>
         <ID>{data($y/id)}</ID>
         <HOST_ID>{data($x/id)}</HOST_ID>
-        <LOCATION_ID>{data{$y/location/id}}</LOCATION_ID>
+        <LOCATION_ID>{data($y/location/id)}</LOCATION_ID>
         <RATING>0</RATING>
         </tuple>
 };
@@ -214,7 +214,7 @@ as element()*
         <USER_ID>{data($x/id)}</USER_ID>
         <LOCATION_ID>1</LOCATION_ID>
         </tuple>
-}
+};
 
 (: LP SPACE :)
 
@@ -229,11 +229,20 @@ local:replaceIds($base/trip);
 local:replaceIds($base/trip/album);
 local:replaceIds($base/trip/album/content);
 
-<tripster>
-{for $x in doc($docname)/tripster/user
-    return 
-        <user>
-        <id>{data($x/id)}</id>
-        <trip><id>{data($x/trip/id)}</id></trip>
-        </user>}
-</tripster>
+<database>
+    <USERS>{local:getUsers()}</USERS>
+    <TRIP>{local:getTrip()}</TRIP>
+    <LOCATION>{local:getLocation()}</LOCATION>
+    <ALBUM>{local:getAlbum()}</ALBUM>
+    <ALBUM_OF>{local:getAlbumOf()}</ALBUM_OF>
+    <CONTENT>{local:getContent()}</CONTENT>
+    <CONTENT_OF>{local:getContentOf()}</CONTENT_OF>
+    <DREAM_LOCATION_OF>{local:getDreamLocation()}</DREAM_LOCATION_OF>
+    <VISITED></VISITED>
+    <PARTICIPANTS_OF>{local:getParticipantsOf()}</PARTICIPANTS_OF>
+    <TRIP_COMMENTS>{local:getTripComments()}</TRIP_COMMENTS>
+    <TRIP_COMMENTS_OF>{local:getTripCommentsOf()}</TRIP_COMMENTS_OF>
+    <FRIENDS_WITH>{local:getFriendsWith()}</FRIENDS_WITH>
+    <CONTENT_COMMENTS>{local:getContentComments()}</CONTENT_COMMENTS>
+    <CONTENT_COMMENTS_OF>{local:getContentCommentsOf()}</CONTENTS_COMMENTS_OF>
+</database>
