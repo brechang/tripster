@@ -7,9 +7,7 @@ xquery version "3.0";
 : To change this template use File | Settings | File Templates.
 :)
 
-
-
-declare variable $docname := "ta_tripster.xml";
+declare variable $docname := "project_data.xml";
 
 declare updating function local:insertIds($el)
 {
@@ -68,21 +66,23 @@ as element()*
 };
 
 declare function local:getFriendID($name as xs:string)
-as xs:integer
+as element()*
 {
     for $x in doc($docname)/tripster/user
     where data($x/login) = $name  
-    return data($x/id)
+    return 
+        <FRIEND_ID>{data($x/id)}</FRIEND_ID>
 };
 
 declare function local:getFriendsWith()
 as element()*
 {
     for $x in doc($docname)/tripster/user
+    for $y in $x/friend
     return 
         <tuple> 
             <USER_ID>{data($x/id)}</USER_ID>
-            <FRIEND_ID>{local:getFriendID(data($x/friend))}</FRIEND_ID>
+            {local:getFriendID(data($y))}
         </tuple>
 };
 
