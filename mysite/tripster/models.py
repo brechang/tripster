@@ -14,9 +14,9 @@ class Location(models.Model):
     name = models.CharField(max_length=100)
 
 class Trip(models.Model):
-    host = models.ForeignKey(TripsterUser)
+    host = models.ForeignKey(TripsterUser, related_name='host')
     locations = models.ManyToManyField(Location)
-    participants= models.ManyToManyField(TripsterUser)
+    participants = models.ManyToManyField(TripsterUser, related_name='participants')
 
 class Album(models.Model):
     name = models.CharField(max_length=100)
