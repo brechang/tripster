@@ -7,16 +7,16 @@ class TripsterUser(models.Model):
     # has (id), Username, password, firstname, lastname
     user = models.OneToOneField(User)
     affiliation = models.CharField(max_length=100)
-    friends = models.ForeignKey('self')
-    dream_location = models.ForeignKey('Location')
+    friends = models.ManyToManyField('self')
+    dream_location = models.ManyToManyField('Location')
 
 class Location(models.Model):
     name = models.CharField(max_length=100)
 
 class Trip(models.Model):
-    host = models.OneToOneField(TripsterUser)
-    location = models.ForeignKey(Location)
-    participates = models.ForeignKey(TripsterUser)
+    host = models.ForeignKey(TripsterUser)
+    locations = models.ManyToManyField(Location)
+    participants= models.ManyToManyField(TripsterUser)
 
 class Album(models.Model):
     name = models.CharField(max_length=100)
