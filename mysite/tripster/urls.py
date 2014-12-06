@@ -4,13 +4,14 @@ from tripster import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
+    url(r'^signup', views.signup, name='signup'),
     url(r'^register', views.register, name='register'),
     url(r'^login', views.login, name='login'),
     url(r'^feed', views.feed, name='feed'),
-    url(r'^settings', views.feed, name='settings'),
-    url(r'^trips', views.feed, name='my_trips'),
-    url(r'^friends', views.feed, name='my_friends'),
-    url(r'^newtrip', views.feed, name='new_trip'),
-    url(r'^search', views.feed, name='search')
+    url(r'^settings', views.settings, name='settings'),
+    url(r'^trips', views.my_trips, name='my_trips'),
+    url(r'^friends', views.my_friends, name='my_friends'),
+    url(r'^newtrip', views.new_trip, name='new_trip'),
+    url(r'^search', views.search, name='search')
 )
 
