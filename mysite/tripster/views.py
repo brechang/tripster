@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from tripster import models
-from django.contrib.auth import authentiate
+from django.contrib.auth import authenticate
 
 # Create your views here.
 
@@ -16,14 +16,17 @@ def register(request):
     user.save()
     t_user = models.TripsterUser(user=user, affiliation=affiliation)
     t_user.save()
-    return render(request, 'tripster/auth.html')
+    return redirect('/login')
 
 def login(request):
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(username=username, password=password)
     if user is not None:
-        return render(request, 'tripster/home.html')
+        return redirect('/feed')
     else:
         error = "Incorrect login info!"
         return redirect('/', error=error)
+
+def feed(request):
+    return render(request, 'tripster/home.html')
