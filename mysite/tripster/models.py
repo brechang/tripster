@@ -15,6 +15,7 @@ class Location(models.Model):
 
 class Trip(models.Model):
     host = models.ForeignKey(TripsterUser)
+    trip_name = models.CharField(max_length=200)
     locations = models.ManyToManyField(Location)
     participants = models.ManyToManyField(TripsterUser, related_name='trips')
 
