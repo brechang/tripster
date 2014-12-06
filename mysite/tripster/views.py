@@ -19,7 +19,7 @@ def register(request):
     user = User.objects.create_user(username, password=password)
     user.save()
     t_user = models.TripsterUser(user=user, affiliation=affiliation)
-    t_user.save()   
+    t_user.save()
     return authenticate_user(request, username, password)
 
 def authenticate_user(request, username, password):
@@ -30,12 +30,20 @@ def authenticate_user(request, username, password):
     else:
         error = "Incorrect login info!"
         return redirect('/', error=error)
-    
+
 def login(request):
     username = request.POST['username']
     password = request.POST['password']
     return authenticate_user(request, username, password)
-    
+
 def feed(request):
     return render_to_response('tripster/home.html', RequestContext(request))
+
+def make_trip(request):
+    return render_to_response('tripster/newtrip.html', RequestContext(request))
+
+def newtrip(request):
+    location = request.POST['location']
+    image = request.POST['image']
+    return redirect('/feed')
 
