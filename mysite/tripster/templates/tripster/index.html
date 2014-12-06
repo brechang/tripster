@@ -13,7 +13,7 @@
     <input value="Log In" type="submit"/>
 </form>
 
-<form action="{% url 'signup' %}" method="post">
+<form action="{% url 'signup' %}">
     {% csrf_token %}
     <input value="Sign Up" type="submit"/>
 </form>
