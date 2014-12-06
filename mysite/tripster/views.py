@@ -4,7 +4,7 @@ from tripster import models
 
 # Create your views here.
 
-def login(request):
+def index(request):
     return render(request, 'tripster/index.html')
 
 def auth(request):
