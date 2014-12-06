@@ -1,1 +1,7 @@
-Hi
+<h1>Hi</h1>
+
+<form action="{% url 'addfriend' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="friend"/>
+    <input type="submit" value="Add Friend"/>
+</form>

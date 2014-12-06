@@ -13,5 +13,6 @@ urlpatterns = patterns('',
 #    url(r'^friends', views.my_friends, name='my_friends'),
 #    url(r'^newtrip', views.new_trip, name='new_trip'),
 #    url(r'^search', views.search, name='search')
+    url(r'^addfriend', views.add_friend, name='addfriend'),
 )
 
