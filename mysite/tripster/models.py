@@ -14,9 +14,9 @@ class Location(models.Model):
     name = models.CharField(max_length=100)
 
 class Trip(models.Model):
-    host = models.ForeignKey(TripsterUser, related_name='host')
+    host = models.ForeignKey(TripsterUser)
     locations = models.ManyToManyField(Location)
-    participants = models.ManyToManyField(TripsterUser, related_name='participants')
+    participants = models.ManyToManyField(TripsterUser, related_name='trips')
 
 class Album(models.Model):
     name = models.CharField(max_length=100)
@@ -39,3 +39,6 @@ class ContentComment(models.Model):
     comment = models.CharField(max_length=2000)
     rating = models.IntegerField()
 
+class FriendRequest(models.Model):
+    user = models.ForeignKey(TripsterUser)
+    invitee = models.ForeignKey(TripsterUser, related_name='requests')
