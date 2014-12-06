@@ -1,0 +1,16 @@
+<h1>New Trip</h1>
+
+<form action="{% url '' %}" method = "post">
+    {%csrf_token%}
+    <label> Trip Name: </label>
+    <input type="text" name="trip_name" />
+    </br>
+    <label>Location: </label>
+    <input type="text" name="location" />
+    </br>
+    <label>Image: </label>
+    <input type="url" name="image" />
+    </br>
+    <input value="Submit" type="submit"/>
+</form>
+
