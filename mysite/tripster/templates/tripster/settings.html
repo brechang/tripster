@@ -1,0 +1,9 @@
+<h1>Settings</h1>
+
+<form action="{% url 'settings' %}" method="post">
+    {% csrf_token %}
+    <label> Affiliation: </label>
+    <input type="text" name="affiliation"/>
+    </br>
+    <input value="Submit" type="submit"/>
+</form>

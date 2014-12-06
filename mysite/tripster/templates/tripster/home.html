@@ -1,7 +1,17 @@
 <h1>Hi</h1>
 
-<form action="{% url 'addfriend' %}" method="post">
+<form action="{% url 'add_friend' %}" method="post">
     {% csrf_token %}
     <input type="text" name="friend"/>
     <input type="submit" value="Add Friend"/>
+</form>
+
+<form action="{% url 'make_trip' %}">
+    {% csrf_token %}
+    <input type="submit" value="Make a Trip">
+</form>
+
+<form action="{% url 'change_settings' %}">
+    {% csrf_token %}
+    <input type="submit" value="Settings">
 </form>

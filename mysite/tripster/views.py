@@ -30,12 +30,12 @@ def authenticate_user(request, username, password):
     else:
         error = "Incorrect login info!"
         return redirect('/', error=error)
-    
+
 def login(request):
     username = request.POST['username']
     password = request.POST['password']
     return authenticate_user(request, username, password)
-    
+
 def feed(request):
     return render_to_response('tripster/home.html', RequestContext(request))
 
@@ -46,7 +46,30 @@ def add_friend(request):
         friend = TripsterUser.objects.filter(username=friend_name)
         if friend:
             req = FriendRequest.objects.filter(user=user, invitee=friend)
-            
-
 
     
+def make_trip(request):
+    return render_to_response('tripster/newtrip.html', RequestContext(request))
+
+def newtrip(request):
+    location = request.POST['location']
+    name = request.POST['name']
+    image = request.POST['image']
+
+    # TODO:
+    # make location if location doesn't exist in database
+    # need to get "t_user" object to put into host and participants
+    trip = models.Trip(locations=location, name=name, participants=None, host=None)
+    trip.save()
+    return redirect('/feed')
+
+def change_settings(request):
+    return render_to_response('tripster/settings.html', RequestContext(request))
+
+def settings(request):
+    affiliation = request.POST['affiliation']
+
+    # TODO:
+    # save "t_user"
+    return redirect('/feed')
+
