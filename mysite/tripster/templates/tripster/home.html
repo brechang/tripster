@@ -1,18 +1,5 @@
 <form action="{% url 'make_trip' %}">
+    {% csrf_token %}
     <input type="submit" value="Make a Trip">
 </form>
-
-<!--
-<form action="{% url '' %}">
-    <input type="submit" value="My Trips">
-</form>
-
-<form action="{% url '' %}">
-    <input type="submit" value="My Friends">
-</form>
-
-<form action="{% url '' %}">
-    <input type="submit" value="Settings">
-</form>
--->
 
