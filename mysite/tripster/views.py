@@ -43,11 +43,25 @@ def add_friend(request):
     friend_name = request.POST['friend']
     if request.user.is_authenticated():
         user = request.user
-        friend = TripsterUser.objects.filter(username=friend_name)
+        t_user = TripsterUser.objects.get(user=user)
+        friend = User.objects.filter(username=friend_name)
         if friend:
-            req = FriendRequest.objects.filter(user=user, invitee=friend)
+            t_friend = TripsterUser.objects.get(user=friend)
+            req = FriendRequest.objects.filter(user=t_user, invitee=t_friend)
+            if req:
+                # already made request
+                pass
+            else:
+                new_req = FriendRequest(user=t_user, invitee=t_friend)
+                new_req.save()
+        else:
+            # no friend found
+            # redirect to home with error message
+            pass
+    else:
+        # not authenticated go to login
+        pass
 
-    
 def make_trip(request):
     return render_to_response('tripster/newtrip.html', RequestContext(request))
 
@@ -56,12 +70,20 @@ def newtrip(request):
     name = request.POST['name']
     image = request.POST['image']
 
-    # TODO:
-    # make location if location doesn't exist in database
-    # need to get "t_user" object to put into host and participants
-    trip = models.Trip(locations=location, name=name, participants=None, host=None)
-    trip.save()
-    return redirect('/feed')
+    loc = Location.objects.filter(name=location)
+    if not loc:
+        loc = Location(name=location)
+        loc.save()
+    else:
+        loc = loc[0]
+    if request.user.is_authenticated():
+        user = request.user
+        t_user = TripsterUser.objects.get(user=user)
+        trip = Trip(name=name, host=t_user)
+        trip.save()
+        trip.locations.add(loc)
+        trip.participants.add(t_user)
+        return redirect('/feed')
 
 def change_settings(request):
     return render_to_response('tripster/settings.html', RequestContext(request))
