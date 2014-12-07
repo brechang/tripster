@@ -124,30 +124,34 @@ def settings(request):
     return redirect('/feed')
 
 def view_trips(request):
-    trip_list = Trip.objects.filter()
+    trip_list = Trip.objects.all()
     trip_dict = { 'trip_list' : trip_list }
     return render_to_response('tripster/trips.html', trip_dict, context_instance=RequestContext(request))
 
 def get_trip(request, trip_id):
-    if request.method == "GET":
-        t_user = TripsterUser.objects.get(user=request.user)
-        trip_name = request.path.split('/')[-2]
-        trip = Trip.objects.filter(name=trip_name, host=t_user)[0]
-        locations = trip.locations.all()
-        participants = trip.participants.all()
-        trip_info = {
-                'trip' : trip,
-                'locations_list' : locations,
-                'participants' : participants
-        }
-        return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
+    trip = Trip.objects.filter(id=trip_id)[0]
     if request.method == "POST":
         location = request.POST['location'] if 'location' in request.POST else None
         participant = request.POST['participant'] if 'participant' in request.POST else None
 
         if location:
-            trip.locations.add(location)
-        if participant:
-            trip.participants.add(location)
+            loc = Location.objects.filter(name=location)
+            if not loc:
+                loc = Location(name=location)
+                loc.save()
+            else:
+                loc = loc[0]
+            trip.locations.add(loc)
+    #if request.method == "GET":
+    t_user = TripsterUser.objects.get(user=request.user)
+    locations = trip.locations.all()
+    participants = trip.participants.all()
+    trip_info = {
+            'trip' : trip,
+            'locations_list' : locations,
+            'participants' : participants,
+            'trip_id' : trip_id,
+    }
+    return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
 
 
