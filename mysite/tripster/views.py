@@ -48,19 +48,17 @@ def add_friend(request):
         if friend:
             t_friend = TripsterUser.objects.get(user=friend)
             req = FriendRequest.objects.filter(user=t_user, invitee=t_friend)
-            if req:
-                # already made request
-                pass
-            else:
+            if not req and not t_friend in t_user.friends:
                 new_req = FriendRequest(user=t_user, invitee=t_friend)
                 new_req.save()
+            return redirect('/feed')
         else:
             # no friend found
             # redirect to home with error message
-            pass
+            return redirect('/feed')
     else:
         # not authenticated go to login
-        pass
+        return redirect('/')
 
 def make_trip(request):
     return render_to_response('tripster/newtrip.html', RequestContext(request))
