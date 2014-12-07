@@ -1,0 +1,20 @@
+<h1>My Friends</h1>
+
+{% if get_friend_requests %}
+    <ul>
+        {% for friend in get_friend_requests %}
+            <li><a href="/user/{{ friend.username }}/">{{friend.firstname}} {{friend.lastname}} is requesting you!</a></li>
+            <button type="button" onclick="alert('Added friend!')">Add friend!</button>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if get_friend %}
+    <ul>
+        {% for friend in get_friend %}
+            <li><a href="/user/{{ friend.username }}/">{{friend.firstname}} {{friend.lastname}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Make some friends!</p>
+{% endif %}
