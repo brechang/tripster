@@ -132,6 +132,7 @@ def view_trips(request):
 def get_trip(request):
     if request.method == "GET":
         t_user = TripsterUser.objects.get(user=request.user)
+        #TODO: url should have id, not trip name
         trip_name = request.path.split('/')[-2]
         trip = Trip.objects.filter(name=trip_name, host=t_user)[0]
         locations = trip.locations.all()
@@ -142,4 +143,8 @@ def get_trip(request):
                 'participants' : participants
         }
         return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
+    #TODO: add_location, add_participants
+    if request.method == "POST":
+        pass
+
 
