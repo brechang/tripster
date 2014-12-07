@@ -13,8 +13,8 @@ urlpatterns = patterns('',
     url(r'^change_settings', views.change_settings, name='change_settings'),
     url(r'^settings', views.settings, name='settings'),
 #    url(r'^trips', views.my_trips, name='my_trips'),
-#    url(r'^friends', views.my_friends, name='my_friends'),
+#    url(r'^friends', views.friends, name='my_friends'),
 #    url(r'^search', views.search, name='search')
-    url(r'^add_friend', views.add_friend, name='add_friend'),
+    url(r'^friends', views.friends, name='friends'),
 )
 

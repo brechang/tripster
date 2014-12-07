@@ -39,26 +39,55 @@ def login(request):
 def feed(request):
     return render_to_response('tripster/home.html', RequestContext(request))
 
-def add_friend(request):
-    friend_name = request.POST['friend']
-    if request.user.is_authenticated():
-        user = request.user
-        t_user = TripsterUser.objects.get(user=user)
-        friend = User.objects.filter(username=friend_name)
-        if friend:
-            t_friend = TripsterUser.objects.get(user=friend)
-            req = FriendRequest.objects.filter(user=t_user, invitee=t_friend)
-            if not req and not t_friend in t_user.friends:
-                new_req = FriendRequest(user=t_user, invitee=t_friend)
-                new_req.save()
-            return redirect('/feed')
+def friends(request):
+    if request.method == 'GET':
+        if request.user.is_authenticated():
+            user = request.user
+            t_user = TripsterUser.objects.get(user=user)
+            friend_requests = FriendRequest.objects.filter(invitee=t_user)
+            friend_requests = [f.user.user.username for f in friend_requests]
+            friends = [f.user.username for f in t_user.friends.all()]
+            friend_dict = {
+                'friend_requests' : friend_requests,
+                'friends' : friends,
+                }
+            return render_to_response('tripster/friends.html', friend_dict, RequestContext(request))
         else:
-            # no friend found
-            # redirect to home with error message
-            return redirect('/feed')
-    else:
-        # not authenticated go to login
-        return redirect('/')
+            return redirect('/')
+
+    if request.method == 'POST':
+        if request.user.is_authenticated():
+            user = request.user
+            t_user = TripsterUser.objects.get(user=user)
+            if 'friend' in request.POST:
+                friend_name = request.POST['friend']
+                friend = User.objects.filter(username=friend_name)
+                if friend:
+                    t_friend = TripsterUser.objects.get(user=friend)
+                    req = FriendRequest.objects.filter(user=t_user, invitee=t_friend)
+                    if not req and not t_friend in t_user.friends.all():
+                        new_req = FriendRequest(user=t_user, invitee=t_friend)
+                        new_req.save()
+                    return redirect('/friends')
+                else:
+                    # no friend found
+                    # redirect to home with error message
+                    return redirect('/friends')
+            elif 'accept' in request.POST:
+                friend_name = request.POST['accept']
+                friend = User.objects.get(username=friend_name)
+                t_friend = TripsterUser.objects.get(user=friend)
+                t_friend.friends.add(t_user)
+                t_user.friends.add(t_friend)
+                req = FriendRequest.objects.get(user=t_friend, invitee=t_user)
+                req.delete()
+                return redirect('/friends')
+            else:
+                # we fucked up
+                return redirect('/friends')
+        else:
+            # not authenticated go to login
+            return redirect('/')
 
 def make_trip(request):
     return render_to_response('tripster/newtrip.html', RequestContext(request))

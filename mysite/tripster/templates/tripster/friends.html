@@ -1,0 +1,24 @@
+<h1>My Friends</h1>
+
+{% if friend_requests %}
+    <ul>
+        {% for friend in friend_requests %}
+            <li><a href="/user/{{friend}}/">{{friend}} is requesting you!</a></li>
+            <form action="{% url 'friends' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="accept" value="{{friend}}"/>
+                <input type="submit" value="Add friend!"/>
+            </form>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if friends %}
+    <ul>
+        {% for friend in friends %}
+            <li><a href="/user/{{friend}}/">{{friend}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Make some friends!</p>
+{% endif %}
