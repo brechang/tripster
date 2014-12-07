@@ -12,6 +12,6 @@ urlpatterns = patterns('',
     url(r'^settings', views.settings, name='settings'),
     url(r'^friends', views.friends, name='friends'),
     url(r'^view_trips', views.view_trips, name='view_trips'),
-    url(r'^trip/\w+/$', views.get_trip, name='get_trip'),
+    url(r'^trip/(?P<trip_id>\d+)/$', views.get_trip, name='get_trip'),
 )
 

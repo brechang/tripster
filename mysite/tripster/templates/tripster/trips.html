@@ -1,12 +1,35 @@
 <h1>My Trips</h1>
 
+{% if pending_trips %}
+    <ul>
+        {% for trip in pending_trips %}
+        <li><a href="/trip/{{trip.id}}/">Do you want to join {[trip.name}}?</a></li>
+        <form action="{% url 'trips' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="accept" value="{{trip}}"/>
+            <input type="submit" value="Join trip!"/>
+        </form>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 {% if trip_list %}
     <ul>
         {% for trip in trip_list %}
-            <li><a href="/trip/{{ trip.name }}/">{{trip.name}}</a></li>
+        <li><a href="/trip/{{trip.id}}/">{{trip.name}}</a></li>
         {% endfor %}
     </ul>
 {% else %}
     <p>No trips are available.</p>
+{% endif %}
+
+{% if joined_trip_list %}
+    <ul>
+        {% for trip in joined_trip_list %}
+        <li><a href="/trip/{{trip.id}}/">{{trip.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You have not joined any trips!</p>
 {% endif %}
 
