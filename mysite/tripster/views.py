@@ -64,3 +64,8 @@ def settings(request):
     # save "t_user"
     return redirect('/feed')
 
+def view_trips(request):
+    return render_to_response('tripster/mytrips.html', RequestContext(request))
+
+def get_trip(request):
+    pass
