@@ -127,7 +127,7 @@ def settings(request):
 def view_trips(request):
     trip_list = Trip.objects.all()
     trip_dict = { 'trip_list' : trip_list }
-    return render_to_response('tripster/mytrips.html', trip_dict, context_instance=RequestContext(request))
+    return render_to_response('tripster/trips.html', trip_dict, context_instance=RequestContext(request))
 
 def get_trip(request):
     if request.method == "GET":
