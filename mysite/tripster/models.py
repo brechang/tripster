@@ -48,6 +48,12 @@ class ContentComment(models.Model):
 
 class FriendRequest(models.Model):
     user = models.ForeignKey(TripsterUser)
-    invitee = models.ForeignKey(TripsterUser, related_name='requests')
+    invitee = models.ForeignKey(TripsterUser, related_name='friend_requests')
     class Meta:
         unique_together= ('user', 'invitee')
+
+class TripRequest(models.Model):
+    invitee = models.ForeignKey(TripsterUser)
+    trip = models.ForeignKey(Trip)
+    class Meta:
+        unique_together= ('invitee', 'trip')

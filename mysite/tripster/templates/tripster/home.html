@@ -2,8 +2,7 @@
 
 <form action="{% url 'friends' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="friend"/>
-    <input type="submit" value="Add Friend"/>
+    <input type="submit" value="My Friends"/>
 </form>
 
 <form action="{% url 'createtrip' %}">
