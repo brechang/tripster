@@ -1,11 +1,12 @@
 <h1>My Trips</h1>
 
-{% if get_trip %}
+{% if trip_list %}
     <ul>
-        {% for trip in get_trip %}
+        {% for trip in trip_list %}
             <li><a href="/trip/{{ trip.name }}/">{{trip.name}}</a></li>
         {% endfor %}
     </ul>
 {% else %}
     <p>No trips are available.</p>
 {% endif %}
+

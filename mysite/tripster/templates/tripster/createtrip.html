@@ -1,6 +1,6 @@
 <h1>New Trip</h1>
 
-<form action="{% url 'newtrip' %}" method = "post">
+<form action="{% url 'createtrip' %}" method = "post">
     {%csrf_token%}
     <label> Trip Name: </label>
     <input type="text" name="name" />

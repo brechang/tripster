@@ -1,0 +1,42 @@
+<h1>{{ trip.name }}</h1>
+<h2>Host: {{user.username}}</h2>
+
+{% if locations_list %}
+    <ul>
+        {% for location in locations_list %}
+        <!-- <li><a href="location/{{location.name}}/">{{location.name}}</a></li> -->
+        <li> {{location.name}} </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No locations in this trip.</p>
+{% endif %}
+
+<form action="{% url 'get_trip' %}" method="post">
+    {% csrf_token %}
+    <label>Add location: </label>
+    <input type="text" name="location" />
+    </br>
+    <input value="Submit" type="submit"/>
+</form>
+
+{% if participants %}
+    <ul>
+        {% for participant in participants %}
+        <li> {{participant.user.username}}  </li>
+
+        <!-- <li><a href="user/{{participant.username}}/">{{participant.firstname}} {{participant.lastname}}</a></li> -->
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No participants in this trip.</p>
+{% endif %}
+
+<form action="{% url 'get_trip' %}" method="post">
+    {% csrf_token %}
+    <label>Add participant: </label>
+    <input type="text" name="participant"/>
+    </br>
+    <input value="Submit" type="submit"/>
+</form>
+

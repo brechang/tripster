@@ -21,30 +21,3 @@ Newsfeed/Homepage
         My Friends --> Recommend other locations/friends to other friends (10)
     * Search Bar (11) 
 
-
-
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
-***Vaporwave***
