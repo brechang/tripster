@@ -3,7 +3,7 @@
 {% if trip_list %}
     <ul>
         {% for trip in trip_list %}
-            <li><a href="/trip/{{ trip.name }}/">{{trip.name}}</a></li>
+            <li><a href="/trip/{{ trip.id }}/">{{trip.name}}</a></li>
         {% endfor %}
     </ul>
 {% else %}

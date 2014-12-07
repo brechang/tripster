@@ -110,7 +110,6 @@ def create_trip(request):
             trip.save()
             trip.locations.add(loc)
             trip.participants.add(t_user)
-            trip.save()
             return redirect('/feed')
 
 def change_settings(request):
@@ -125,14 +124,13 @@ def settings(request):
     return redirect('/feed')
 
 def view_trips(request):
-    trip_list = Trip.objects.all()
+    trip_list = Trip.objects.filter()
     trip_dict = { 'trip_list' : trip_list }
     return render_to_response('tripster/trips.html', trip_dict, context_instance=RequestContext(request))
 
-def get_trip(request):
+def get_trip(request, trip_id):
     if request.method == "GET":
         t_user = TripsterUser.objects.get(user=request.user)
-        #TODO: url should have id, not trip name
         trip_name = request.path.split('/')[-2]
         trip = Trip.objects.filter(name=trip_name, host=t_user)[0]
         locations = trip.locations.all()
@@ -143,8 +141,13 @@ def get_trip(request):
                 'participants' : participants
         }
         return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
-    #TODO: add_location, add_participants
     if request.method == "POST":
-        pass
+        location = request.POST['location'] if 'location' in request.POST else None
+        participant = request.POST['participant'] if 'participant' in request.POST else None
+
+        if location:
+            trip.locations.add(location)
+        if participant:
+            trip.participants.add(location)
 
 
