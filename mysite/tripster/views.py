@@ -142,7 +142,7 @@ def get_trip(request, trip_id):
             else:
                 loc = loc[0]
             trip.locations.add(loc)
-    #if request.method == "GET":
+
     t_user = TripsterUser.objects.get(user=request.user)
     locations = trip.locations.all()
     participants = trip.participants.all()
@@ -153,5 +153,4 @@ def get_trip(request, trip_id):
             'trip_id' : trip_id,
     }
     return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
-
 
