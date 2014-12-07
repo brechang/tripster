@@ -9,18 +9,18 @@ from django.template import RequestContext, loader
 def index(request):
     return render_to_response('tripster/index.html', RequestContext(request))
 
-def signup(request):
-    return render_to_response('tripster/register.html', RequestContext(request))
-
 def register(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    affiliation = request.POST['affiliation']
-    user = User.objects.create_user(username, password=password)
-    user.save()
-    t_user = TripsterUser(user=user, affiliation=affiliation)
-    t_user.save()
-    return authenticate_user(request, username, password)
+    if request.method == "GET":
+        return render_to_response('tripster/register.html', RequestContext(request))
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        affiliation = request.POST['affiliation']
+        user = User.objects.create_user(username, password=password)
+        user.save()
+        t_user = TripsterUser(user=user, affiliation=affiliation)
+        t_user.save()
+        return authenticate_user(request, username, password)
 
 def authenticate_user(request, username, password):
     user = authenticate(username=username, password=password)
@@ -62,28 +62,28 @@ def add_friend(request):
         # not authenticated go to login
         pass
 
-def make_trip(request):
-    return render_to_response('tripster/newtrip.html', RequestContext(request))
+def create_trip(request):
+    if request.method == "GET":
+        return render_to_response('tripster/createtrip.html', RequestContext(request))
+    if request.method == "POST":
+        location = request.POST['location']
+        name = request.POST['name']
+        image = request.POST['image']
 
-def newtrip(request):
-    location = request.POST['location']
-    name = request.POST['name']
-    image = request.POST['image']
-
-    loc = Location.objects.filter(name=location)
-    if not loc:
-        loc = Location(name=location)
-        loc.save()
-    else:
-        loc = loc[0]
-    if request.user.is_authenticated():
-        user = request.user
-        t_user = TripsterUser.objects.get(user=user)
-        trip = Trip(name=name, host=t_user)
-        trip.save()
-        trip.locations.add(loc)
-        trip.participants.add(t_user)
-        return redirect('/feed')
+        loc = Location.objects.filter(name=location)
+        if not loc:
+            loc = Location(name=location)
+            loc.save()
+        else:
+            loc = loc[0]
+        if request.user.is_authenticated():
+            user = request.user
+            t_user = TripsterUser.objects.get(user=user)
+            trip = Trip(name=name, host=t_user)
+            trip.save()
+            trip.locations.add(loc)
+            trip.participants.add(t_user)
+            return redirect('/feed')
 
 def change_settings(request):
     return render_to_response('tripster/settings.html', RequestContext(request))
@@ -104,4 +104,3 @@ def view_trips(request):
 
 def get_trip(request):
     pass
-
