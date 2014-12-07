@@ -1,5 +1,11 @@
 <h1>My Friends</h1>
 
+<form action="{% url 'friends' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="friend">
+    <input type="submit" value="Send Friend Request">
+</form>
+
 {% if friend_requests %}
     <ul>
         {% for friend in friend_requests %}

@@ -1,0 +1,9 @@
+<h1>{{album.name}}</h1>
+
+{% if contents %}
+    <ul>
+        {% for content in contents %}
+            <li><a href="/content?={{content.id}}/">{{content.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}

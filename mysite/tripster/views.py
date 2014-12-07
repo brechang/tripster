@@ -44,8 +44,7 @@ def friends(request):
         if request.user.is_authenticated():
             user = request.user
             t_user = TripsterUser.objects.get(user=user)
-            friend_requests = FriendRequest.objects.filter(invitee=t_user)
-            friend_requests = [f.user.user.username for f in friend_requests]
+            friend_requests = [f.user.user.username for f in t_user.friend_requests]
             friends = [f.user.username for f in t_user.friends.all()]
             friend_dict = {
                 'friend_requests' : friend_requests,
@@ -65,7 +64,8 @@ def friends(request):
                 if friend:
                     t_friend = TripsterUser.objects.get(user=friend)
                     req = FriendRequest.objects.filter(user=t_user, invitee=t_friend)
-                    if not req and not t_friend in t_user.friends.all():
+                    other_req = FriendRequest.objects.filter(user=t_friend, invitee=t_user)
+                    if t_friend != t_user and not req and not other_req and not t_friend in t_user.friends.all():
                         new_req = FriendRequest(user=t_user, invitee=t_friend)
                         new_req.save()
                     return redirect('/friends')
