@@ -1,5 +1,5 @@
 <h1>{{ trip.name }}</h1>
-<h2>Host: {{user.username}}</h2>
+<h2>Host: {{trip.host.user.username}}</h2>
 
 {% if locations_list %}
     <ul>
@@ -23,9 +23,8 @@
 {% if participants %}
     <ul>
         {% for participant in participants %}
-        <li> {{participant.user.username}}  </li>
+        <li> {{participant.user.username}} </li>
 
-        <!-- <li><a href="user/{{participant.username}}/">{{participant.firstname}} {{participant.lastname}}</a></li> -->
         {% endfor %}
     </ul>
 {% else %}

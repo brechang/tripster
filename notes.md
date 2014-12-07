@@ -1,8 +1,9 @@
 7. Invite/Accept trip requests from friends
+
 8. Add photos/albums to trips, with privacy settings
 10. Recommend locations/friends based on previous trips/(interests)
-
 9. Comment, like, (rate) trips/photos
+
 5. View photos/trips from existing friends as a news feed
 11. Search for users/locations
 

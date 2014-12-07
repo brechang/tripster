@@ -44,7 +44,7 @@ def friends(request):
         if request.user.is_authenticated():
             user = request.user
             t_user = TripsterUser.objects.get(user=user)
-            friend_requests = [f.user.user.username for f in t_user.friend_requests]
+            friend_requests = [f.user.user.username for f in t_user.friend_requests.all()]
             friends = [f.user.username for f in t_user.friends.all()]
             friend_dict = {
                 'friend_requests' : friend_requests,
@@ -124,8 +124,22 @@ def settings(request):
     return redirect('/feed')
 
 def view_trips(request):
-    trip_list = Trip.objects.all()
-    trip_dict = { 'trip_list' : trip_list }
+    t_user =  TripsterUser.objects.get(user=request.user)
+
+    if request.method == "POST":
+        request_id = request.POST['accept']
+        trip_request = TripRequest.objects.get(pk=request_id)
+        trip = trip_request.trip
+        trip.participants.add(t_user)
+        trip_request.delete()
+
+    trip_list = Trip.objects.filter(host=t_user)
+    trip_requests = t_user.triprequest_set.all()
+    trip_dict = {
+                    'trip_list' : trip_list,
+                    'trip_requests': trip_requests,
+                    'joined_trip_list': t_user.trips.all(),
+                }
     return render_to_response('tripster/trips.html', trip_dict, context_instance=RequestContext(request))
 
 def get_trip(request, trip_id):
@@ -142,6 +156,14 @@ def get_trip(request, trip_id):
             else:
                 loc = loc[0]
             trip.locations.add(loc)
+        if participant:
+            user = User.objects.filter(username=participant)
+            if user:
+                t_user = TripsterUser.objects.get(user=user)
+                req = TripRequest.objects.filter(trip=trip, invitee=t_user)
+                if not req and not t_user in trip.participants.all():
+                    new_req = TripRequest(trip=trip, invitee=t_user)
+                    new_req.save()
 
     t_user = TripsterUser.objects.get(user=request.user)
     locations = trip.locations.all()
