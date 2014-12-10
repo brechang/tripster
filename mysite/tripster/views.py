@@ -168,11 +168,13 @@ def get_trip(request, trip_id):
     t_user = TripsterUser.objects.get(user=request.user)
     locations = trip.locations.all()
     participants = trip.participants.all()
+    albums = Album.objects.filter(trip=trip)
     trip_info = {
             'trip' : trip,
             'locations_list' : locations,
             'participants' : participants,
             'trip_id' : trip_id,
+            'albums' : albums,
     }
     return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
 
@@ -191,5 +193,23 @@ def create_album(request):
 
         return redirect('/feed')
 
-def view_album(request):
-    pass
+def get_album(request, album_id):
+    album = Album.objects.filter(id=album_id)[0]
+    content = None
+    # add content
+    if request.method == "POST":
+        name = request.POST['name'] if 'url' in request.POST else None
+        url = request.POST['url'] if 'content' in request.POST else None
+
+        if name and url:
+            content = Content(name=name, url=url)
+            content.save()
+            content.add(album)
+
+    album_info = {
+            'album' : album,
+            'trip_name' : album.trip.name,
+            'content' : content,
+    }
+    return render_to_response('tripster/album.html', album_info, RequestContext(request))
+
