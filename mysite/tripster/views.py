@@ -147,7 +147,7 @@ def get_trip(request, trip_id):
     if request.method == "POST":
         location = request.POST['location'] if 'location' in request.POST else None
         participant = request.POST['participant'] if 'participant' in request.POST else None
-
+        comment = request.POST['comment'] if 'comment' in request.POST else None
         if location:
             loc = Location.objects.filter(name=location)
             if not loc:
@@ -164,7 +164,9 @@ def get_trip(request, trip_id):
                 if not req and not t_user in trip.participants.all():
                     new_req = TripRequest(trip=trip, invitee=t_user)
                     new_req.save()
-
+        if comment:
+           c = TripComment(user=request.user, trip=trip, comment=comment)
+           c.save()
     t_user = TripsterUser.objects.get(user=request.user)
     locations = trip.locations.all()
     participants = trip.participants.all()

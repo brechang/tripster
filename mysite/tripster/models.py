@@ -38,12 +38,20 @@ class TripComment(models.Model):
     user = models.ForeignKey(TripsterUser)
     trip = models.ForeignKey(Trip)
     comment = models.CharField(max_length=2000)
+
+class TripRating(models.Model):
+    user = models.ForeignKey(TripsterUser)
+    trip = models.ForeignKey(Trip)
     rating = models.IntegerField()
 
 class ContentComment(models.Model):
     user = models.ForeignKey(TripsterUser)
     content = models.ForeignKey(Content)
     comment = models.CharField(max_length=2000)
+
+class ContentRating(models.Model):
+    user = models.ForeignKey(TripsterUser)
+    content = models.ForeignKey(Content)
     rating = models.IntegerField()
 
 class FriendRequest(models.Model):
