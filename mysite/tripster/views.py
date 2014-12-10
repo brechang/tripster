@@ -148,6 +148,7 @@ def get_trip(request, trip_id):
         location = request.POST['location'] if 'location' in request.POST else None
         participant = request.POST['participant'] if 'participant' in request.POST else None
         comment = request.POST['comment'] if 'comment' in request.POST else None
+        rating = request.POST['rating'] if 'rating' in request.POST else None
         if location:
             loc = Location.objects.filter(name=location)
             if not loc:
@@ -165,19 +166,36 @@ def get_trip(request, trip_id):
                     new_req = TripRequest(trip=trip, invitee=t_user)
                     new_req.save()
         if comment:
-           c = TripComment(user=request.user, trip=trip, comment=comment)
-           c.save()
+            t_user = TripsterUser.objects.get(user=request.user)
+            c = TripComment(user=t_user, trip=trip, comment=comment)
+            c.save()
+        if rating:
+            t_user = TripsterUser.objects.get(user=request.user)
+            r = TripRating.objects.filter(user=t_user, trip=trip)
+            if r:
+                r = r[0]
+                r.rating = rating
+                r.save()
+            else:
+                r = TripRating(user=t_user, trip=trip, rating=rating)
+                r.save()
     t_user = TripsterUser.objects.get(user=request.user)
     locations = trip.locations.all()
     participants = trip.participants.all()
+    comments = trip.tripcomment_set.all()
+    rating = TripRating.objects.filter(user=t_user, trip=trip)
     albums = Album.objects.filter(trip=trip)
     trip_info = {
             'trip' : trip,
             'locations_list' : locations,
             'participants' : participants,
             'trip_id' : trip_id,
+            'comments' : comments,
+            'range' : range(1,6),
             'albums' : albums,
     }
+    if rating:
+        trip_info.update({'rating': rating[0]})
     return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
 
 def create_album(request):

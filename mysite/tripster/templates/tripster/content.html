@@ -1,0 +1,12 @@
+<h1>{{ content.name }}</h1>
+<h2>Album: {{ content.album }}</h2>
+
+<img src="{{content.url}}">
+
+<form action="{% url 'content' %}" method="post">
+    {% csrf_token %}
+    <label>Comment: </label>
+    <input type="text" name="location" />
+    </br>
+    <input value="Submit" type="submit"/>
+</form>

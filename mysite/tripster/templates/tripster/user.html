@@ -1,0 +1,32 @@
+<h1>{{ t_user.name }}</h1>
+<h2>Affilitation: {{ t_user.affiliation }}</h2>
+
+{% if dream_location_list %}
+    <ul>
+        {% for location in dream_location_list %}
+                <li> {{location.name}} </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{t_user.name}} has no dream locations!</p>
+{% endif %}
+
+{% if trips_list %}
+    <ul>
+        {% for trips in trips_list %}
+        	<li><a href="trip?={{trip.id}}/">{{trip.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{t_user.name}} has no trips!</p>
+{% endif %}
+
+{% if friends_list %}
+    <ul>
+        {% for friend in friends_list %}
+        	<li><a href="user?={{friend.id}}/">{{friend.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{t_user.name}} has no friends!</p>
+{% endif %}

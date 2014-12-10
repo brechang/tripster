@@ -69,7 +69,7 @@
 {% if comments %}
     <ul>
         {% for comment in comments %}
-        <li> {{comment.user.username}}: {{comment.comment}} </li>
+        <li> {{comment.user.user.username}}: {{comment.comment}} </li>
         {% endfor %}
     </ul>
 {% endif %}
@@ -84,7 +84,20 @@
 
 <form action="{% url 'get_trip' trip_id %}" method="post">
     {% csrf_token %}
-    <label>Rating: </label>
+    <label>Current Rating: 
+        {% if rating %} {{rating.rating}}
+        {% else %} Unrated
+        {% endif %}
+    </label>
+    </br>
+    <label>Change Rating: </label>
+    {% if range %}
+    <select name="rating">
+        {% for i in range %}
+        <option value={{i}}> {{i}}</option>
+        {% endfor %}
+    </select>
+    {% endif %}
     </br>
     <input value="Submit" type="submit"/>
 </form>
