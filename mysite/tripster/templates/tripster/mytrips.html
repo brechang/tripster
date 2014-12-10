@@ -1,0 +1,12 @@
+<h1>My Trips</h1>
+
+{% if trip_list %}
+    <ul>
+        {% for trip in trip_list %}
+            <li><a href="/trip/{{ trip.id }}/">{{trip.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No trips are available.</p>
+{% endif %}
+

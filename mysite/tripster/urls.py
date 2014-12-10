@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, url
-
 from tripster import views
 
 urlpatterns = patterns('',
@@ -13,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^friends', views.friends, name='friends'),
     url(r'^view_trips', views.view_trips, name='view_trips'),
     url(r'^trip/(?P<trip_id>\d+)/$', views.get_trip, name='get_trip'),
+    url(r'^createalbum$', views.create_album, name='createalbum'),
 )
 
