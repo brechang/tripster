@@ -1,10 +1,5 @@
 *Like a request*
 10. Recommend locations/friends based on previous trips/(interests)
-
-8. Add photos/albums to trips, with privacy settings
-9. Comment, like, (rate) trips/photos
-
-5. View photos/trips from existing friends as a news feed
 11. Search for users/locations
 
 User Profile pages
@@ -19,6 +14,11 @@ NEEDS ERROR CHECKING
 
 1. Pages new user should be able to register, with all the personal information
     * Need more user info
+
+8. Add photos/albums to trips, with privacy settings
+9. Comment, like, (rate) trips/photos
+
+5. View photos/trips from existing friends as a news feed
 
 Pages
 =====

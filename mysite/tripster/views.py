@@ -221,7 +221,7 @@ def get_album(request, album_id):
         name = request.POST['name'] if 'name' in request.POST else None
         url = request.POST['url'] if 'url' in request.POST else None
 
-        if name and url:
+        if name and url and album:
             content = Content(name=name, url=url, album=album)
             content.save()
 
@@ -234,18 +234,36 @@ def get_album(request, album_id):
     return render_to_response('tripster/album.html', album_info, RequestContext(request))
 
 def get_content(request, content_id):
-    # add content
+    content = Content.objects.get(id=content_id)
+    comments = ContentComment.objects.filter(content=content)
     if request.method == "POST":
-        name = request.POST['name'] if 'name' in request.POST else None
-        url = request.POST['url'] if 'url' in request.POST else None
+        comment = request.POST['comment'] if 'comment' in request.POST else None
+        rating = request.POST['rating'] if 'rating' in request.POST else None
+        if comment:
+            t_user = TripsterUser.objects.get(user=request.user)
+            c = ContentComment(user=t_user, content=content, comment=comment)
+            c.save()
 
-        if name and url:
-            content = Content(name=name, url=url, album=album)
-            content.save()
+        if rating:
+            t_user = TripsterUser.objects.get(user=request.user)
+            r = ContentRating.objects.filter(user=t_user, content=content)
+            if r:
+                r = r[0]
+                r.rating = rating
+                r.save()
+            else:
+                r = ContentRating(user=t_user, content=content, rating=rating)
+                r.save()
 
     content_info = {
-            'content' : content
+            'content' : content,
+            'comments': comments,
+            'range' : range(1,6),
     }
-
+    t_user = TripsterUser.objects.get(user=request.user)
+    rating = ContentRating.objects.filter(user=t_user, content=content)
+    if rating:
+        content_info.update({'rating': rating[0]})
+    comment = request.POST['comment'] if 'comment' in request.POST else None
     return render_to_response('tripster/content.html', content_info, RequestContext(request))
 

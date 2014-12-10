@@ -1,12 +1,49 @@
 <h1>{{ content.name }}</h1>
-<h2>Album: {{ content.album }}</h2>
+<h2>Album: {{ content.album.name }}</h2>
 
 <img src="{{content.url}}">
 
-<form action="{% url 'content' content_id %}" method="post">
+</br>
+{% if comments %}
+    <ul>
+        {% for comment in comments %}
+        <li> {{comment.user.user.username}}: {{comment.comment}} </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> No comments </p>
+{% endif %}
+</br>
+
+<form action="{% url 'get_content' content.id %}" method="post">
     {% csrf_token %}
     <label>Comment: </label>
-    <input type="text" name="location" />
+    <input type="text" name="comment" />
     </br>
     <input value="Submit" type="submit"/>
 </form>
+
+<form action="{% url 'get_content' content.id %}" method="post">
+    {% csrf_token %}
+    <label>Current Rating: 
+        {% if rating %} 
+            {{rating.rating}}
+        {% else %} 
+            Unrated
+        {% endif %}
+    </label>
+    </br>
+    <label>Change Rating: </label>
+    {% if range %}
+    <select name="rating">
+        {% for i in range %}
+            <option value={{i}}> {{i}}</option>
+        {% endfor %}
+    </select>
+    {% endif %}
+    </br>
+    <input value="Submit" type="submit"/>
+</form>
+
+
+
