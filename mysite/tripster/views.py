@@ -276,16 +276,17 @@ def get_content(request, content_id):
 def search(request):
     search_info = {}
     if request.method == "POST":
-        key = request.POST['search']
+        key = request.POST['search'].lower()
+        print key
         locations = []
         users = []
         for loc in Location.objects.all():
-            if key in loc.name:
+            if key in loc.name.lower():
                 locations.append(loc)
         for u in TripsterUser.objects.all():
-            if key in u.user.username:
+            if key in u.user.username.lower():
                 users.append(u)
-        serach_info = {
+        search_info = {
             'locations' : locations,
             'users' : users,
         }
