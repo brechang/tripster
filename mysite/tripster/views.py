@@ -184,6 +184,7 @@ def get_trip(request, trip_id):
     participants = trip.participants.all()
     comments = trip.tripcomment_set.all()
     rating = TripRating.objects.filter(user=t_user, trip=trip)
+    albums = Album.objects.filter(trip=trip)
     trip_info = {
             'trip' : trip,
             'locations_list' : locations,
@@ -191,6 +192,7 @@ def get_trip(request, trip_id):
             'trip_id' : trip_id,
             'comments' : comments,
             'range' : range(1,6),
+            'albums' : albums,
     }
     if rating:
         trip_info.update({'rating': rating[0]})
@@ -211,5 +213,23 @@ def create_album(request):
 
         return redirect('/feed')
 
-def view_album(request):
-    pass
+def get_album(request, album_id):
+    album = Album.objects.filter(id=album_id)[0]
+    content = None
+    # add content
+    if request.method == "POST":
+        name = request.POST['name'] if 'url' in request.POST else None
+        url = request.POST['url'] if 'content' in request.POST else None
+
+        if name and url:
+            content = Content(name=name, url=url)
+            content.save()
+            content.add(album)
+
+    album_info = {
+            'album' : album,
+            'trip_name' : album.trip.name,
+            'content' : content,
+    }
+    return render_to_response('tripster/album.html', album_info, RequestContext(request))
+

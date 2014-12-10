@@ -53,6 +53,19 @@
     <input value="Submit" type="submit"/>
 </form>
 
+<h2>My Trip Albums</h2>
+{% if albums %}
+    <ul>
+        {% for album in albums %}
+            <li><a href="/album/{{album.id}}/">{{album.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no albums in this trip!</p>
+{% endif %}
+
+</br>
+
 {% if comments %}
     <ul>
         {% for comment in comments %}
