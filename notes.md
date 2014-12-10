@@ -1,6 +1,4 @@
-*Like a request*
 10. Recommend locations/friends based on previous trips/(interests)
-11. Search for users/locations
 
 User Profile pages
 
@@ -19,6 +17,8 @@ NEEDS ERROR CHECKING
 9. Comment, like, (rate) trips/photos
 
 5. View photos/trips from existing friends as a news feed
+
+11. Search for users/locations
 
 Pages
 =====
