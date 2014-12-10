@@ -3,7 +3,7 @@
 
 <img src="{{content.url}}">
 
-<form action="{% url 'content' %}" method="post">
+<form action="{% url 'content' content_id %}" method="post">
     {% csrf_token %}
     <label>Comment: </label>
     <input type="text" name="location" />

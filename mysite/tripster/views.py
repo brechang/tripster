@@ -233,3 +233,19 @@ def get_album(request, album_id):
 
     return render_to_response('tripster/album.html', album_info, RequestContext(request))
 
+def get_content(request, content_id):
+    # add content
+    if request.method == "POST":
+        name = request.POST['name'] if 'name' in request.POST else None
+        url = request.POST['url'] if 'url' in request.POST else None
+
+        if name and url:
+            content = Content(name=name, url=url, album=album)
+            content.save()
+
+    content_info = {
+            'content' : content
+    }
+
+    return render_to_response('tripster/content.html', content_info, RequestContext(request))
+
