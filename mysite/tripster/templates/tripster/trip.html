@@ -31,6 +31,20 @@
     <p>No participants in this trip.</p>
 {% endif %}
 
+
+{% if albums %}
+    <ul>
+        {% for album in album %}
+        <li> {{album.name}} </li>
+
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No albums in this trip.</p>
+{% endif %}
+
+
+
 <form action="{% url 'get_trip' trip_id %}" method="post">
     {% csrf_token %}
     <label>Add participant: </label>
@@ -67,4 +81,3 @@
     <input value="Submit" type="submit"/>
 </form>
 
-<button type="button">Add Album</button>

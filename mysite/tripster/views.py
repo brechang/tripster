@@ -178,3 +178,20 @@ def get_trip(request, trip_id):
     }
     return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
 
+def create_album(request):
+    trips = Trip.objects.all()
+    trip_list = { 'trips' : trips }
+    if request.method == "GET":
+        return render_to_response('tripster/createalbum.html', trip_list, RequestContext(request))
+    if request.method == "POST":
+        name = request.POST['name']
+        trip_id = request.POST['trip_id']
+        trip = Trip.objects.get(id=trip_id)
+
+        album = Album(name=name, trip=trip)
+        album.save()
+
+        return redirect('/feed')
+
+def view_album(request):
+    pass
