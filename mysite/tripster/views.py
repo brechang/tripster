@@ -197,21 +197,21 @@ def create_album(request):
 
 def get_album(request, album_id):
     album = Album.objects.filter(id=album_id)[0]
-    content = None
+    contents = Content.objects.filter(album=album)
     # add content
     if request.method == "POST":
-        name = request.POST['name'] if 'url' in request.POST else None
-        url = request.POST['url'] if 'content' in request.POST else None
+        name = request.POST['name'] if 'name' in request.POST else None
+        url = request.POST['url'] if 'url' in request.POST else None
 
         if name and url:
-            content = Content(name=name, url=url)
+            content = Content(name=name, url=url, album=album)
             content.save()
-            content.add(album)
 
     album_info = {
             'album' : album,
             'trip_name' : album.trip.name,
-            'content' : content,
+            'contents' : contents,
     }
+
     return render_to_response('tripster/album.html', album_info, RequestContext(request))
 
