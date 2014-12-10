@@ -259,7 +259,7 @@ def get_content(request, content_id):
             'content' : content,
             'comments': comments,
             'range' : range(1,6),
-    }
+        }
     t_user = TripsterUser.objects.get(user=request.user)
     rating = ContentRating.objects.filter(user=t_user, content=content)
     if rating:
@@ -267,3 +267,20 @@ def get_content(request, content_id):
     comment = request.POST['comment'] if 'comment' in request.POST else None
     return render_to_response('tripster/content.html', content_info, RequestContext(request))
 
+def get_userprofile(request, username):
+    if request.method == "POST":
+        pass
+
+    t_user = TripsterUser.objects.get(user=request.user)
+    dream_location_list = [d.name for d in t_user.dream_location.all()]
+    trips_list = Trip.objects.filter(host=t_user)
+    visited_locations = [l for t in trips_list for l in t.locations.all()]
+    friends_list = [f.user for f in t_user.friends.all()]
+    user_info = {
+            't_user' : t_user,
+            'dream_location_list': dream_location_list,
+            'trips_list' : trips_list,
+            'friends_list' : friends_list,
+            'visited_locations' : visited_locations,
+        }
+    return render_to_response('tripster/user.html', user_info, RequestContext(request))

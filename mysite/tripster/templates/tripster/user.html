@@ -1,4 +1,4 @@
-<h1>{{ t_user.name }}</h1>
+<h1>{{ t_user.user.username }}</h1>
 <h2>Affilitation: {{ t_user.affiliation }}</h2>
 
 {% if dream_location_list %}
@@ -11,22 +11,45 @@
     <p>{{t_user.name}} has no dream locations!</p>
 {% endif %}
 
+<h2> My Trips </h2>
 {% if trips_list %}
     <ul>
-        {% for trips in trips_list %}
-        	<li><a href="trip?={{trip.id}}/">{{trip.name}}</a></li>
+        {% for trip in trips_list %}
+            <li><a href="trip/{{trip.id}}/">{{trip.name}}</a></li>
         {% endfor %}
     </ul>
 {% else %}
-    <p>{{t_user.name}} has no trips!</p>
+    <p>{{t_user.user.name}} has no trips!</p>
 {% endif %}
 
+<h2> My Friends </h2>
 {% if friends_list %}
     <ul>
         {% for friend in friends_list %}
-        	<li><a href="user?={{friend.id}}/">{{friend.name}}</a></li>
+            <li><a href="user/{{friend.username}}/">{{friend.username}}</a></li>
         {% endfor %}
     </ul>
 {% else %}
-    <p>{{t_user.name}} has no friends!</p>
+    <p>{{t_user.user.name}} has no friends!</p>
 {% endif %}
+
+<h2> Recommend </h2>
+<form action="{% url 'get_userprofile' t_user.user.username %}" method="post">
+    <label>Recommend location </label>
+        {% if visited_locations %}
+        <select name="location">
+            {% for loc in visited_locations %}
+                <option value="{{ loc.name }}"> {{ loc.name }}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+    <label> to </label>
+        {% if friends_list %}
+        <select name="friends">
+            {% for friend in friends_list %}
+                <option value="{{ friend.id }}"> {{ friend.username }}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+    <input value="Recommend friend" type="submit"/>
+</form>
