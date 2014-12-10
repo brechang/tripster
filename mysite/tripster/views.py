@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from tripster.models import *
 from django.contrib.auth import authenticate, login as django_login
 from django.template import RequestContext, loader
+from django.db.models import Q
 
 # Create your views here.
 
@@ -37,7 +38,12 @@ def login(request):
     return authenticate_user(request, username, password)
 
 def feed(request):
-    return render_to_response('tripster/home.html', RequestContext(request))
+    t_user = TripsterUser.objects.get(user=request.user)
+    trips = Trip.objects.filter(Q(host__in=t_user.friends.all()) | Q(host=t_user))
+    feed_dict = {
+        'trips' : trips,
+    }
+    return render_to_response('tripster/home.html', feed_dict, RequestContext(request))
 
 def friends(request):
     if request.method == 'GET':
@@ -249,3 +255,20 @@ def get_content(request, content_id):
 
     return render_to_response('tripster/content.html', content_info, RequestContext(request))
 
+def search(request):
+    search_info = {}
+    if request.method == "POST":
+        key = request.POST['search']
+        locations = []
+        users = []
+        for loc in Location.objects.all():
+            if key in loc.name:
+                locations.append(loc)
+        for u in TripsterUser.objects.all():
+            if key in u.user.username:
+                users.append(u)
+        serach_info = {
+            'locations' : locations,
+            'users' : users,
+        }
+    return render_to_response('tripster/search.html', search_info, RequestContext(request))

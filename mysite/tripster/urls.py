@@ -15,5 +15,6 @@ urlpatterns = patterns('',
     url(r'^trip/(?P<trip_id>\d+)/$', views.get_trip, name='get_trip'),
     url(r'^album/(?P<album_id>\d+)/$', views.get_album, name='get_album'),
     url(r'^createalbum$', views.create_album, name='createalbum'),
+    url(r'search', views.search, name='search'),
 )
 

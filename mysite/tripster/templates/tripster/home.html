@@ -1,5 +1,11 @@
 <h1>Hi</h1>
 
+<form action="{% url 'search' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="search">
+    <input type="submit" value="Search">
+</form>
+
 <form action="{% url 'friends' %}" method="post">
     {% csrf_token %}
     <input type="submit" value="My Friends"/>
@@ -29,4 +35,12 @@
    <source src="audio/vaporwave.ogg" /> 
    <source src="audio/vaporwave.mp3" /> 
 </audio> 
+
+{% if trips %}
+    {% for trip in trips %}
+    <h2> {{trip.name}} </h2><br>
+    <h3> Host: {{trip.host.user.username}}</h3><br>
+    IMAGE<br>
+    {% endfor %}
+{% endif %}
 
