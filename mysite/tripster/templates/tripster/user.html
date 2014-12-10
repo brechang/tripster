@@ -34,7 +34,9 @@
 {% endif %}
 
 <h2> Recommend </h2>
+
 <form action="{% url 'get_userprofile' t_user.user.username %}" method="post">
+    {% csrf_token %}
     <label>Recommend location </label>
         {% if visited_locations %}
         <select name="location">

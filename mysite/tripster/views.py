@@ -269,7 +269,7 @@ def get_content(request, content_id):
 
 def get_userprofile(request, username):
     if request.method == "POST":
-        pass
+        redirect('/feed')
 
     t_user = TripsterUser.objects.get(user=request.user)
     dream_location_list = [d.name for d in t_user.dream_location.all()]
