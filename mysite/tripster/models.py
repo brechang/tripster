@@ -9,6 +9,9 @@ class TripsterUser(models.Model):
     user = models.OneToOneField(User)
     affiliation = models.CharField(max_length=100)
     friends = models.ManyToManyField('self')
+    url = models.CharField(max_length=200)
+    age = models.IntegerField()
+    gender = models.CharField(max_length=100)
     dream_location = models.ManyToManyField('Location')
 
 class Location(models.Model):
@@ -17,6 +20,7 @@ class Location(models.Model):
 class Trip(models.Model):
     host = models.ForeignKey(TripsterUser)
     name = models.CharField(max_length=200)
+    url = models.CharField(max_length=200)
     locations = models.ManyToManyField(Location)
     participants = models.ManyToManyField(TripsterUser, related_name='trips')
     timestamp = models.DateTimeField(default=timezone.now)
