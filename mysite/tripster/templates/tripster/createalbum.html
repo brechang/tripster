@@ -9,25 +9,21 @@
 
 <h1>New Album</h1>
 
-<form action="{% url 'createalbum' %}" method = "post">
-    {%csrf_token%}
-    {% if trips %}
-    <label> Name: </label>
-    <input type="text" name="name" />
-    </br>
-    <label> Trips: </label>
-        <select name="trip_id">
-          {% for trip in trips %}
-              <option value="{{ trip.id }}"> {{ trip.name }} </option>
-          {% endfor %}
-        </select>
-    {% else %}
-        <p> No trips available. Go make or join a trip!</p>
-    {% endif %}
-
-    </br>
-    {% if trips %}
+{% if trips %}
+    <form action="{% url 'createalbum' %}" method = "post">
+        {%csrf_token%}
+        <label> Name: </label>
+        <input type="text" name="name" />
+        </br>
+        <label> Trips: </label>
+            <select name="trip_id">
+              {% for trip in trips %}
+                  <option value="{{ trip.id }}"> {{ trip.name }} </option>
+              {% endfor %}
+            </select>
+        </br>
         <input value="Submit" type="submit"/>
-    {% endif %}
-</form>
-
+    </form>
+{% else %}
+    <p> No trips available. Go make or join a trip!</p>
+{% endif %}

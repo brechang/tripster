@@ -17,12 +17,10 @@
     </ul>
 {% else %}
     <p> No content in this album yet </p>
-    </br>
 {% endif %}
 
 <form action="{% url 'get_album' album.id %}" method="post">
     {% csrf_token %}
-
     <label>Content name: </label>
     <input type="text" name="name"/>
     </br>

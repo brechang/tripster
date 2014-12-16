@@ -161,7 +161,7 @@ def settings(request):
     return render_to_response('tripster/settings.html', settings_dict, RequestContext(request))
 
 def view_trips(request):
-    t_user =  TripsterUser.objects.get(user=request.user)
+    t_user = TripsterUser.objects.get(user=request.user)
 
     if request.method == "POST":
         if 'accept' in request.POST:
@@ -345,10 +345,7 @@ def get_userprofile(request, username):
     if tu != user_prof and (user_prof.privacy == 0 or user_prof.privacy == 1 and tu not in user_prof.friends.all()):
         return redirect('/feed')
 
-    if request.method == "POST":
-        redirect('/feed')
-
-    t_user = TripsterUser.objects.get(user=request.user)
+    t_user = user_prof
     dream_location_list = [d.name for d in t_user.dream_location.all()]
     trips_list = Trip.objects.filter(host=t_user)
     visited_locations = [l for t in trips_list for l in t.locations.all()]
@@ -356,6 +353,7 @@ def get_userprofile(request, username):
     user_info = {
             't_user' : t_user,
             'username' : username,
+            'user_profile_pic' : t_user.url,
             'dream_location_list': dream_location_list,
             'trips_list' : trips_list,
             'friends_list' : friends_list,

@@ -2,8 +2,8 @@ For Demo -- incomplete
 ========
 * Project report
 
-Get rid of this ---> 10. Recommend locations/friends based on previous trips/(interests) because we're doing this within the news feed
-
+* add dream locations
+* average rating for a trip/content
 * Import/export stuff
 * Need to add privacy for photos/albums
     * users - settings, register
@@ -17,22 +17,17 @@ Need a bit more work
 * Caching
 
 
-
 More or less done
 =================
 * Amazon stuff
 * Decline friend request
 * Decline trip request
 * Make user have more "settings" e.g. profile pic, interests
-* News feed -- right now it's the latest 10 trips of friends
+* News feed -- right now its the latest 10 trips of friends
     * Metrics
 
 
-
-
-
-
-User Profile pages
+* User Profile pages
 
 
 
@@ -58,7 +53,7 @@ Pages
 =====
 Registration/Login pages (1,2)
 Newsfeed/Homepage
-    * Newsfeed Content: Friends' Trips and photos (5, 9)
+    * Newsfeed Content: Friends Trips and photos (5, 9)
     * Buttons: Settings(3)   New Trip(6)    My Trips(7)     My Friends(4)   User profile
 
         My Trips --> Trip Page (8)
