@@ -1,5 +1,11 @@
-<h1>{{ t_user.user.username }}</h1>
+<h1>{{ username }}</h1>
 <h2>Affilitation: {{ t_user.affiliation }}</h2>
+
+{% if user_profile_pic %}
+    <img src="{{user_profile_pic}}" width="512" height="512">
+{% else %}
+    No user profile pic
+{% endif %}
 
 {% if dream_location_list %}
     <ul>

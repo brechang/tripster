@@ -205,7 +205,8 @@ def get_trip(request, trip_id):
     return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
 
 def create_album(request):
-    trips = Trip.objects.all()
+    t_user = TripsterUser.objects.get(user=request.user)
+    trips = t_user.trips.all()
     trip_list = { 'trips' : trips }
     if request.method == "GET":
         return render_to_response('tripster/createalbum.html', trip_list, RequestContext(request))
@@ -241,6 +242,11 @@ def get_album(request, album_id):
 
 def get_content(request, content_id):
     content = Content.objects.get(id=content_id)
+    trip = content.album.trip
+    participants = [p.user for p in trip.participants.all()]
+    if not request.user in participants:
+        return redirect('/feed')
+
     comments = ContentComment.objects.filter(content=content)
     if request.method == "POST":
         comment = request.POST['comment'] if 'comment' in request.POST else None
@@ -284,6 +290,7 @@ def get_userprofile(request, username):
     friends_list = [f.user for f in t_user.friends.all()]
     user_info = {
             't_user' : t_user,
+            'username' : username,
             'dream_location_list': dream_location_list,
             'trips_list' : trips_list,
             'friends_list' : friends_list,
