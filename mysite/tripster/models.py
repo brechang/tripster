@@ -13,6 +13,7 @@ class TripsterUser(models.Model):
     age = models.IntegerField()
     gender = models.CharField(max_length=100)
     dream_location = models.ManyToManyField('Location')
+    privacy = models.IntegerField(default=1)
 
 class Location(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -24,6 +25,7 @@ class Trip(models.Model):
     locations = models.ManyToManyField(Location)
     participants = models.ManyToManyField(TripsterUser, related_name='trips')
     timestamp = models.DateTimeField(default=timezone.now)
+    privacy = models.IntegerField(default=1)
     class Meta:
         unique_together = ('host', 'name')
         ordering = ['-timestamp']
@@ -32,6 +34,7 @@ class Album(models.Model):
     name = models.CharField(max_length=100)
     trip = models.ForeignKey(Trip)
     timestamp = models.DateTimeField(default=timezone.now)
+    privacy = models.IntegerField(default=1)
     class Meta:
         unique_together = ('name', 'trip')
         ordering = ['-timestamp']
@@ -41,6 +44,7 @@ class Content(models.Model):
     url = models.CharField(max_length=200)
     album = models.ForeignKey(Album)
     timestamp = models.DateTimeField(default=timezone.now)
+    privacy = models.IntegerField(default=1)
     class Meta:
         unique_together = ('album', 'name')
         ordering = ['-timestamp']
