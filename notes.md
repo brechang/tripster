@@ -3,6 +3,7 @@ For Demo -- incomplete
 * Project report
 
 
+Get rid of this ---> 10. Recommend locations/friends based on previous trips/(interests)
 
 EZ
 ==
@@ -33,7 +34,6 @@ More or less done
 
 
 
-10. Recommend locations/friends based on previous trips/(interests)
 
 
 

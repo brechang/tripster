@@ -22,9 +22,12 @@ def register(request):
         username = request.POST['username']
         password = request.POST['password']
         affiliation = request.POST['affiliation']
+        url = request.POST['url']
+        age = request.POST['age']
+        gender = request.POST['gender']
         user = User.objects.create_user(username, password=password)
         user.save()
-        t_user = TripsterUser(user=user, affiliation=affiliation)
+        t_user = TripsterUser(user=user, affiliation=affiliation, url=url, age=age, gender=gender)
         t_user.save()
         return authenticate_user(request, username, password)
 
