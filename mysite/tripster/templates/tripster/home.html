@@ -1,4 +1,17 @@
-<h1>Hi</h1>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'tripster/style.css' %}" />
+
+<head>
+    <style>
+        body {background-color:#FF819D}
+        h1   {color:#6CFBB8}
+        h2   {color:#CE7044}
+        h3   {color:#AD6DA9}
+    </style>
+</head>
+
+<h1><u><i>WELCOME TO THE VIRTUAL PLAZA</u></i></h1>
+
 
 <form action="{% url 'search' %}" method="post">
     {% csrf_token %}
@@ -6,35 +19,37 @@
     <input type="submit" value="Search">
 </form>
 
-<form action="{% url 'friends' %}" method="post">
+<TABLE BORDER="0">
+<TR>
+
+<TD><form action="{% url 'friends' %}" method="post">
     {% csrf_token %}
     <input type="submit" value="My Friends"/>
-</form>
+</form></TD>
 
-<form action="{% url 'createtrip' %}">
+<TD><form action="{% url 'createtrip' %}">
     {% csrf_token %}
     <input type="submit" value="Make a Trip">
-</form>
+</form></TD>
 
-<form action="{% url 'change_settings' %}">
+<TD><form action="{% url 'change_settings' %}">
     {% csrf_token %}
     <input type="submit" value="Settings">
-</form>
+</form></TD>
 
-<form action="{% url 'view_trips' %}">
+<TD><form action="{% url 'view_trips' %}">
     {% csrf_token %}
     <input type="submit" value="My Trips">
-</form>
+</form></TD>
 
-<form action="{% url 'createalbum' %}">
+<TD><form action="{% url 'createalbum' %}">
     {% csrf_token %}
     <input type="submit" value="Make an album">
-</form>
+</form></TD>
+</TR>
 
-<audio autoplay="autoplay" controls="controls">  
-   <source src="audio/vaporwave.ogg" /> 
-   <source src="audio/vaporwave.mp3" /> 
-</audio> 
+</TABLE>
+
 
 {% if trips %}
     {% for trip in trips %}
