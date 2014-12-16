@@ -12,6 +12,7 @@
 
 <h1><u><i>WELCOME TO THE VIRTUAL PLAZA</u></i></h1>
 
+
 <form action="{% url 'search' %}" method="post">
     {% csrf_token %}
     <input type="text" name="search">
@@ -43,10 +44,6 @@
     <input type="submit" value="Make an album">
 </form>
 
-MEDIA_URL = 'mysite/tripster/templates/tripster'
-<audio autoplay = "autoplay">
-     <source src="{{MEDIA_URL}}audio/vaporwave.ogg"/>
-</audio>
 
 {% if trips %}
     {% for trip in trips %}
