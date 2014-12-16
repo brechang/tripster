@@ -2,8 +2,12 @@ For Demo -- incomplete
 ========
 * Project report
 
+
+
 EZ
 ==
+
+
 
 Annoying
 ========
@@ -12,9 +16,13 @@ Annoying
 * Make user have more "settings" e.g. profile pic, interests
 * Import/export stuff
 
+
+
 Need a bit more work
 ====================
 * Caching
+
+
 
 More or less done
 =================
@@ -24,9 +32,14 @@ More or less done
 * Need to add privacy for photos/albums (but not trips themselves) 
 
 
+
 10. Recommend locations/friends based on previous trips/(interests)
 
+
+
 User Profile pages
+
+
 
 NEEDS ERROR CHECKING
 ====================
