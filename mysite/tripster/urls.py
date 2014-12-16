@@ -19,3 +19,7 @@ urlpatterns = patterns('',
     url(r'search', views.search, name='search'),
 )
 
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.MEDIA_ROOT}))

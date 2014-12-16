@@ -92,4 +92,6 @@ STATICFILES_DIRS = (
     'tripster/static/',
 )
 
-MEDIA_URL = 'mysite/tripster/templates/'
+MEDIA_ROOT = 'mysite/tripster/templates/'
+
+MEDIA_URL = '/media/'
