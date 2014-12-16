@@ -16,7 +16,8 @@
 {% if friend_requests %}
     <ul>
         {% for friend in friend_requests %}
-            <li><a href="/user/{{friend}}/">{{friend}} is requesting you!</a></li>
+            <li>
+            <a href="/user/{{friend}}/">{{friend}} is requesting you!</a>
             <form action="{% url 'friends' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="accept" value="{{friend}}"/>
@@ -27,6 +28,7 @@
                 <input type="hidden" name="decline" value="{{friend}}"/>
                 <input type="submit" value="Decline Request"/>
             </form>
+            </li>
         {% endfor %}
     </ul>
 {% endif %}
@@ -34,9 +36,22 @@
 {% if friends %}
     <ul>
         {% for friend in friends %}
-            <li><a href="/user/{{friend}}/">{{friend}}</a></li>
+            <li><a href="/user/{{friend.user.username}}/">{{friend.user.username}}</a></li>
         {% endfor %}
     </ul>
-{% else %}
+{% endif %}
+{% if others %}
     <p>Make some friends!</p>
+        <ul>
+            {% for other in others %}
+                <li>
+                <a href="/user/{{other.user.username}}/">{{other.user.username}}</a>
+                <form action="{% url 'friends' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="friend" value="{{other.user.username}}"/>
+                    <input type="submit" value="Request friend!"/>
+                </form>
+                </li>
+            {% endfor %}
+        </ul>
 {% endif %}

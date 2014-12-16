@@ -25,7 +25,7 @@ def register(request):
         url = request.POST['url']
         age = request.POST['age']
         gender = request.POST['gender']
-        user = User.objects.create_user(username, password=password)
+        user = User.objects.create_user(username=username, password=password)
         user.save()
         t_user = TripsterUser(user=user, affiliation=affiliation, url=url, age=age, gender=gender)
         t_user.save()
@@ -51,29 +51,37 @@ def login(request):
     #    print 'stored in cache ' + str(id)
     return authenticate_user(request, username, password)
 
+def score(user, trip):
+    s = 0
+    host = trip.host
+    dream = user.dream_location.all()
+    for l in trip.locations.all():
+        if l in dream:
+            s += 3
+    for t in Trip.objects.all():
+        p = t.participants.all()
+        if user in p and host in p:
+            s += 1
+    return s
+
 def feed(request):
     t_user = TripsterUser.objects.get(user=request.user)
-    trips = Trip.objects.filter(Q(host__in=t_user.friends.all()) | Q(host=t_user))
+    friend_trips = Trip.objects.filter(host__in=t_user.friends.all())
+    your_trips = t_user.trips.all()
+    trips = friend_trips.exclude(pk__in=your_trips)
+    trips = list(trips)
+    trips.sort(key = lambda t: -score(t_user, t))
+    for t in trips:
+        print score(t_user, t)
     feed_dict = {
         'trips' : trips,
     }
     return render_to_response('tripster/home.html', feed_dict, RequestContext(request))
 
 def friends(request):
-    if request.method == 'GET':
-        user = request.user
-        t_user = TripsterUser.objects.get(user=user)
-        friend_requests = [f.user.user.username for f in t_user.friend_requests.all()]
-        friends = [f.user.username for f in t_user.friends.all()]
-        friend_dict = {
-            'friend_requests' : friend_requests,
-            'friends' : friends,
-            }
-        return render_to_response('tripster/friends.html', friend_dict, RequestContext(request))
-
+    user = request.user
+    t_user = TripsterUser.objects.get(user=user)
     if request.method == 'POST':
-        user = request.user
-        t_user = TripsterUser.objects.get(user=user)
         if 'friend' in request.POST:
             friend_name = request.POST['friend']
             friend = User.objects.filter(username=friend_name)
@@ -84,11 +92,7 @@ def friends(request):
                 if t_friend != t_user and not req and not other_req and not t_friend in t_user.friends.all():
                     new_req = FriendRequest(user=t_user, invitee=t_friend)
                     new_req.save()
-                return redirect('/friends')
-            else:
-                # no friend found
-                # redirect to home with error message
-                return redirect('/friends')
+            return redirect('/friends')
         if 'accept' in request.POST:
             friend_name = request.POST['accept']
             friend = User.objects.get(username=friend_name)
@@ -105,6 +109,16 @@ def friends(request):
             req = FriendRequest.objects.get(user=t_friend, invitee=t_user)
             req.delete()
             return redirect('/friends')
+    
+    friend_requests = [f.user.user.username for f in t_user.friend_requests.all()]
+    friends = t_user.friends.all()
+    others = TripsterUser.objects.all().exclude(pk__in=friends).exclude(pk=t_user.id)
+    friend_dict = {
+        'friend_requests' : friend_requests,
+        'friends' : friends,
+        'others' : others,
+        }
+    return render_to_response('tripster/friends.html', friend_dict, RequestContext(request))
 
 def create_trip(request):
     if request.method == "GET":
@@ -128,16 +142,23 @@ def create_trip(request):
         trip.participants.add(t_user)
         return redirect('/feed')
 
-def change_settings(request):
-    return render_to_response('tripster/settings.html', RequestContext(request))
-
 def settings(request):
-    affiliation = request.POST['affiliation']
-    user = request.user
-    t_user = TripsterUser.objects.get(user=user)
-    t_user.affiliation = affiliation
-    t_user.save()
-    return redirect('/feed')
+    t_user = TripsterUser.objects.get(user=request.user)
+    if request.method == "POST":
+        affiliation = request.POST['affiliation']
+        age = request.POST['age']
+        gender = request.POST['gender']
+        url = request.POST['url']
+        t_user.affiliation = affiliation
+        t_user.age = age
+        t_user.gender = gender
+        t_user.url = url
+        t_user.save()
+    
+    settings_dict = {
+        'user' : t_user,
+    }
+    return render_to_response('tripster/settings.html', settings_dict, RequestContext(request))
 
 def view_trips(request):
     t_user =  TripsterUser.objects.get(user=request.user)
@@ -153,6 +174,7 @@ def view_trips(request):
             request_id = request.POST['decline']
             trip_request = TripRequest.objects.get(pk=request_id)
             trip_request.delete()
+
     trip_list = Trip.objects.filter(host=t_user)
     trip_requests = t_user.triprequest_set.all()
     trip_dict = {
@@ -163,7 +185,12 @@ def view_trips(request):
     return render_to_response('tripster/trips.html', trip_dict, context_instance=RequestContext(request))
 
 def get_trip(request, trip_id):
-    trip = Trip.objects.filter(id=trip_id)[0]
+    trip = Trip.objects.get(id=trip_id)
+    triphost = trip.host
+    tu = TripsterUser.objects.get(user=request.user)
+    if tu != triphost and (trip.privacy == 0 or trip.privacy == 1 and tu not in triphost.friends.all()):
+        return redirect('/feed')
+
     if request.method == "POST":
         location = request.POST['location'] if 'location' in request.POST else None
         participant = request.POST['participant'] if 'participant' in request.POST else None
@@ -204,7 +231,15 @@ def get_trip(request, trip_id):
     participants = trip.participants.all()
     comments = trip.tripcomment_set.all()
     rating = TripRating.objects.filter(user=t_user, trip=trip)
+
+    # privacy for albums (and in general):
+    # 0 = only me, 1 = all my friends, 2 = global
     albums = Album.objects.filter(trip=trip)
+    if trip.host != t_user:
+        albums.exclude(privacy=0)
+        if t_user not in trip.host.friends.all():
+            albums.exclude(privacy=1)
+
     trip_info = {
             'trip' : trip,
             'locations_list' : locations,
@@ -231,12 +266,16 @@ def create_album(request):
 
         album = Album(name=name, trip=trip)
         album.save()
-
         return redirect('/feed')
 
 def get_album(request, album_id):
-    album = Album.objects.filter(id=album_id)[0]
+    album = Album.objects.get(id=album_id)
     contents = Content.objects.filter(album=album)
+    triphost = album.trip.host
+    tu = TripsterUser.objects.get(user=request.user)
+    if tu != triphost and (album.privacy == 0 or album.privacy == 1 and tu not in triphost.friends.all()):
+        return redirect('/feed')
+
     # add content
     if request.method == "POST":
         name = request.POST['name'] if 'name' in request.POST else None
@@ -245,6 +284,11 @@ def get_album(request, album_id):
         if name and url and album:
             content = Content(name=name, url=url, album=album)
             content.save()
+
+    if tu != triphost:
+        contents.exclude(privacy=0)
+        if tu not in album.trip.host.friends.all():
+            contents.exclude(privacy=1)
 
     album_info = {
             'album' : album,
@@ -256,9 +300,9 @@ def get_album(request, album_id):
 
 def get_content(request, content_id):
     content = Content.objects.get(id=content_id)
-    trip = content.album.trip
-    participants = [p.user for p in trip.participants.all()]
-    if not request.user in participants:
+    triphost = content.album.trip.host
+    tu = TripsterUser.objects.get(user=request.user)
+    if tu != triphost and (content.privacy == 0 or content.privacy == 1 and tu not in triphost.friends.all()):
         return redirect('/feed')
 
     comments = ContentComment.objects.filter(content=content)
@@ -294,6 +338,13 @@ def get_content(request, content_id):
     return render_to_response('tripster/content.html', content_info, RequestContext(request))
 
 def get_userprofile(request, username):
+    tu = TripsterUser.objects.get(user=request.user)
+    user_prof = TripsterUser.objects.filter(user__username=username)[0]
+    if not user_prof:
+        redirect('/feed')
+    if tu != user_prof and (user_prof.privacy == 0 or user_prof.privacy == 1 and tu not in user_prof.friends.all()):
+        return redirect('/feed')
+
     if request.method == "POST":
         redirect('/feed')
 
@@ -316,7 +367,6 @@ def search(request):
     search_info = {}
     if request.method == "POST":
         key = request.POST['search'].lower()
-        print key
         locations = []
         users = []
         for loc in Location.objects.all():
