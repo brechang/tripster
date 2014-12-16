@@ -4,6 +4,11 @@ from tripster.models import *
 from django.contrib.auth import authenticate, login as django_login
 from django.template import RequestContext, loader
 from django.db.models import Q
+#from pymongo import MongoClient
+
+#client = MongoClient()
+#db = client.cache_db
+#cache = db.cache
 
 # Create your views here.
 
@@ -35,6 +40,12 @@ def authenticate_user(request, username, password):
 def login(request):
     username = request.POST['username']
     password = request.POST['password']
+    info = {'username': username, 'password': password}
+    #if cache.find_one({'username': username}):
+    #    print 'found in cache'
+    #else:
+    #    id = cache.insert(info)
+    #    print 'stored in cache ' + str(id)
     return authenticate_user(request, username, password)
 
 def feed(request):
@@ -47,53 +58,50 @@ def feed(request):
 
 def friends(request):
     if request.method == 'GET':
-        if request.user.is_authenticated():
-            user = request.user
-            t_user = TripsterUser.objects.get(user=user)
-            friend_requests = [f.user.user.username for f in t_user.friend_requests.all()]
-            friends = [f.user.username for f in t_user.friends.all()]
-            friend_dict = {
-                'friend_requests' : friend_requests,
-                'friends' : friends,
-                }
-            return render_to_response('tripster/friends.html', friend_dict, RequestContext(request))
-        else:
-            return redirect('/')
+        user = request.user
+        t_user = TripsterUser.objects.get(user=user)
+        friend_requests = [f.user.user.username for f in t_user.friend_requests.all()]
+        friends = [f.user.username for f in t_user.friends.all()]
+        friend_dict = {
+            'friend_requests' : friend_requests,
+            'friends' : friends,
+            }
+        return render_to_response('tripster/friends.html', friend_dict, RequestContext(request))
 
     if request.method == 'POST':
-        if request.user.is_authenticated():
-            user = request.user
-            t_user = TripsterUser.objects.get(user=user)
-            if 'friend' in request.POST:
-                friend_name = request.POST['friend']
-                friend = User.objects.filter(username=friend_name)
-                if friend:
-                    t_friend = TripsterUser.objects.get(user=friend)
-                    req = FriendRequest.objects.filter(user=t_user, invitee=t_friend)
-                    other_req = FriendRequest.objects.filter(user=t_friend, invitee=t_user)
-                    if t_friend != t_user and not req and not other_req and not t_friend in t_user.friends.all():
-                        new_req = FriendRequest(user=t_user, invitee=t_friend)
-                        new_req.save()
-                    return redirect('/friends')
-                else:
-                    # no friend found
-                    # redirect to home with error message
-                    return redirect('/friends')
-            elif 'accept' in request.POST:
-                friend_name = request.POST['accept']
-                friend = User.objects.get(username=friend_name)
+        user = request.user
+        t_user = TripsterUser.objects.get(user=user)
+        if 'friend' in request.POST:
+            friend_name = request.POST['friend']
+            friend = User.objects.filter(username=friend_name)
+            if friend:
                 t_friend = TripsterUser.objects.get(user=friend)
-                t_friend.friends.add(t_user)
-                t_user.friends.add(t_friend)
-                req = FriendRequest.objects.get(user=t_friend, invitee=t_user)
-                req.delete()
+                req = FriendRequest.objects.filter(user=t_user, invitee=t_friend)
+                other_req = FriendRequest.objects.filter(user=t_friend, invitee=t_user)
+                if t_friend != t_user and not req and not other_req and not t_friend in t_user.friends.all():
+                    new_req = FriendRequest(user=t_user, invitee=t_friend)
+                    new_req.save()
                 return redirect('/friends')
             else:
-                # we fucked up
+                # no friend found
+                # redirect to home with error message
                 return redirect('/friends')
-        else:
-            # not authenticated go to login
-            return redirect('/')
+        if 'accept' in request.POST:
+            friend_name = request.POST['accept']
+            friend = User.objects.get(username=friend_name)
+            t_friend = TripsterUser.objects.get(user=friend)
+            t_friend.friends.add(t_user)
+            t_user.friends.add(t_friend)
+            req = FriendRequest.objects.get(user=t_friend, invitee=t_user)
+            req.delete()
+            return redirect('/friends')
+        if 'decline' in request.POST:
+            friend_name = request.POST['decline']
+            friend = User.objects.get(username=friend_name)
+            t_friend = TripsterUser.objects.get(user=friend)
+            req = FriendRequest.objects.get(user=t_friend, invitee=t_user)
+            req.delete()
+            return redirect('/friends')
 
 def create_trip(request):
     if request.method == "GET":
@@ -109,14 +117,13 @@ def create_trip(request):
             loc.save()
         else:
             loc = loc[0]
-        if request.user.is_authenticated():
-            user = request.user
-            t_user = TripsterUser.objects.get(user=user)
-            trip = Trip(name=name, host=t_user)
-            trip.save()
-            trip.locations.add(loc)
-            trip.participants.add(t_user)
-            return redirect('/feed')
+        user = request.user
+        t_user = TripsterUser.objects.get(user=user)
+        trip = Trip(name=name, host=t_user)
+        trip.save()
+        trip.locations.add(loc)
+        trip.participants.add(t_user)
+        return redirect('/feed')
 
 def change_settings(request):
     return render_to_response('tripster/settings.html', RequestContext(request))
@@ -133,12 +140,16 @@ def view_trips(request):
     t_user =  TripsterUser.objects.get(user=request.user)
 
     if request.method == "POST":
-        request_id = request.POST['accept']
-        trip_request = TripRequest.objects.get(pk=request_id)
-        trip = trip_request.trip
-        trip.participants.add(t_user)
-        trip_request.delete()
-
+        if 'accept' in request.POST:
+            request_id = request.POST['accept']
+            trip_request = TripRequest.objects.get(pk=request_id)
+            trip = trip_request.trip
+            trip.participants.add(t_user)
+            trip_request.delete()
+        if 'decline' in request.POST:
+            request_id = request.POST['decline']
+            trip_request = TripRequest.objects.get(pk=request_id)
+            trip_request.delete()
     trip_list = Trip.objects.filter(host=t_user)
     trip_requests = t_user.triprequest_set.all()
     trip_dict = {
@@ -205,7 +216,8 @@ def get_trip(request, trip_id):
     return render_to_response('tripster/trip.html', trip_info, RequestContext(request))
 
 def create_album(request):
-    trips = Trip.objects.all()
+    t_user = TripsterUser.objects.get(user=request.user)
+    trips = t_user.trips.all()
     trip_list = { 'trips' : trips }
     if request.method == "GET":
         return render_to_response('tripster/createalbum.html', trip_list, RequestContext(request))
@@ -241,6 +253,11 @@ def get_album(request, album_id):
 
 def get_content(request, content_id):
     content = Content.objects.get(id=content_id)
+    trip = content.album.trip
+    participants = [p.user for p in trip.participants.all()]
+    if not request.user in participants:
+        return redirect('/feed')
+
     comments = ContentComment.objects.filter(content=content)
     if request.method == "POST":
         comment = request.POST['comment'] if 'comment' in request.POST else None
@@ -284,6 +301,7 @@ def get_userprofile(request, username):
     friends_list = [f.user for f in t_user.friends.all()]
     user_info = {
             't_user' : t_user,
+            'username' : username,
             'dream_location_list': dream_location_list,
             'trips_list' : trips_list,
             'friends_list' : friends_list,

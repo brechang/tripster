@@ -11,21 +11,23 @@
 
 <form action="{% url 'createalbum' %}" method = "post">
     {%csrf_token%}
+    {% if trips %}
     <label> Name: </label>
     <input type="text" name="name" />
     </br>
     <label> Trips: </label>
-    {% if trips %}
         <select name="trip_id">
           {% for trip in trips %}
               <option value="{{ trip.id }}"> {{ trip.name }} </option>
           {% endfor %}
         </select>
     {% else %}
-        <p> No trips available. </p>
+        <p> No trips available. Go make or join a trip!</p>
     {% endif %}
 
     </br>
-    <input value="Submit" type="submit"/>
+    {% if trips %}
+        <input value="Submit" type="submit"/>
+    {% endif %}
 </form>
 
