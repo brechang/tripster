@@ -51,9 +51,28 @@ def login(request):
     #    print 'stored in cache ' + str(id)
     return authenticate_user(request, username, password)
 
+def score(user, trip):
+    s = 0
+    host = trip.host
+    dream = user.dream_location.all()
+    for l in trip.locations.all():
+        if l in dream:
+            s += 3
+    for t in Trip.objects.all():
+        p = t.participants.all()
+        if user in p and host in p:
+            s += 1
+    return s
+
 def feed(request):
     t_user = TripsterUser.objects.get(user=request.user)
-    trips = Trip.objects.filter(Q(host__in=t_user.friends.all()) | Q(host=t_user))
+    friend_trips = Trip.objects.filter(host__in=t_user.friends.all())
+    your_trips = t_user.trips.all()
+    trips = friend_trips.exclude(pk__in=your_trips)
+    trips = list(trips)
+    trips.sort(key = lambda t: -score(t_user, t))
+    for t in trips:
+        print score(t_user, t)
     feed_dict = {
         'trips' : trips,
     }
