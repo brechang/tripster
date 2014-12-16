@@ -1,6 +1,12 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'tripster/style.css' %}" />
 
+<head>
+    <style>
+        body {background-color:#F2B8F0}
+        h1   {color:#7BE0CB}
+    </style>
+</head>
 <h1><u>Welcome to the virtual plaza</u></h1>
 
 <form action="{% url 'search' %}" method="post">
