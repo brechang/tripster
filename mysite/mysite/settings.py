@@ -91,3 +91,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     'tripster/static/',
 )
+
+MEDIA_URL = 'mysite/tripster/templates/'
