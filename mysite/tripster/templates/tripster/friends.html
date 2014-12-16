@@ -22,6 +22,11 @@
                 <input type="hidden" name="accept" value="{{friend}}"/>
                 <input type="submit" value="Add friend!"/>
             </form>
+            <form action="{% url 'friends' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="decline" value="{{friend}}"/>
+                <input type="submit" value="Decline Request"/>
+            </form>
         {% endfor %}
     </ul>
 {% endif %}
