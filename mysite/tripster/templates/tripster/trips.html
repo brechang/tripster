@@ -10,6 +10,11 @@
             <input type="hidden" name="accept" value="{{request.id}}"/>
             <input type="submit" value="Join trip!"/>
         </form>
+        <form action="{% url 'view_trips' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="decline" value="{{request.id}}"/>
+            <input type="submit" value="Decline Request"/>
+        </form>
         {% endfor %}
     </ul>
 {% endif %}
