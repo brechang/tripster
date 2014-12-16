@@ -153,6 +153,7 @@ def view_trips(request):
             request_id = request.POST['decline']
             trip_request = TripRequest.objects.get(pk=request_id)
             trip_request.delete()
+
     trip_list = Trip.objects.filter(host=t_user)
     trip_requests = t_user.triprequest_set.all()
     trip_dict = {
@@ -164,6 +165,11 @@ def view_trips(request):
 
 def get_trip(request, trip_id):
     trip = Trip.objects.filter(id=trip_id)[0]
+    triphost = trip.host
+    tu = TripsterUser.objects.get(user=request.user)
+    if triphost.privacy == 0 or (triphost.privacy == 1 and tu not in triphost.friends.all()):
+        return redirect('/feed')
+
     if request.method == "POST":
         location = request.POST['location'] if 'location' in request.POST else None
         participant = request.POST['participant'] if 'participant' in request.POST else None
@@ -204,7 +210,15 @@ def get_trip(request, trip_id):
     participants = trip.participants.all()
     comments = trip.tripcomment_set.all()
     rating = TripRating.objects.filter(user=t_user, trip=trip)
+
+    # privacy for albums (and in general):
+    # 0 = only me, 1 = all my friends, 2 = global
     albums = Album.objects.filter(trip=trip)
+    if trip.host != t_user:
+        albums.exclude(privacy=0)
+        if t_user not in trip.host.friends.all():
+            albums.exclude(privacy=1)
+
     trip_info = {
             'trip' : trip,
             'locations_list' : locations,
@@ -231,12 +245,16 @@ def create_album(request):
 
         album = Album(name=name, trip=trip)
         album.save()
-
         return redirect('/feed')
 
 def get_album(request, album_id):
     album = Album.objects.filter(id=album_id)[0]
     contents = Content.objects.filter(album=album)
+    triphost = album.trip.host
+    tu = TripsterUser.objects.get(user=request.user)
+    if triphost.privacy == 0 or (triphost.privacy == 1 and tu not in triphost.friends.all()):
+        return redirect('/feed')
+
     # add content
     if request.method == "POST":
         name = request.POST['name'] if 'name' in request.POST else None
@@ -245,6 +263,11 @@ def get_album(request, album_id):
         if name and url and album:
             content = Content(name=name, url=url, album=album)
             content.save()
+
+    if tu != album.trip.host:
+        contents.exclude(privacy=0)
+        if t_user not in album.trip.host.friends.all():
+            contents.exclude(privacy=1)
 
     album_info = {
             'album' : album,
@@ -256,9 +279,9 @@ def get_album(request, album_id):
 
 def get_content(request, content_id):
     content = Content.objects.get(id=content_id)
-    trip = content.album.trip
-    participants = [p.user for p in trip.participants.all()]
-    if not request.user in participants:
+    triphost = content.album.trip.host
+    tu = TripsterUser.objects.get(user=request.user)
+    if triphost.privacy == 0 or (triphost.privacy == 1 and tu not in triphost.friends.all()):
         return redirect('/feed')
 
     comments = ContentComment.objects.filter(content=content)
@@ -294,6 +317,11 @@ def get_content(request, content_id):
     return render_to_response('tripster/content.html', content_info, RequestContext(request))
 
 def get_userprofile(request, username):
+    tu = TripsterUser.objects.get(user=request.user)
+    user_prof = User.objects.get(username=username)
+    if user_prof.privacy == 0 or (user_prof.privacy == 1 and tu not in user_prof.friends.all()):
+        return redirect('/feed')
+
     if request.method == "POST":
         redirect('/feed')
 

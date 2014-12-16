@@ -3,7 +3,7 @@ For Demo -- incomplete
 * Project report
 
 
-Get rid of this ---> 10. Recommend locations/friends based on previous trips/(interests)
+Get rid of this ---> 10. Recommend locations/friends based on previous trips/(interests) because we're doing this within the news feed
 
 EZ
 ==
@@ -16,7 +16,7 @@ Annoying
     * Metrics
 * Make user have more "settings" e.g. profile pic, interests
 * Import/export stuff
-
+* Need to add privacy for photos/albums
 
 
 Need a bit more work
@@ -30,7 +30,6 @@ More or less done
 * Amazon stuff
 * Decline friend request
 * Decline trip request
-* Need to add privacy for photos/albums (but not trips themselves) 
 
 
 
