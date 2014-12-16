@@ -24,7 +24,7 @@
 {% if trips_list %}
     <ul>
         {% for trip in trips_list %}
-            <li><a href="trip/{{trip.id}}/">{{trip.name}}</a></li>
+            <li><a href="/trip/{{trip.id}}/">{{trip.name}}</a></li>
         {% endfor %}
     </ul>
 {% else %}
@@ -35,7 +35,7 @@
 {% if friends_list %}
     <ul>
         {% for friend in friends_list %}
-            <li><a href="user/{{friend.username}}/">{{friend.username}}</a></li>
+            <li><a href="/user/{{friend.username}}/">{{friend.username}}</a></li>
         {% endfor %}
     </ul>
 {% else %}
