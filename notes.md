@@ -2,21 +2,14 @@ For Demo -- incomplete
 ========
 * Project report
 
-
 Get rid of this ---> 10. Recommend locations/friends based on previous trips/(interests) because we're doing this within the news feed
 
-EZ
-==
-
-
-
-Annoying
-========
-* News feed -- right now it's the latest 10 trips of friends
-    * Metrics
-* Make user have more "settings" e.g. profile pic, interests
 * Import/export stuff
 * Need to add privacy for photos/albums
+    * users - settings, register
+    * trips - make trip, trip page if host
+    * album - make album, album page if owner
+    * content - make content, content page if owner
 
 
 Need a bit more work
@@ -30,6 +23,9 @@ More or less done
 * Amazon stuff
 * Decline friend request
 * Decline trip request
+* Make user have more "settings" e.g. profile pic, interests
+* News feed -- right now it's the latest 10 trips of friends
+    * Metrics
 
 
 

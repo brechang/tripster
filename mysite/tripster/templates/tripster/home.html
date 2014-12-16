@@ -32,7 +32,7 @@
     <input type="submit" value="Make a Trip">
 </form></TD>
 
-<TD><form action="{% url 'change_settings' %}">
+<TD><form action="{% url 'settings' %}">
     {% csrf_token %}
     <input type="submit" value="Settings">
 </form></TD>
@@ -53,12 +53,14 @@
 
 {% if trips %}
     {% for trip in trips %}
-    <h2> {{trip.name}} </h2><br>
-    <h3> Host: {{trip.host.user.username}}</h3><br>
-    IMAGE<br>
+    <h3><a href="/trip/{{trip.id}}/">{{trip.name}}</a></h3>
+    <b> Host: {{trip.host.user.username}}</b>
+    <img href="{{trip.url}}"/>
     {% endfor %}
 {% endif %}
 
+<!--
 <audio id="Player" autoplay>
     <source src="{{MEDIA_URL}}audio/vaporwave.ogg"/>
 </audio>
+-->

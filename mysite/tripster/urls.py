@@ -7,7 +7,6 @@ urlpatterns = patterns('',
     url(r'^login', views.login, name='login'),
     url(r'^feed', views.feed, name='feed'),
     url(r'^createtrip', views.create_trip, name='createtrip'),
-    url(r'^change_settings', views.change_settings, name='change_settings'),
     url(r'^settings', views.settings, name='settings'),
     url(r'^friends', views.friends, name='friends'),
     url(r'^view_trips', views.view_trips, name='view_trips'),
@@ -19,7 +18,7 @@ urlpatterns = patterns('',
     url(r'search', views.search, name='search'),
 )
 
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-        'document_root': settings.MEDIA_ROOT}))
+#if settings.DEBUG:
+#    urlpatterns += patterns('',
+#        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+#        'document_root': settings.MEDIA_ROOT}))
