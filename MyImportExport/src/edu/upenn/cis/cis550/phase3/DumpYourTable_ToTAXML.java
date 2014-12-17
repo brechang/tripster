@@ -90,9 +90,14 @@ public class DumpYourTable_ToTAXML {
 //				line.append("<" + col + " type=\"" + 
 //						rs.getMetaData().getColumnTypeName(i+1) + "\">");
 				
-				line.append("<" + col + ">");
-				
+
+				System.out.println("col:" + col);
 				String val = rs.getString(i+1);
+				System.out.println("val:" + val);
+				if(val == null) {
+					continue;
+				}
+				line.append("<" + col + ">");
 				line.append(val.trim());
 				
 				line.append("</" + col + ">");

@@ -33,9 +33,9 @@
     </br>
     <label> User Profile Privacy Level: </label>
     <select name="privacy">
-        {% for p_level in priv_level  %}
-            <option value="{{ forloop.counter0 }}"> {{ p_level }}</option>
-        {% endfor %}
+        <option value="0">Only Me</option>
+        <option value="1">My Friends</option>
+        <option value="2">Global</option>
     </select>
     </br>
  <input value="Submit" type="submit"/>

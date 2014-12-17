@@ -154,15 +154,15 @@ def settings(request):
     t_user = TripsterUser.objects.get(user=request.user)
     if request.method == "POST":
         location = request.POST['location'] if 'location' in request.POST else None
-        print location
-        if location:
-            loc = Location.objects.filter(name=location)
-            if not loc:
-                loc = Location(name=location)
-                loc.save()
-            else:
-                loc = loc[0]
-            t_user.dream_location.add(loc)
+        if location is not None:
+            if location:
+                loc = Location.objects.filter(name=location)
+                if not loc:
+                    loc = Location(name=location)
+                    loc.save()
+                else:
+                    loc = loc[0]
+                t_user.dream_location.add(loc)
         else:
             affiliation = request.POST['affiliation']
             age = request.POST['age']
