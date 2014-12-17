@@ -17,24 +17,20 @@ def index(request):
 
 def register(request):
     if request.method == "GET":
-        range_dict = {
-            'priv_level' : ['Only Me', 'My Friends', 'Global'],
-        }
         return render_to_response('tripster/register.html', range_dict, RequestContext(request))
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
         affiliation = request.POST['affiliation']
+        privacy = request.POST['privacy']
         url = request.POST['url']
         age = request.POST['age']
         gender = request.POST['gender']
 
-        privacy_dict = {'Only me':0, 'My friends':1, 'global':2}
-        privacy = privacy_dict[request.POST['privacy']]
         user = User.objects.create_user(username=username, password=password)
         user.save()
 
-        t_user = TripsterUser(user=user, affiliation=affiliation, url=url, age=age, gender=gender)
+        t_user = TripsterUser(user=user, affiliation=affiliation, url=url, age=age, gender=gender, privacy=privacy)
         t_user.save()
         return authenticate_user(request, username, password)
 
