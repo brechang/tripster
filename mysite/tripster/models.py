@@ -90,3 +90,4 @@ class TripRequest(models.Model):
     trip = models.ForeignKey(Trip)
     class Meta:
         unique_together = ('invitee', 'trip')
+
