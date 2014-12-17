@@ -7,6 +7,19 @@
     </style>
 </head>
 
+<div style="text-align:center;vertical-align:top;">
+	<TABLE BORDER="0">
+	<TR>
+		
+	<TD><form action="{% url 'feed' %}" method="post">
+		{% csrf_token %}
+	<input type="submit" value="My Feed"/></TD>
+	
+	<TD><a href="/"><button>Logout</button></a></TD>	
+	</TR>
+	</TABLE>
+</div>
+
 <h1><u><i>WELCOME TO THE VIRTUAL PLAZA</u></i></h1>
 
 
