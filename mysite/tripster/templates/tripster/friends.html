@@ -5,17 +5,17 @@
     </style>
 </head>
 <div style="text-align:center;vertical-align:top;">
-	<TABLE BORDER="0">
-	<TR>
 
-		<TD><form action="{% url 'feed' %}" method="post">
+	<form action="{% url 'feed' %}" method="post">
+		<span style="float:left;"> </span>
 			{% csrf_token %}
-		<input type="submit" value="My Feed"/></form></TD>
-		<TD><form action="{% url 'index' %}" method="post">
+		<input type="submit" value="My Feed"/></form>
+	
+	<form action="{% url 'index' %}" method="post">
+		<span style="float:left;"> </span>
 			{% csrf_token %}
-		<input type="submit" value="Logout"/></form></TD>
-	</TR>
-	</TABLE>
+		<input type="submit" value="Logout"/>
+	</form>
 
 </div>
 
