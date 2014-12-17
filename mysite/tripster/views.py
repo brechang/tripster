@@ -17,22 +17,21 @@ def index(request):
 
 def register(request):
     if request.method == "GET":
-        return render_to_response('tripster/register.html', range_dict, RequestContext(request))
+        return render_to_response('tripster/register.html', RequestContext(request))
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        affiliation = request.POST['affiliation']
-        privacy = request.POST['privacy']
-        url = request.POST['url']
-        age = request.POST['age']
-        gender = request.POST['gender']
+        field_dict = dict()
+        for field in ['username', 'password', 'affiliation', 'privacy', 'url', 'age', 'gender']:
+            if field in request.POST and request.POST[field]:
+                field_dict[field] = request.POST[field]
+            else:
+                return redirect('/register')
 
-        user = User.objects.create_user(username=username, password=password)
+        user = User.objects.create_user(username=field_dict['username'], password=field_dict['password'])
         user.save()
 
-        t_user = TripsterUser(user=user, affiliation=affiliation, url=url, age=age, gender=gender, privacy=privacy)
+        t_user = TripsterUser(user=user, affiliation=field_dict['affiliation'], url=field_dict['url'], age=field_dict['age'], gender=field_dict['gender'], privacy=field_dict['privacy'])
         t_user.save()
-        return authenticate_user(request, username, password)
+        return authenticate_user(request, field_dict['username'], field_dict['password'])
 
 def authenticate_user(request, username, password):
     user = authenticate(username=username, password=password)
