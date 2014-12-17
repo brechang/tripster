@@ -111,3 +111,13 @@
     <input value="Submit" type="submit"/>
 </form>
 
+{% if is_host %}
+    <label>Change Privacy of Trip: </label>
+    <select name="privacy">
+        <option value="0">Only Me</option>
+        <option value="1">My Friends</option>
+        <option value="2">Global</option>
+    </select>
+    <input value="Submit" type="submit"/>
+{% endif %}
+

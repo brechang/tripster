@@ -27,6 +27,28 @@
     <label>Content url: </label>
     <input type="url" name="url"/>
     </br>
+    <label>Privacy of Content: </label>
+    <select name="c_privacy">
+        <option value="0">Only Me</option>
+        <option value="1">My Friends</option>
+        <option value="2">Global</option>
+    </select>
+    </br>
     <input value="Add Content" type="submit"/>
 </form>
+
+{% if is_owner %}
+
+<form action="{% url 'get_album' album.id %}" method="post">
+    {% csrf_token %}
+
+    <label>Change Privacy of Album: </label>
+    <select name="a_privacy">
+        <option value="0">Only Me</option>
+        <option value="1">My Friends</option>
+        <option value="2">Global</option>
+    </select>
+    <input value="Submit" type="submit"/>
+</form>
+{% endif %}
 
