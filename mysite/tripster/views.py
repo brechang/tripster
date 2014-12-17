@@ -145,18 +145,30 @@ def create_trip(request):
 def settings(request):
     t_user = TripsterUser.objects.get(user=request.user)
     if request.method == "POST":
-        affiliation = request.POST['affiliation']
-        age = request.POST['age']
-        gender = request.POST['gender']
-        url = request.POST['url']
-        t_user.affiliation = affiliation
-        t_user.age = age
-        t_user.gender = gender
-        t_user.url = url
-        t_user.save()
+        location = request.POST['location'] if 'location' in request.POST else None
+        print location
+        if location:
+            loc = Location.objects.filter(name=location)
+            if not loc:
+                loc = Location(name=location)
+                loc.save()
+            else:
+                loc = loc[0]
+            t_user.dream_location.add(loc)
+        else:
+            affiliation = request.POST['affiliation']
+            age = request.POST['age']
+            gender = request.POST['gender']
+            url = request.POST['url']
+            t_user.affiliation = affiliation
+            t_user.age = age
+            t_user.gender = gender
+            t_user.url = url
+            t_user.save()
     
     settings_dict = {
         'user' : t_user,
+        'dream_locations' : t_user.dream_location.all(),
     }
     return render_to_response('tripster/settings.html', settings_dict, RequestContext(request))
 
