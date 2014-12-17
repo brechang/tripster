@@ -6049,392 +6049,392 @@
   <TRIPSTER_TRIPCOMMENT>
     <tuple>
       <ID>1</ID>
-      <COMMENT>10</COMMENT>
+      <COMMENT>Excellent</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>6</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>2</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>just so so</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>6</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>3</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>Crazy trip</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>11</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>4</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>Enjoyed</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>12</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>5</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>Loads of fun</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>13</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>6</ID>
-      <COMMENT>4</COMMENT>
+      <COMMENT>NULL</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>16</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>7</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>NULL</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>17</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>8</ID>
-      <COMMENT>3</COMMENT>
+      <COMMENT>NULL</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>20</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>9</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>GREAT</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>21</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>10</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>I likeit!</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>22</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>11</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT>Fantastic</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>12</ID>
-      <COMMENT>3</COMMENT>
+      <COMMENT>Decent</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>13</ID>
-      <COMMENT>3</COMMENT>
+      <COMMENT>Very nice</COMMENT>
       <TRIP_ID>4</TRIP_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>14</ID>
-      <COMMENT>3</COMMENT>
+      <COMMENT>Fantastic</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>15</ID>
-      <COMMENT>2</COMMENT>
+      <COMMENT>Not Bad</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>16</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT>null</COMMENT>
       <TRIP_ID>5</TRIP_ID>
       <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>17</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>null</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>18</ID>
-      <COMMENT>2</COMMENT>
+      <COMMENT>Not bad</COMMENT>
       <TRIP_ID>4</TRIP_ID>
       <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>19</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT>null</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>42</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>20</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT>Awesome</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>42</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>21</ID>
-      <COMMENT>2</COMMENT>
+      <COMMENT>Horrible</COMMENT>
       <TRIP_ID>4</TRIP_ID>
       <USER_ID>42</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>22</ID>
-      <COMMENT>4</COMMENT>
+      <COMMENT>null</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>23</ID>
-      <COMMENT>2</COMMENT>
+      <COMMENT>Ok</COMMENT>
       <TRIP_ID>5</TRIP_ID>
       <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>24</ID>
-      <COMMENT>3</COMMENT>
+      <COMMENT>Well, actually I am not quite insterested in girls...</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>45</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>25</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>I am looking forward to this trip!</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>47</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>26</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>Who is gonna come with me!?</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>48</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>27</ID>
-      <COMMENT>2</COMMENT>
+      <COMMENT>Texas?</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>28</ID>
-      <COMMENT>4</COMMENT>
+      <COMMENT>smeels weird</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>29</ID>
-      <COMMENT>3</COMMENT>
+      <COMMENT/>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>30</ID>
-      <COMMENT>4</COMMENT>
+      <COMMENT/>
       <TRIP_ID>4</TRIP_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>31</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT/>
       <TRIP_ID>5</TRIP_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>32</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT>This Trip Sucked!</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>54</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>33</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT/>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>55</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>34</ID>
-      <COMMENT>3</COMMENT>
+      <COMMENT/>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>55</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>35</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT/>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>56</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>36</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT/>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>57</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>37</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>Best Trip Ever!</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>58</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>38</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>Quite Guamanian!</COMMENT>
       <TRIP_ID>5</TRIP_ID>
       <USER_ID>60</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>39</ID>
-      <COMMENT>3</COMMENT>
+      <COMMENT>a comment</COMMENT>
       <TRIP_ID>5</TRIP_ID>
       <USER_ID>64</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>40</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT>a comment</COMMENT>
       <TRIP_ID>4</TRIP_ID>
       <USER_ID>65</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>41</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT>a comment</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>66</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>42</ID>
-      <COMMENT>4</COMMENT>
+      <COMMENT>a comment</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>67</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>43</ID>
-      <COMMENT>2</COMMENT>
+      <COMMENT>a comment</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>68</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>44</ID>
-      <COMMENT>7</COMMENT>
+      <COMMENT>Fun time but got sick</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>69</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>45</ID>
-      <COMMENT>9</COMMENT>
+      <COMMENT>What a blast</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>71</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>46</ID>
-      <COMMENT>9</COMMENT>
+      <COMMENT>Amazing time with good friends</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>72</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>47</ID>
-      <COMMENT>1</COMMENT>
+      <COMMENT>Not enough chicken</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>73</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>48</ID>
-      <COMMENT>2</COMMENT>
+      <COMMENT>:)</COMMENT>
       <TRIP_ID>4</TRIP_ID>
       <USER_ID>75</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>49</ID>
-      <COMMENT>2</COMMENT>
+      <COMMENT>So romantic!</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>77</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>50</ID>
-      <COMMENT>8</COMMENT>
+      <COMMENT>love Philly</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>83</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>51</ID>
-      <COMMENT>8</COMMENT>
+      <COMMENT>love New York</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>84</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>52</ID>
-      <COMMENT>8</COMMENT>
+      <COMMENT>Great</COMMENT>
       <TRIP_ID>1</TRIP_ID>
       <USER_ID>88</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>53</ID>
-      <COMMENT>9</COMMENT>
+      <COMMENT>Awesome</COMMENT>
       <TRIP_ID>2</TRIP_ID>
       <USER_ID>90</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>54</ID>
-      <COMMENT>10</COMMENT>
+      <COMMENT>Perfect</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>92</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>55</ID>
-      <COMMENT>5</COMMENT>
+      <COMMENT>This was OK</COMMENT>
       <TRIP_ID>3</TRIP_ID>
       <USER_ID>95</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>56</ID>
-      <COMMENT>10</COMMENT>
+      <COMMENT>Woohoo!</COMMENT>
       <TRIP_ID>4</TRIP_ID>
       <USER_ID>96</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
@@ -10293,533 +10293,533 @@
   <TRIPSTER_CONTENTCOMMENT>
     <tuple>
       <ID>1</ID>
-      <CONTENT_ID>11</CONTENT_ID>
       <COMMENT>great</COMMENT>
+      <CONTENT_ID>11</CONTENT_ID>
       <USER_ID>6</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>2</ID>
-      <CONTENT_ID>17</CONTENT_ID>
       <COMMENT>just so so</COMMENT>
+      <CONTENT_ID>17</CONTENT_ID>
       <USER_ID>6</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>3</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <COMMENT>Dude, that's a shark</COMMENT>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>11</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>4</ID>
-      <CONTENT_ID>4</CONTENT_ID>
       <COMMENT>Dude, that's a shark</COMMENT>
+      <CONTENT_ID>4</CONTENT_ID>
       <USER_ID>12</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>5</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <COMMENT>Kittens are dumb</COMMENT>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>13</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>6</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>Hey, that's me</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>14</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>7</ID>
-      <CONTENT_ID>5</CONTENT_ID>
       <COMMENT>So huge</COMMENT>
+      <CONTENT_ID>5</CONTENT_ID>
       <USER_ID>15</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>8</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>NULL</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>16</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>9</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>NULL</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>17</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>10</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>NULL</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>18</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>11</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>NULL</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>19</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>12</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>NULL</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>20</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>13</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>GREAT PHOTO</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>24</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>14</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>Beautiful</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>15</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <COMMENT>null</COMMENT>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>16</ID>
-      <CONTENT_ID>5</CONTENT_ID>
       <COMMENT>null</COMMENT>
+      <CONTENT_ID>5</CONTENT_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>17</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <COMMENT>null</COMMENT>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>18</ID>
-      <CONTENT_ID>19</CONTENT_ID>
       <COMMENT>So cold</COMMENT>
+      <CONTENT_ID>19</CONTENT_ID>
       <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>19</ID>
-      <CONTENT_ID>11</CONTENT_ID>
       <COMMENT>India is beautiful</COMMENT>
+      <CONTENT_ID>11</CONTENT_ID>
       <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>20</ID>
-      <CONTENT_ID>12</CONTENT_ID>
       <COMMENT>null</COMMENT>
+      <CONTENT_ID>12</CONTENT_ID>
       <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>21</ID>
-      <CONTENT_ID>13</CONTENT_ID>
       <COMMENT>null</COMMENT>
+      <CONTENT_ID>13</CONTENT_ID>
       <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>22</ID>
-      <CONTENT_ID>14</CONTENT_ID>
       <COMMENT>Thai manne vanakkam</COMMENT>
+      <CONTENT_ID>14</CONTENT_ID>
       <USER_ID>42</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>23</ID>
-      <CONTENT_ID>7</CONTENT_ID>
       <COMMENT>Was an awesome experience</COMMENT>
+      <CONTENT_ID>7</CONTENT_ID>
       <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>24</ID>
-      <CONTENT_ID>10</CONTENT_ID>
       <COMMENT>Loved it</COMMENT>
+      <CONTENT_ID>10</CONTENT_ID>
       <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>25</ID>
-      <CONTENT_ID>17</CONTENT_ID>
       <COMMENT>Bucketlist done!!</COMMENT>
+      <CONTENT_ID>17</CONTENT_ID>
       <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>26</ID>
-      <CONTENT_ID>23</CONTENT_ID>
       <COMMENT>I really wish I can go to Penn someday!</COMMENT>
+      <CONTENT_ID>23</CONTENT_ID>
       <USER_ID>44</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>27</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <COMMENT>What an amazing scenery!</COMMENT>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>45</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>28</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>Pink Lady</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>29</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>30</ID>
-      <CONTENT_ID>4</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>4</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>31</ID>
-      <CONTENT_ID>5</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>5</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>32</ID>
-      <CONTENT_ID>6</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>6</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>33</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <COMMENT>Pinkman</COMMENT>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>34</ID>
-      <CONTENT_ID>7</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>7</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>35</ID>
-      <CONTENT_ID>8</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>8</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>36</ID>
-      <CONTENT_ID>9</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>9</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>37</ID>
-      <CONTENT_ID>10</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>10</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>38</ID>
-      <CONTENT_ID>11</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>11</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>39</ID>
-      <CONTENT_ID>12</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>12</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>40</ID>
-      <CONTENT_ID>13</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>13</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>41</ID>
-      <CONTENT_ID>14</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>14</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>42</ID>
-      <CONTENT_ID>15</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>15</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>43</ID>
-      <CONTENT_ID>16</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>16</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>44</ID>
-      <CONTENT_ID>17</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>17</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>45</ID>
-      <CONTENT_ID>18</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>18</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>46</ID>
-      <CONTENT_ID>19</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>19</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>47</ID>
-      <CONTENT_ID>20</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>20</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>48</ID>
-      <CONTENT_ID>21</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>21</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>49</ID>
-      <CONTENT_ID>22</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>22</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>50</ID>
-      <CONTENT_ID>23</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>23</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>51</ID>
-      <CONTENT_ID>24</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>24</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>52</ID>
-      <CONTENT_ID>25</CONTENT_ID>
       <COMMENT>Great pic</COMMENT>
+      <CONTENT_ID>25</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>53</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>54</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>54</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>54</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>55</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>55</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>56</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>56</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>57</ID>
-      <CONTENT_ID>4</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>4</CONTENT_ID>
       <USER_ID>57</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>58</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <COMMENT/>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>58</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>59</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>That video Blows</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>58</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>60</ID>
-      <CONTENT_ID>20</CONTENT_ID>
       <COMMENT>Stouffer-Mayer is a very cool place to live.</COMMENT>
+      <CONTENT_ID>20</CONTENT_ID>
       <USER_ID>60</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>61</ID>
-      <CONTENT_ID>8000</CONTENT_ID>
       <COMMENT>a comment</COMMENT>
+      <CONTENT_ID>8000</CONTENT_ID>
       <USER_ID>64</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>62</ID>
-      <CONTENT_ID>8050</CONTENT_ID>
       <COMMENT>a comment</COMMENT>
+      <CONTENT_ID>8050</CONTENT_ID>
       <USER_ID>65</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>63</ID>
-      <CONTENT_ID>7040</CONTENT_ID>
       <COMMENT>a comment</COMMENT>
+      <CONTENT_ID>7040</CONTENT_ID>
       <USER_ID>66</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>64</ID>
-      <CONTENT_ID>5062</CONTENT_ID>
       <COMMENT>a comment</COMMENT>
+      <CONTENT_ID>5062</CONTENT_ID>
       <USER_ID>67</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>65</ID>
-      <CONTENT_ID>6035</CONTENT_ID>
       <COMMENT>a comment</COMMENT>
+      <CONTENT_ID>6035</CONTENT_ID>
       <USER_ID>67</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>66</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>Good pics but a lot are blurry</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>69</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>67</ID>
-      <CONTENT_ID>0</CONTENT_ID>
       <COMMENT>Love the photos!</COMMENT>
+      <CONTENT_ID>0</CONTENT_ID>
       <USER_ID>70</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>68</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <COMMENT>Really captured the great moments!</COMMENT>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>71</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>69</ID>
-      <CONTENT_ID>4</CONTENT_ID>
       <COMMENT>Cool video</COMMENT>
+      <CONTENT_ID>4</CONTENT_ID>
       <USER_ID>74</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>70</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>Awesome pic!</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>76</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>71</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <COMMENT>Lol I look so weird</COMMENT>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>77</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>72</ID>
-      <CONTENT_ID>10</CONTENT_ID>
       <COMMENT>love this photo</COMMENT>
+      <CONTENT_ID>10</CONTENT_ID>
       <USER_ID>83</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>73</ID>
-      <CONTENT_ID>8</CONTENT_ID>
       <COMMENT>love this photo</COMMENT>
+      <CONTENT_ID>8</CONTENT_ID>
       <USER_ID>84</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>74</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>Good</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>89</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>75</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <COMMENT>Awesome picture</COMMENT>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>93</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>76</ID>
-      <CONTENT_ID>7</CONTENT_ID>
       <COMMENT>Wow!</COMMENT>
+      <CONTENT_ID>7</CONTENT_ID>
       <USER_ID>94</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
@@ -10827,533 +10827,533 @@
   <TRIPSTER_CONTENTRATING>
     <tuple>
       <ID>1</ID>
-      <CONTENT_ID>11</CONTENT_ID>
       <RATING>10</RATING>
+      <CONTENT_ID>11</CONTENT_ID>
       <USER_ID>6</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>2</ID>
-      <CONTENT_ID>17</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>17</CONTENT_ID>
       <USER_ID>6</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>3</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>11</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>4</ID>
-      <CONTENT_ID>4</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>4</CONTENT_ID>
       <USER_ID>12</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>5</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>13</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>6</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>14</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>7</ID>
-      <CONTENT_ID>5</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>5</CONTENT_ID>
       <USER_ID>15</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>8</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>0</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>16</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>9</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>0</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>17</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>10</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>0</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>18</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>11</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>0</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>19</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>12</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>0</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>20</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>13</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>24</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>14</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>15</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>16</ID>
-      <CONTENT_ID>5</CONTENT_ID>
       <RATING>1</RATING>
+      <CONTENT_ID>5</CONTENT_ID>
       <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>17</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>18</ID>
-      <CONTENT_ID>19</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>19</CONTENT_ID>
       <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>19</ID>
-      <CONTENT_ID>11</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>11</CONTENT_ID>
       <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>20</ID>
-      <CONTENT_ID>12</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>12</CONTENT_ID>
       <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>21</ID>
-      <CONTENT_ID>13</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>13</CONTENT_ID>
       <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>22</ID>
-      <CONTENT_ID>14</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>14</CONTENT_ID>
       <USER_ID>42</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>23</ID>
-      <CONTENT_ID>7</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>7</CONTENT_ID>
       <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>24</ID>
-      <CONTENT_ID>10</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>10</CONTENT_ID>
       <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>25</ID>
-      <CONTENT_ID>17</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>17</CONTENT_ID>
       <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>26</ID>
-      <CONTENT_ID>23</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>23</CONTENT_ID>
       <USER_ID>44</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>27</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>45</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>28</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>0</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>29</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>30</ID>
-      <CONTENT_ID>4</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>4</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>31</ID>
-      <CONTENT_ID>5</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>5</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>32</ID>
-      <CONTENT_ID>6</CONTENT_ID>
       <RATING>1</RATING>
+      <CONTENT_ID>6</CONTENT_ID>
       <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>33</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>34</ID>
-      <CONTENT_ID>7</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>7</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>35</ID>
-      <CONTENT_ID>8</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>8</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>36</ID>
-      <CONTENT_ID>9</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>9</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>37</ID>
-      <CONTENT_ID>10</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>10</CONTENT_ID>
       <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>38</ID>
-      <CONTENT_ID>11</CONTENT_ID>
       <RATING>1</RATING>
+      <CONTENT_ID>11</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>39</ID>
-      <CONTENT_ID>12</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>12</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>40</ID>
-      <CONTENT_ID>13</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>13</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>41</ID>
-      <CONTENT_ID>14</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>14</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>42</ID>
-      <CONTENT_ID>15</CONTENT_ID>
       <RATING>0</RATING>
+      <CONTENT_ID>15</CONTENT_ID>
       <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>43</ID>
-      <CONTENT_ID>16</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>16</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>44</ID>
-      <CONTENT_ID>17</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>17</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>45</ID>
-      <CONTENT_ID>18</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>18</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>46</ID>
-      <CONTENT_ID>19</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>19</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>47</ID>
-      <CONTENT_ID>20</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>20</CONTENT_ID>
       <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>48</ID>
-      <CONTENT_ID>21</CONTENT_ID>
       <RATING>1</RATING>
+      <CONTENT_ID>21</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>49</ID>
-      <CONTENT_ID>22</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>22</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>50</ID>
-      <CONTENT_ID>23</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>23</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>51</ID>
-      <CONTENT_ID>24</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>24</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>52</ID>
-      <CONTENT_ID>25</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>25</CONTENT_ID>
       <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>53</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>1</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>54</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>54</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>1</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>54</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>55</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>55</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>56</ID>
-      <CONTENT_ID>3</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>3</CONTENT_ID>
       <USER_ID>56</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>57</ID>
-      <CONTENT_ID>4</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>4</CONTENT_ID>
       <USER_ID>57</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>58</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <RATING>1</RATING>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>58</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>59</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>58</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>60</ID>
-      <CONTENT_ID>20</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>20</CONTENT_ID>
       <USER_ID>60</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>61</ID>
-      <CONTENT_ID>8000</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>8000</CONTENT_ID>
       <USER_ID>64</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>62</ID>
-      <CONTENT_ID>8050</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>8050</CONTENT_ID>
       <USER_ID>65</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>63</ID>
-      <CONTENT_ID>7040</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>7040</CONTENT_ID>
       <USER_ID>66</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>64</ID>
-      <CONTENT_ID>5062</CONTENT_ID>
       <RATING>1</RATING>
+      <CONTENT_ID>5062</CONTENT_ID>
       <USER_ID>67</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>65</ID>
-      <CONTENT_ID>6035</CONTENT_ID>
       <RATING>2</RATING>
+      <CONTENT_ID>6035</CONTENT_ID>
       <USER_ID>67</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>66</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>69</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>67</ID>
-      <CONTENT_ID>0</CONTENT_ID>
       <RATING>10</RATING>
+      <CONTENT_ID>0</CONTENT_ID>
       <USER_ID>70</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>68</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <RATING>8</RATING>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>71</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>69</ID>
-      <CONTENT_ID>4</CONTENT_ID>
       <RATING>4</RATING>
+      <CONTENT_ID>4</CONTENT_ID>
       <USER_ID>74</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>70</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>5</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>76</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>71</ID>
-      <CONTENT_ID>2</CONTENT_ID>
       <RATING>3</RATING>
+      <CONTENT_ID>2</CONTENT_ID>
       <USER_ID>77</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>72</ID>
-      <CONTENT_ID>10</CONTENT_ID>
       <RATING>8</RATING>
+      <CONTENT_ID>10</CONTENT_ID>
       <USER_ID>83</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>73</ID>
-      <CONTENT_ID>8</CONTENT_ID>
       <RATING>8</RATING>
+      <CONTENT_ID>8</CONTENT_ID>
       <USER_ID>84</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>74</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>6</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>89</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>75</ID>
-      <CONTENT_ID>1</CONTENT_ID>
       <RATING>8</RATING>
+      <CONTENT_ID>1</CONTENT_ID>
       <USER_ID>93</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>76</ID>
-      <CONTENT_ID>7</CONTENT_ID>
       <RATING>10</RATING>
+      <CONTENT_ID>7</CONTENT_ID>
       <USER_ID>94</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>

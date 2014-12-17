@@ -154,8 +154,8 @@ as element()*
     return
         <tuple>
             <ID>{data($y/id)}</ID>
-            <CONTENT_ID>{data($y/contentid)}</CONTENT_ID>
             <COMMENT>{data($y/comment)}</COMMENT>
+            <CONTENT_ID>{data($y/contentid)}</CONTENT_ID>
             <USER_ID>{data($x/id)}</USER_ID>
             <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
         </tuple>
@@ -169,8 +169,8 @@ as element()*
     return
         <tuple>
             <ID>{data($y/id)}</ID>
-            <CONTENT_ID>{data($y/contentid)}</CONTENT_ID>
             <RATING>{data($y/score)}</RATING>
+            <CONTENT_ID>{data($y/contentid)}</CONTENT_ID>
             <USER_ID>{data($x/id)}</USER_ID>
             <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
         </tuple>
@@ -226,7 +226,7 @@ as element()*
     return
         <tuple>
         <ID>{data($y/id)}</ID>
-        <COMMENT>{data($y/score)}</COMMENT>
+        <COMMENT>{data($y/comment)}</COMMENT>
         <TRIP_ID>{data($y/tripid)}</TRIP_ID>
         <USER_ID>{data($x/id)}</USER_ID>
         <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
