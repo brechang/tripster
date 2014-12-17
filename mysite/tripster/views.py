@@ -4,12 +4,13 @@ from tripster.models import *
 from django.contrib.auth import authenticate, login as django_login
 from django.template import RequestContext, loader
 from django.db.models import Q
-#from pymongo import MongoClient
+import time
+from pymongo import MongoClient
 
-#client = MongoClient()
-#db = client.cache_db
-#cache = db.cache
-
+client = MongoClient()
+db = client.cache_db
+cache = db.cache
+cache.remove()
 # Create your views here.
 
 def index(request):
@@ -45,12 +46,6 @@ def authenticate_user(request, username, password):
 def login(request):
     username = request.POST['username']
     password = request.POST['password']
-    info = {'username': username, 'password': password}
-    #if cache.find_one({'username': username}):
-    #    print 'found in cache'
-    #else:
-    #    id = cache.insert(info)
-    #    print 'stored in cache ' + str(id)
     return authenticate_user(request, username, password)
 
 def score(user, trip):
@@ -66,8 +61,7 @@ def score(user, trip):
             s += 1
     return s
 
-def feed(request):
-    t_user = TripsterUser.objects.get(user=request.user)
+def score_trips(t_user):
     friend_trips = Trip.objects.filter(host__in=t_user.friends.all())
     your_trips = t_user.trips.all()
     trips = friend_trips.exclude(pk__in=your_trips)
@@ -75,8 +69,34 @@ def feed(request):
     trips.sort(key = lambda t: -score(t_user, t))
     for t in trips:
         print score(t_user, t)
+    return [trip.id for trip in trips]
+
+def feed(request):
+    t_user = TripsterUser.objects.get(user=request.user)
+    cache_dict = cache.find_one({'username': t_user.user.username})
+    if cache_dict:
+        print 'found in cache'
+        print cache_dict
+        if time.time() - cache_dict['timestamp'] > 30:
+            trips = score_trips(t_user)
+            cache.update(
+                {'username': t_user.user.username},
+                {'$set': {
+                    'timestamp' : time.time(),
+                    'trips' : trips,}
+                },
+            )
+            cache_dict = cache.find_one({'username': t_user.user.username})
+            print 'updated cache_dict'
+            print cache_dict
+    else:
+        cache_dict = {'username': t_user.user.username, 'timestamp': time.time(), 'trips': score_trips(t_user)}
+        id = cache.insert(cache_dict)
+        print 'stored in cache ' + str(id)
+        print cache_dict
+    
     feed_dict = {
-        'trips' : trips,
+        'trips': Trip.objects.filter(id__in=cache_dict['trips'])
     }
     return render_to_response('tripster/home.html', feed_dict, RequestContext(request))
 
