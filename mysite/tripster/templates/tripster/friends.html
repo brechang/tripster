@@ -8,7 +8,9 @@
 
 	<form action="{% url 'feed' %}" method="post">
 		{% csrf_token %}
-	<input type="submit" value="My Feed"/> | <a href="/"><button>Logout</button></a>	
+	<input type="submit" value="My Feed"/> | <form action="{% url 'index' %}" method="post">
+		{% csrf_token %}
+	<input type="submit" value="Logout"/>	
 
 </div>
 
