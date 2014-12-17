@@ -11,7 +11,7 @@
 
 {% if trip_requests %}
     <h2>Trip Requests</h2>
-    <ul>
+    <ul style="list-style: none;">
         {% for request in trip_requests %}
         <li><a href="/trip/{{request.trip.id}}/">Do you want to join {{request.trip.name}}?</a></li>
         <form action="{% url 'view_trips' %}" method="post">
@@ -30,7 +30,7 @@
 
 <h2>Hosted Trips</h2>
 {% if trip_list %}
-    <ul>
+    <ul style="list-style: none;">
         {% for trip in trip_list %}
         <li><a href="/trip/{{trip.id}}/">{{trip.name}}</a></li>
         {% endfor %}
@@ -42,7 +42,7 @@
 
 <h2>Joined Trips</h2>
 {% if joined_trip_list %}
-    <ul>
+    <ul style="list-style: none;">
         {% for trip in joined_trip_list %}
         <li><a href="/trip/{{trip.id}}/">{{trip.name}}</a></li>
         {% endfor %}
