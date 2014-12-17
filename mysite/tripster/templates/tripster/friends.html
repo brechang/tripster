@@ -6,12 +6,11 @@
 </head>
 <div style="text-align:center;vertical-align:top;">
 	
-	<span style="float:left;">
 	<form action="{% url 'feed' %}" method="post">
 			{% csrf_token %}
-		<input type="submit" value="My Feed"/></form></span>
+		<input type="submit" value="My Feed"/></form>
 	
-	<span style="float:left;"
+	<span style="float:left;">
 	<form action="{% url 'index' %}" method="post">
 			{% csrf_token %}
 		<input type="submit" value="Logout"/></span>
