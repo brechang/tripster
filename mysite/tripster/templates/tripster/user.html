@@ -6,6 +6,18 @@
         h3   {color:#AD6DA9}
     </style>
 </head>
+<div style="text-align:center;vertical-align:top;">
+	
+	<form action="{% url 'feed' %}" method="post">
+			{% csrf_token %}
+		<input type="submit" value="My Feed"/></form>
+	
+	<form action="{% url 'index' %}" method="post">
+			{% csrf_token %}
+		<input type="submit" value="Logout"/>
+	</form>
+
+</div>
 
 <h1>{{ username }}</h1>
 <h2>Affilitation: {{ t_user.affiliation }}</h2>
