@@ -11,7 +11,7 @@
 
 {% if users %}
     <h3> User Matches </h3>
-    <ul>
+    <ul style="list-style: none;">
         {% for user in users %}
         	<li><a href="user/{{user.user.username}}/">{{user.user.username}}</a></li>
         {% endfor %}
@@ -22,7 +22,7 @@
 
 {% if locations %}
     <h3> Location Matches </h3>
-    <ul>
+    <ul style="list-style: none;">
         {% for location in locations %}
                 <li> {{location.name}} </li>
         {% endfor %}

@@ -153,26 +153,37 @@ def create_trip(request):
 def settings(request):
     t_user = TripsterUser.objects.get(user=request.user)
     if request.method == "POST":
-        affiliation = request.POST['affiliation']
-        age = request.POST['age']
-        gender = request.POST['gender']
-        url = request.POST['url']
-        privacy = request.POST['privacy']
-        t_user.affiliation = affiliation
-        t_user.age = age
-        t_user.gender = gender
-        t_user.url = url
-        t_user.privacy = privacy
-        t_user.save()
+        location = request.POST['location'] if 'location' in request.POST else None
+        print location
+        if location:
+            loc = Location.objects.filter(name=location)
+            if not loc:
+                loc = Location(name=location)
+                loc.save()
+            else:
+                loc = loc[0]
+            t_user.dream_location.add(loc)
+        else:
+            affiliation = request.POST['affiliation']
+            age = request.POST['age']
+            gender = request.POST['gender']
+            url = request.POST['url']
+            privacy = request.POST['privacy']
+            t_user.affiliation = affiliation
+            t_user.age = age
+            t_user.gender = gender
+            t_user.url = url
+            t_user.privacy = privacy
+            t_user.save()
 
     settings_dict = {
         'user' : t_user,
-        'priv_level' : ['Only me', 'My friends', 'global'],
+        'dream_locations' : t_user.dream_location.all(),
     }
     return render_to_response('tripster/settings.html', settings_dict, RequestContext(request))
 
 def view_trips(request):
-    t_user =  TripsterUser.objects.get(user=request.user)
+    t_user = TripsterUser.objects.get(user=request.user)
 
     if request.method == "POST":
         if 'accept' in request.POST:
@@ -374,10 +385,7 @@ def get_userprofile(request, username):
     if tu != user_prof and (user_prof.privacy == 0 or user_prof.privacy == 1 and tu not in user_prof.friends.all()):
         return redirect('/feed')
 
-    if request.method == "POST":
-        redirect('/feed')
-
-    t_user = TripsterUser.objects.get(user=request.user)
+    t_user = user_prof
     dream_location_list = [d.name for d in t_user.dream_location.all()]
     trips_list = Trip.objects.filter(host=t_user)
     visited_locations = [l for t in trips_list for l in t.locations.all()]
@@ -385,6 +393,7 @@ def get_userprofile(request, username):
     user_info = {
             't_user' : t_user,
             'username' : username,
+            'user_profile_pic' : t_user.url,
             'dream_location_list': dream_location_list,
             'trips_list' : trips_list,
             'friends_list' : friends_list,

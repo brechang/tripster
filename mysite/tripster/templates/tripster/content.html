@@ -15,7 +15,7 @@
 
 </br>
 {% if comments %}
-    <ul>
+    <ul style="list-style: none;">
         {% for comment in comments %}
         <li> {{comment.user.user.username}}: {{comment.comment}} </li>
         {% endfor %}

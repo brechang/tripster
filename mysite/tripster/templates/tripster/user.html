@@ -12,12 +12,14 @@
 <h2>Age: {{ t_user.age }}</h2>
 <h2>Gender: {{ t_user.gender }}</h2>
 
+<h2>Profile Picture</h2>
 {% if user_profile_pic %}
-    <img src="{{user_profile_pic}}" width="512" height="512">
+    <img src="{{user_profile_pic}}" width="512">
 {% else %}
     No user profile pic
 {% endif %}
 
+<h2>Dream Locations</h2>
 {% if dream_location_list %}
     <ul>
         {% for location in dream_location_list %}
@@ -25,7 +27,7 @@
         {% endfor %}
     </ul>
 {% else %}
-    <p>{{t_user.name}} has no dream locations!</p>
+    <p>No dream locations!</p>
 {% endif %}
 
 <h2> My Trips </h2>
@@ -36,7 +38,7 @@
         {% endfor %}
     </ul>
 {% else %}
-    <p>{{t_user.user.name}} has no trips!</p>
+    <p>No trips!</p>
 {% endif %}
 
 <h2> My Friends </h2>
@@ -50,25 +52,14 @@
     <p>{{t_user.user.name}} has no friends!</p>
 {% endif %}
 
-<h2> Recommend </h2>
 
-<form action="{% url 'get_userprofile' t_user.user.username %}" method="post">
-    {% csrf_token %}
-    <label>Recommend location </label>
-        {% if visited_locations %}
-        <select name="location">
-            {% for loc in visited_locations %}
-                <option value="{{ loc.name }}"> {{ loc.name }}</option>
-            {% endfor %}
-        </select>
-        {% endif %}
-    <label> to </label>
-        {% if friends_list %}
-        <select name="friends">
-            {% for friend in friends_list %}
-                <option value="{{ friend.id }}"> {{ friend.username }}</option>
-            {% endfor %}
-        </select>
-        {% endif %}
-    <input value="Recommend friend" type="submit"/>
-</form>
+<h2> Visited Locations </h2>
+{% if visited_locations %}
+    <ul>
+        {% for location in visited_locations %}
+            <li>{{location.name}}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No visited locations!</p>
+{% endif %}

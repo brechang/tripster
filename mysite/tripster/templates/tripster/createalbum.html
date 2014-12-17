@@ -9,37 +9,31 @@
 
 <h1>New Album</h1>
 
-<form action="{% url 'createalbum' %}" method = "post">
-    {%csrf_token%}
-    {% if trips %}
-    <label> Name: </label>
-    <input type="text" name="name" />
-    </br>
-    <label> Trips: </label>
-        <select name="trip_id">
-          {% for trip in trips %}
-              <option value="{{ trip.id }}"> {{ trip.name }} </option>
-          {% endfor %}
+{% if trips %}
+    <form action="{% url 'createalbum' %}" method = "post">
+        {%csrf_token%}
+        <label> Name: </label>
+        <input type="text" name="name" />
+        </br>
+        <label> Trips: </label>
+            <select name="trip_id">
+              {% for trip in trips %}
+                  <option value="{{ trip.id }}"> {{ trip.name }} </option>
+              {% endfor %}
+            </select>
+        </br>
+
+        <label> Privacy Level: </label>
+        <select name="privacy">
+            <option value="0">Only Me</option>
+            <option value="1">My Friends</option>
+            <option value="2">Global</option>
         </select>
-    {% else %}
-        <p> No trips available. Go make or join a trip!</p>
-    {% endif %}
 
-    </br>
+        </br>
 
-    <label> Privacy Level: </label>
-    <select name="privacy">
-        <option value="0">Only Me</option>
-        <option value="1">My Friends</option>
-        <option value="2">Global</option>
-    </select>
-
-    </br>
-
-    {% if trips %}
         <input value="Submit" type="submit"/>
-    {% endif %}
-
-
-</form>
-
+    </form>
+{% else %}
+    <p> No trips available. Go make or join a trip!</p>
+{% endif %}

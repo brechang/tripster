@@ -10,19 +10,17 @@
 <h1>{{album.name}}</h1>
 
 {% if contents %}
-    <ul>
+    <ul style="list-style: none;">
         {% for content in contents %}
             <li><a href="/content/{{content.id}}/">{{content.name}}</a></li>
         {% endfor %}
     </ul>
 {% else %}
     <p> No content in this album yet </p>
-    </br>
 {% endif %}
 
 <form action="{% url 'get_album' album.id %}" method="post">
     {% csrf_token %}
-
     <label>Content name: </label>
     <input type="text" name="name"/>
     </br>

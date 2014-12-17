@@ -11,7 +11,7 @@
 <h2>Host: {{trip.host.user.username}}</h2>
 
 {% if locations_list %}
-    <ul>
+    <ul style="list-style: none;">
         {% for location in locations_list %}
         <!-- <li><a href="location/{{location.name}}/">{{location.name}}</a></li> -->
         <li> {{location.name}} </li>
@@ -30,7 +30,7 @@
 </form>
 
 {% if participants %}
-    <ul>
+    <ul style="list-style: none;">
         {% for participant in participants %}
         <li> {{participant.user.username}} </li>
 
@@ -42,7 +42,7 @@
 
 
 {% if albums %}
-    <ul>
+    <ul style="list-style: none;">
         {% for album in album %}
         <li> {{album.name}} </li>
 
@@ -64,7 +64,7 @@
 
 <h2>My Trip Albums</h2>
 {% if albums %}
-    <ul>
+    <ul style="list-style: none;">
         {% for album in albums %}
             <li><a href="/album/{{album.id}}/">{{album.name}}</a></li>
         {% endfor %}
@@ -76,7 +76,7 @@
 </br>
 
 {% if comments %}
-    <ul>
+    <ul style="list-style: none;">
         {% for comment in comments %}
         <li> {{comment.user.user.username}}: {{comment.comment}} </li>
         {% endfor %}

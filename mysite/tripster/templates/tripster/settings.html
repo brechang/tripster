@@ -25,10 +25,29 @@
     </br>
     <label> Privacy Level of Profile: </label>
     <select name="privacy">
-        {% for p_level in priv_level  %}
-            <option value="{{ forloop.counter0 }}"> {{ p_level }}</option>
-        {% endfor %}
+        <option value="0">Only Me<option>
+        <option value="1">My Friends<option>
+        <option value="2">Global<option>
     </select>
     <input value="Submit" type="submit"/>
 
+</form>
+
+<h2> My Dream Locations </h2>
+{% if dream_locations %}
+    <ul>
+    {% for location in dream_locations %}
+        <li>{{location.name}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+   <p>No dream locations.</p>
+{% endif %}
+
+<form action="{% url 'settings' %}" method="post">
+    {% csrf_token %}
+    <label> Add Dream Location: </label>
+    <input type="text" name="location"/>
+    </br>
+    <input value="Submit" type="submit"/>
 </form>
