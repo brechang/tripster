@@ -4,6 +4,18 @@
         h1   {color:#6CFBB8}
     </style>
 </head>
+<div style="text-align:center;vertical-align:top;">
+	
+	<form action="{% url 'feed' %}" method="post">
+			{% csrf_token %}
+		<input type="submit" value="My Feed"/></form>
+	
+	<form action="{% url 'index' %}" method="post">
+			{% csrf_token %}
+		<input type="submit" value="Logout"/>
+	</form>
+
+</div>
 
 <h1>My Friends</h1>
 
