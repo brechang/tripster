@@ -123,7 +123,7 @@ as element()*
         <ID>{data($y/id)}</ID>
         <RATING>{data($y/score)}</RATING>
         <TRIP_ID>{data($y/tripid)}</TRIP_ID>
-        <USER_ID>{$x/id}</USER_ID>
+        <USER_ID>{data($x/id)}</USER_ID>
         </tuple>
 };
 
@@ -228,7 +228,7 @@ as element()*
         <ID>{data($y/id)}</ID>
         <COMMENT>{data($y/score)}</COMMENT>
         <TRIP_ID>{data($y/tripid)}</TRIP_ID>
-        <USER_ID>{$x/id}</USER_ID>
+        <USER_ID>{data($x/id)}</USER_ID>
         <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
         </tuple>
 };

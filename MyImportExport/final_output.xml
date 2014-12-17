@@ -5713,449 +5713,337 @@
       <ID>1</ID>
       <RATING>10</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6</id>
-      </USER_ID>
+      <USER_ID>6</USER_ID>
     </tuple>
     <tuple>
       <ID>2</ID>
       <RATING>5</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6</id>
-      </USER_ID>
+      <USER_ID>6</USER_ID>
     </tuple>
     <tuple>
       <ID>3</ID>
       <RATING>5</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">11</id>
-      </USER_ID>
+      <USER_ID>11</USER_ID>
     </tuple>
     <tuple>
       <ID>4</ID>
       <RATING>5</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">12</id>
-      </USER_ID>
+      <USER_ID>12</USER_ID>
     </tuple>
     <tuple>
       <ID>5</ID>
       <RATING>5</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">13</id>
-      </USER_ID>
+      <USER_ID>13</USER_ID>
     </tuple>
     <tuple>
       <ID>6</ID>
       <RATING>4</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">16</id>
-      </USER_ID>
+      <USER_ID>16</USER_ID>
     </tuple>
     <tuple>
       <ID>7</ID>
       <RATING>5</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">17</id>
-      </USER_ID>
+      <USER_ID>17</USER_ID>
     </tuple>
     <tuple>
       <ID>8</ID>
       <RATING>3</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">20</id>
-      </USER_ID>
+      <USER_ID>20</USER_ID>
     </tuple>
     <tuple>
       <ID>9</ID>
       <RATING>5</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">21</id>
-      </USER_ID>
+      <USER_ID>21</USER_ID>
     </tuple>
     <tuple>
       <ID>10</ID>
       <RATING>5</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">22</id>
-      </USER_ID>
+      <USER_ID>22</USER_ID>
     </tuple>
     <tuple>
       <ID>11</ID>
       <RATING>1</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">39</id>
-      </USER_ID>
+      <USER_ID>39</USER_ID>
     </tuple>
     <tuple>
       <ID>12</ID>
       <RATING>3</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">39</id>
-      </USER_ID>
+      <USER_ID>39</USER_ID>
     </tuple>
     <tuple>
       <ID>13</ID>
       <RATING>3</RATING>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">39</id>
-      </USER_ID>
+      <USER_ID>39</USER_ID>
     </tuple>
     <tuple>
       <ID>14</ID>
       <RATING>3</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">40</id>
-      </USER_ID>
+      <USER_ID>40</USER_ID>
     </tuple>
     <tuple>
       <ID>15</ID>
       <RATING>2</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">40</id>
-      </USER_ID>
+      <USER_ID>40</USER_ID>
     </tuple>
     <tuple>
       <ID>16</ID>
       <RATING>1</RATING>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">40</id>
-      </USER_ID>
+      <USER_ID>40</USER_ID>
     </tuple>
     <tuple>
       <ID>17</ID>
       <RATING>5</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">41</id>
-      </USER_ID>
+      <USER_ID>41</USER_ID>
     </tuple>
     <tuple>
       <ID>18</ID>
       <RATING>2</RATING>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">41</id>
-      </USER_ID>
+      <USER_ID>41</USER_ID>
     </tuple>
     <tuple>
       <ID>19</ID>
       <RATING>1</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">42</id>
-      </USER_ID>
+      <USER_ID>42</USER_ID>
     </tuple>
     <tuple>
       <ID>20</ID>
       <RATING>1</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">42</id>
-      </USER_ID>
+      <USER_ID>42</USER_ID>
     </tuple>
     <tuple>
       <ID>21</ID>
       <RATING>2</RATING>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">42</id>
-      </USER_ID>
+      <USER_ID>42</USER_ID>
     </tuple>
     <tuple>
       <ID>22</ID>
       <RATING>4</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">43</id>
-      </USER_ID>
+      <USER_ID>43</USER_ID>
     </tuple>
     <tuple>
       <ID>23</ID>
       <RATING>2</RATING>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">43</id>
-      </USER_ID>
+      <USER_ID>43</USER_ID>
     </tuple>
     <tuple>
       <ID>24</ID>
       <RATING>3</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">45</id>
-      </USER_ID>
+      <USER_ID>45</USER_ID>
     </tuple>
     <tuple>
       <ID>25</ID>
       <RATING>5</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">47</id>
-      </USER_ID>
+      <USER_ID>47</USER_ID>
     </tuple>
     <tuple>
       <ID>26</ID>
       <RATING>5</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">48</id>
-      </USER_ID>
+      <USER_ID>48</USER_ID>
     </tuple>
     <tuple>
       <ID>27</ID>
       <RATING>2</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">49</id>
-      </USER_ID>
+      <USER_ID>49</USER_ID>
     </tuple>
     <tuple>
       <ID>28</ID>
       <RATING>4</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">50</id>
-      </USER_ID>
+      <USER_ID>50</USER_ID>
     </tuple>
     <tuple>
       <ID>29</ID>
       <RATING>3</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">51</id>
-      </USER_ID>
+      <USER_ID>51</USER_ID>
     </tuple>
     <tuple>
       <ID>30</ID>
       <RATING>4</RATING>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">52</id>
-      </USER_ID>
+      <USER_ID>52</USER_ID>
     </tuple>
     <tuple>
       <ID>31</ID>
       <RATING>5</RATING>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">53</id>
-      </USER_ID>
+      <USER_ID>53</USER_ID>
     </tuple>
     <tuple>
       <ID>32</ID>
       <RATING>1</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">54</id>
-      </USER_ID>
+      <USER_ID>54</USER_ID>
     </tuple>
     <tuple>
       <ID>33</ID>
       <RATING>1</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">55</id>
-      </USER_ID>
+      <USER_ID>55</USER_ID>
     </tuple>
     <tuple>
       <ID>34</ID>
       <RATING>3</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">55</id>
-      </USER_ID>
+      <USER_ID>55</USER_ID>
     </tuple>
     <tuple>
       <ID>35</ID>
       <RATING>1</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">56</id>
-      </USER_ID>
+      <USER_ID>56</USER_ID>
     </tuple>
     <tuple>
       <ID>36</ID>
       <RATING>1</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">57</id>
-      </USER_ID>
+      <USER_ID>57</USER_ID>
     </tuple>
     <tuple>
       <ID>37</ID>
       <RATING>5</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">58</id>
-      </USER_ID>
+      <USER_ID>58</USER_ID>
     </tuple>
     <tuple>
       <ID>38</ID>
       <RATING>5</RATING>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">60</id>
-      </USER_ID>
+      <USER_ID>60</USER_ID>
     </tuple>
     <tuple>
       <ID>39</ID>
       <RATING>3</RATING>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">64</id>
-      </USER_ID>
+      <USER_ID>64</USER_ID>
     </tuple>
     <tuple>
       <ID>40</ID>
       <RATING>1</RATING>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">65</id>
-      </USER_ID>
+      <USER_ID>65</USER_ID>
     </tuple>
     <tuple>
       <ID>41</ID>
       <RATING>1</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">66</id>
-      </USER_ID>
+      <USER_ID>66</USER_ID>
     </tuple>
     <tuple>
       <ID>42</ID>
       <RATING>4</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">67</id>
-      </USER_ID>
+      <USER_ID>67</USER_ID>
     </tuple>
     <tuple>
       <ID>43</ID>
       <RATING>2</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">68</id>
-      </USER_ID>
+      <USER_ID>68</USER_ID>
     </tuple>
     <tuple>
       <ID>44</ID>
       <RATING>7</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">69</id>
-      </USER_ID>
+      <USER_ID>69</USER_ID>
     </tuple>
     <tuple>
       <ID>45</ID>
       <RATING>9</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">71</id>
-      </USER_ID>
+      <USER_ID>71</USER_ID>
     </tuple>
     <tuple>
       <ID>46</ID>
       <RATING>9</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">72</id>
-      </USER_ID>
+      <USER_ID>72</USER_ID>
     </tuple>
     <tuple>
       <ID>47</ID>
       <RATING>1</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">73</id>
-      </USER_ID>
+      <USER_ID>73</USER_ID>
     </tuple>
     <tuple>
       <ID>48</ID>
       <RATING>2</RATING>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">75</id>
-      </USER_ID>
+      <USER_ID>75</USER_ID>
     </tuple>
     <tuple>
       <ID>49</ID>
       <RATING>2</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">77</id>
-      </USER_ID>
+      <USER_ID>77</USER_ID>
     </tuple>
     <tuple>
       <ID>50</ID>
       <RATING>8</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">83</id>
-      </USER_ID>
+      <USER_ID>83</USER_ID>
     </tuple>
     <tuple>
       <ID>51</ID>
       <RATING>8</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">84</id>
-      </USER_ID>
+      <USER_ID>84</USER_ID>
     </tuple>
     <tuple>
       <ID>52</ID>
       <RATING>8</RATING>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">88</id>
-      </USER_ID>
+      <USER_ID>88</USER_ID>
     </tuple>
     <tuple>
       <ID>53</ID>
       <RATING>9</RATING>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">90</id>
-      </USER_ID>
+      <USER_ID>90</USER_ID>
     </tuple>
     <tuple>
       <ID>54</ID>
       <RATING>10</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">92</id>
-      </USER_ID>
+      <USER_ID>92</USER_ID>
     </tuple>
     <tuple>
       <ID>55</ID>
       <RATING>5</RATING>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">95</id>
-      </USER_ID>
+      <USER_ID>95</USER_ID>
     </tuple>
     <tuple>
       <ID>56</ID>
       <RATING>10</RATING>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">96</id>
-      </USER_ID>
+      <USER_ID>96</USER_ID>
     </tuple>
   </TRIPSTER_TRIPRATING>
   <TRIPSTER_TRIPCOMMENT>
@@ -6163,504 +6051,392 @@
       <ID>1</ID>
       <COMMENT>10</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6</id>
-      </USER_ID>
+      <USER_ID>6</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>2</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6</id>
-      </USER_ID>
+      <USER_ID>6</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>3</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">11</id>
-      </USER_ID>
+      <USER_ID>11</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>4</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">12</id>
-      </USER_ID>
+      <USER_ID>12</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>5</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">13</id>
-      </USER_ID>
+      <USER_ID>13</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>6</ID>
       <COMMENT>4</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">16</id>
-      </USER_ID>
+      <USER_ID>16</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>7</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">17</id>
-      </USER_ID>
+      <USER_ID>17</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>8</ID>
       <COMMENT>3</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">20</id>
-      </USER_ID>
+      <USER_ID>20</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>9</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">21</id>
-      </USER_ID>
+      <USER_ID>21</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>10</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">22</id>
-      </USER_ID>
+      <USER_ID>22</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>11</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">39</id>
-      </USER_ID>
+      <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>12</ID>
       <COMMENT>3</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">39</id>
-      </USER_ID>
+      <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>13</ID>
       <COMMENT>3</COMMENT>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">39</id>
-      </USER_ID>
+      <USER_ID>39</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>14</ID>
       <COMMENT>3</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">40</id>
-      </USER_ID>
+      <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>15</ID>
       <COMMENT>2</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">40</id>
-      </USER_ID>
+      <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>16</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">40</id>
-      </USER_ID>
+      <USER_ID>40</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>17</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">41</id>
-      </USER_ID>
+      <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>18</ID>
       <COMMENT>2</COMMENT>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">41</id>
-      </USER_ID>
+      <USER_ID>41</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>19</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">42</id>
-      </USER_ID>
+      <USER_ID>42</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>20</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">42</id>
-      </USER_ID>
+      <USER_ID>42</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>21</ID>
       <COMMENT>2</COMMENT>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">42</id>
-      </USER_ID>
+      <USER_ID>42</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>22</ID>
       <COMMENT>4</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">43</id>
-      </USER_ID>
+      <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>23</ID>
       <COMMENT>2</COMMENT>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">43</id>
-      </USER_ID>
+      <USER_ID>43</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>24</ID>
       <COMMENT>3</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">45</id>
-      </USER_ID>
+      <USER_ID>45</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>25</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">47</id>
-      </USER_ID>
+      <USER_ID>47</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>26</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">48</id>
-      </USER_ID>
+      <USER_ID>48</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>27</ID>
       <COMMENT>2</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">49</id>
-      </USER_ID>
+      <USER_ID>49</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>28</ID>
       <COMMENT>4</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">50</id>
-      </USER_ID>
+      <USER_ID>50</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>29</ID>
       <COMMENT>3</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">51</id>
-      </USER_ID>
+      <USER_ID>51</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>30</ID>
       <COMMENT>4</COMMENT>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">52</id>
-      </USER_ID>
+      <USER_ID>52</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>31</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">53</id>
-      </USER_ID>
+      <USER_ID>53</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>32</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">54</id>
-      </USER_ID>
+      <USER_ID>54</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>33</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">55</id>
-      </USER_ID>
+      <USER_ID>55</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>34</ID>
       <COMMENT>3</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">55</id>
-      </USER_ID>
+      <USER_ID>55</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>35</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">56</id>
-      </USER_ID>
+      <USER_ID>56</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>36</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">57</id>
-      </USER_ID>
+      <USER_ID>57</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>37</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">58</id>
-      </USER_ID>
+      <USER_ID>58</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>38</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">60</id>
-      </USER_ID>
+      <USER_ID>60</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>39</ID>
       <COMMENT>3</COMMENT>
       <TRIP_ID>5</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">64</id>
-      </USER_ID>
+      <USER_ID>64</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>40</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">65</id>
-      </USER_ID>
+      <USER_ID>65</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>41</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">66</id>
-      </USER_ID>
+      <USER_ID>66</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>42</ID>
       <COMMENT>4</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">67</id>
-      </USER_ID>
+      <USER_ID>67</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>43</ID>
       <COMMENT>2</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">68</id>
-      </USER_ID>
+      <USER_ID>68</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>44</ID>
       <COMMENT>7</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">69</id>
-      </USER_ID>
+      <USER_ID>69</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>45</ID>
       <COMMENT>9</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">71</id>
-      </USER_ID>
+      <USER_ID>71</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>46</ID>
       <COMMENT>9</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">72</id>
-      </USER_ID>
+      <USER_ID>72</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>47</ID>
       <COMMENT>1</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">73</id>
-      </USER_ID>
+      <USER_ID>73</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>48</ID>
       <COMMENT>2</COMMENT>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">75</id>
-      </USER_ID>
+      <USER_ID>75</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>49</ID>
       <COMMENT>2</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">77</id>
-      </USER_ID>
+      <USER_ID>77</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>50</ID>
       <COMMENT>8</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">83</id>
-      </USER_ID>
+      <USER_ID>83</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>51</ID>
       <COMMENT>8</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">84</id>
-      </USER_ID>
+      <USER_ID>84</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>52</ID>
       <COMMENT>8</COMMENT>
       <TRIP_ID>1</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">88</id>
-      </USER_ID>
+      <USER_ID>88</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>53</ID>
       <COMMENT>9</COMMENT>
       <TRIP_ID>2</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">90</id>
-      </USER_ID>
+      <USER_ID>90</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>54</ID>
       <COMMENT>10</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">92</id>
-      </USER_ID>
+      <USER_ID>92</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>55</ID>
       <COMMENT>5</COMMENT>
       <TRIP_ID>3</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">95</id>
-      </USER_ID>
+      <USER_ID>95</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
     <tuple>
       <ID>56</ID>
       <COMMENT>10</COMMENT>
       <TRIP_ID>4</TRIP_ID>
-      <USER_ID>
-        <id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">96</id>
-      </USER_ID>
+      <USER_ID>96</USER_ID>
       <TIMESTAMP>2014-12-05 03:27:08.983187</TIMESTAMP>
     </tuple>
   </TRIPSTER_TRIPCOMMENT>
