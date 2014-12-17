@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, render_to_response
 from django.contrib.auth.models import User
 from tripster.models import *
-from django.contrib.auth import authenticate, login as django_login
+from django.contrib.auth import authenticate, logout, login as django_login
 from django.template import RequestContext, loader
 from django.db.models import Q
 import time
@@ -14,6 +14,8 @@ cache.remove()
 # Create your views here.
 
 def index(request):
+    if request.method == "POST":
+        logout(request)
     return render_to_response('tripster/index.html', RequestContext(request))
 
 def register(request):
@@ -69,7 +71,7 @@ def score_trips(t_user):
     trips.sort(key = lambda t: -score(t_user, t))
     for t in trips:
         print score(t_user, t)
-    return [trip.id for trip in trips]
+    return [trip.id for trip in trips][:10]
 
 def feed(request):
     t_user = TripsterUser.objects.get(user=request.user)
@@ -134,7 +136,7 @@ def friends(request):
 
     friend_requests = [f.user.user.username for f in t_user.friend_requests.all()]
     friends = t_user.friends.all()
-    others = TripsterUser.objects.all().exclude(pk__in=friends).exclude(pk=t_user.id)
+    others = TripsterUser.objects.all().exclude(pk__in=friends).exclude(pk=t_user.id)[:10]
     friend_dict = {
         'friend_requests' : friend_requests,
         'friends' : friends,
