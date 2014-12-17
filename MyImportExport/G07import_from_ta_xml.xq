@@ -76,7 +76,6 @@ as element()*
         </tuple>
 };
 
-
 declare function local:getFriendID($name as xs:string)
 as element()*
 {
@@ -97,7 +96,7 @@ as element()*
             <tuple> 
                 <ID>{data($x/id) * 31 + data(local:getFriendID(data($y)))}</ID>
                 <FROM_TRIPSTERUSER_ID>{data($x/id)}</FROM_TRIPSTERUSER_ID>
-                <TO_TRIPSTERUSER_ID>{local:getFriendID(data($y))}</TO_TRIPSTERUSER_ID>
+                <TO_TRIPSTERUSER_ID>{data(local:getFriendID(data($y)))}</TO_TRIPSTERUSER_ID>
             </tuple>
 };
 
