@@ -8,17 +8,16 @@
 </head>
 
 <div style="text-align:center;vertical-align:top;">
-
+	<span style="float:left;">
 	<form action="{% url 'feed' %}" method="post">
-		<span style="float:left;"> </span>
+	
 			{% csrf_token %}
 		<input type="submit" value="My Feed"/></form>
 	
 	<form action="{% url 'index' %}" method="post">
-		<span style="float:left;"> </span>
 			{% csrf_token %}
 		<input type="submit" value="Logout"/>
-	</form>
+	</form></span>
 
 </div>
 
