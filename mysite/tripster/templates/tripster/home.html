@@ -7,8 +7,8 @@
     </style>
 </head>
 
+<span style="float:left;">
 <div style="text-align:center;vertical-align:top;">
-	<span style="float:left;">
 	<form action="{% url 'feed' %}" method="post">
 	
 			{% csrf_token %}
@@ -17,9 +17,10 @@
 	<form action="{% url 'index' %}" method="post">
 			{% csrf_token %}
 		<input type="submit" value="Logout"/>
-	</form></span>
+	</form>
 
-</div>
+</div>	</span>
+
 
 <h1><u><i>WELCOME TO THE VIRTUAL PLAZA</u></i></h1>
 
