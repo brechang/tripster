@@ -23,5 +23,12 @@
     <label> Profile Picture: </label>
     <input type="url" name="url" value="{{user.url}}"/>
     </br>
+    <label> Privacy Level of Profile: </label>
+    <select name="privacy">
+        {% for p_level in priv_level  %}
+            <option value="{{ forloop.counter0 }}"> {{ p_level }}</option>
+        {% endfor %}
+    </select>
     <input value="Submit" type="submit"/>
+
 </form>

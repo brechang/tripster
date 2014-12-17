@@ -26,8 +26,20 @@
     {% endif %}
 
     </br>
+
+    <label> Privacy Level: </label>
+    <select name="privacy">
+        <option value="0">Only Me</option>
+        <option value="1">My Friends</option>
+        <option value="2">Global</option>
+    </select>
+
+    </br>
+
     {% if trips %}
         <input value="Submit" type="submit"/>
     {% endif %}
+
+
 </form>
 

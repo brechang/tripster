@@ -56,4 +56,19 @@
 </form>
 
 
+{% if is_owner %}
+
+<form action="{% url 'get_content' content.id %}" method="post">
+    {% csrf_token %}
+
+    <label>Change Privacy of Content: </label>
+    <select name="a_privacy">
+        <option value="0">Only Me</option>
+        <option value="1">My Friends</option>
+        <option value="2">Global</option>
+    </select>
+    </br>
+    <input value="Submit" type="submit"/>
+</form>
+{% endif %}
 
